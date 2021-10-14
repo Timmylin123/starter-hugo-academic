@@ -30,7 +30,7 @@ education:
     - course: High School Diploma
       institution: Taipei Wego Senior High School
       year: 2018
-email: ""
+email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
