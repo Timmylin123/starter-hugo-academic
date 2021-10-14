@@ -2,8 +2,7 @@
 title: Ting-Han Lin
 role: Master Student in CS
 avatar_filename: avatar.jpg
-bio: My research interests include distributed robotics, mobile computing and
-  programmable matter.
+bio: "My research interests include "
 interests:
   - Human Computer Interaction
   - Human Robot Interaction
