@@ -8,7 +8,7 @@ external_link: ""
 url_slides: ""
 title: Anagram Solver
 tags:
-  - Deep Learning
+  - Python
 links:
   - icon: twitter
     icon_pack: fab
