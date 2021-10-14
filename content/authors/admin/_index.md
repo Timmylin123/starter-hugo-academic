@@ -1,6 +1,6 @@
 ---
 title: Ting-Han Lin
-role: Master Student in CS
+role: Master's Student in CS
 avatar_filename: avatar.jpg
 bio: "My research interests include "
 interests:
