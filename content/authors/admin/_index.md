@@ -1,16 +1,17 @@
 ---
 title: Ting-Han Lin
 role: Master Student in CS
+avatar_filename: avatar.jpg
 bio: My research interests include distributed robotics, mobile computing and
   programmable matter.
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Human Computer Interaction
+  - Human Robot Interaction
+  - UI/UX Design
 social:
   - icon: envelope
     icon_pack: fas
-    link: /#contact
+    link: tinghan@uchicago.edu
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/GeorgeCushen
@@ -41,9 +42,4 @@ email: ""
 superuser: true
 highlight_name: true
 ---
-
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+Ting-Han (Timmy) Lin is a computer science master’s student at the University of Chicago. HIs research interests are in human-computer integration and human-robot / human-AI interaction. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
