@@ -1,5 +1,5 @@
 ---
-title: Timmy Lin
+title: Ting-Han Lin
 role: Master Student in CS
 bio: My research interests include distributed robotics, mobile computing and
   programmable matter.
