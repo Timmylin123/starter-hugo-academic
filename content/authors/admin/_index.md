@@ -34,4 +34,4 @@ email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-Ting-Han (Timmy) Lin is a computer science master’s student at the University of Chicago. HIs research interests are in human-computer integration and human-robot / human-AI interaction. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
+Ting-Han (Timmy) Lin is a computer science master’s student at the University of Chicago. His research interests are in human-computer integration and human-robot / human-AI interaction. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
