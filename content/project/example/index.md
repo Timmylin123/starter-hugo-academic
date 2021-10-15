@@ -1,5 +1,5 @@
 ---
-slides: #example
+slides: "" #example
 url_pdf: ""
 summary: An interactive program that solves Anagrams in 1 second!
 url_video: ""
@@ -11,7 +11,7 @@ tags:
   - Python
 links: []
 image:
-  caption: Anagrams by Game Pigeon
+  caption: ""
   focal_point: Smart
   filename: featured.png
 url_code: ""

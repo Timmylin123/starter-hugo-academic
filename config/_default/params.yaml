@@ -93,12 +93,12 @@ show_related:
   page: false
   post: true
   project: true
-  publication: false #true
+  publication: false #true, this does really matter for now
   event: true
 reading_time: true
 section_pager: false
 docs_section_pager: true
-sharing: false #true
+sharing: false #true, making it false disable social media icons sharing on every page
 copyright_license:
   enable: false
   allow_derivatives: false
