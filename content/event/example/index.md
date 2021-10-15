@@ -1,6 +1,6 @@
 ---
 abstract: I gave an UChicago Information Session at Taipei Wego High School
-slides: example
+slides: #example
 url_pdf: ""
 summary: An example talk using Wowchemy's Markdown slides feature.
 title: UChicago Infosession
@@ -21,14 +21,14 @@ address:
   postcode: "94305"
   country: United States
 links:
-  - icon: twitter
-    icon_pack: fab
-    name: Follow
-    url: https://twitter.com/georgecushen
+  # - icon: twitter
+  #   icon_pack: fab
+  #   name: Follow
+  #   url: https://twitter.com/georgecushen
 publishDate: 2017-01-01T00:00:00Z
 tags: []
 projects:
-  - example
+  #- example
 image:
   caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)"
   focal_point: Right
