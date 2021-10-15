@@ -1,5 +1,5 @@
 ---
-slides: "" #example
+slides: ""
 url_pdf: ""
 summary: An interactive program that solves Anagrams in 1 second!
 url_video: ""
