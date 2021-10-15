@@ -21,3 +21,5 @@ Anagrams is a 60 second word hunt game developed by [Game Pigeon](http://gamepi
 I used python to design a program that can solve Anagrams within 1 second! Just by inserting the 6 letters shown in the Anagrams game into the text bar, my program would automatically show you all of the vocabulary words that can be formed by these letters (refer to the screenshot above). Then, you will be able to ACE the game![](https://i0.wp.com/mitrobe.com/wp-content/uploads/2020/07/20200703-180050.png?ssl=1)
 
 Here is my [python code](https://github.com/tinghanlin/anagram-solver) for my program! Feel free to check it out!!
+
+You can download my folder, go to my folder and run  "*python AnagramSolver.py"*  and try it out yourself!
