@@ -97,7 +97,7 @@ show_related:
   event: true
 reading_time: true
 section_pager: false
-docs_section_pager: true
+docs_section_pager: false #true
 sharing: false #true, making it false disable social media icons sharing on every page
 copyright_license:
   enable: false
