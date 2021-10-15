@@ -2,7 +2,8 @@
 title: Ting-Han Lin
 role: Master's Student in CS
 avatar_filename: avatar.jpg
-bio: "My research interests include "
+bio: My research interests include human-computer integration and human-robot /
+  human-AI interaction.
 interests:
   - Human Computer Interaction
   - Human Robot Interaction
