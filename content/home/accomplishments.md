@@ -79,19 +79,19 @@ item:
   organization_url: https://certiport.pearsonvue.com/
   title: "MOS: Microsoft Office Specialist 2010 Master"
   url: ""
-# - certificate_url: https://www.citiprogram.org/verify/?waa47ef3d-62c3-41cf-8c1d-d57411757234-39110651
-#   date_end: ""
-#   date_start: "2020-10-23"
-#   description: ""
-#   organization: CITI Program joining BRANY
-#   organization_url: https://about.citiprogram.org/news/citi-program-joins-brany/
-#   title: "Social and Behavioral Sciences IRB Human Subjects Protection Training Course"
-#   url: ""
+- certificate_url: https://www.citiprogram.org/verify/?waa47ef3d-62c3-41cf-8c1d-d57411757234-39110651
+  date_end: ""
+  date_start: "2020-10-23"
+  description: ""
+  organization: CITI Program joining BRANY
+  organization_url: https://about.citiprogram.org/news/citi-program-joins-brany/
+  title: "Social and Behavioral Sciences IRB Human Subjects Protection Training Course"
+  url: ""
   - certificate_url: https://drive.google.com/file/d/1eGx61QMXFcsu4z1nv6hlGSPLQ5Ud4Zb6/view?usp=sharing
   date_end: ""
   date_start: "2018-09-14"
   description: ""
-  organization: Oracle | Integrated Cloud Applications and Platform Services
+  organization: "Oracle | Integrated Cloud Applications and Platform Services"
   organization_url: https://www.oracle.com/index.html
   title: "Oracle Certified Associate, Java SE 7 Programmer"
   url: ""
