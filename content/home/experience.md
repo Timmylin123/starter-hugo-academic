@@ -41,7 +41,7 @@ experience:
         
   - title: Computer Science Grader
     company: University of Chicago
-    company_url: ''
+    company_url: https://www.uchicago.edu/
     company_logo: 
     location: Chicago
     date_start: '2020-09-01'
@@ -51,17 +51,55 @@ experience:
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
         * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
-  - title: Computer Science Grader
+  - title: Research Assistant
     company: University of Chicago
-    company_url: ''
+    company_url: https://www.uchicago.edu/
     company_logo: 
     location: Chicago
     date_start: '2020-09-01'
     date_end: 
     description: |2-
         Responsibilities include:
-        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
-        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
+        * Created a new human-robot interaction research with Professor Sarah Sebo at UChicago Department of Computer Science to investigate how NAO robots can facilitate deep conversations among human subjects
+        * Controlled NAO robot via Choregraphe and Python and designed a program on Unity Game Engine that enables NAO to ask questions to pairs of participants and guide them in a meaningful conversation
+
+  - title: UChicago Peer Mentor Advisory Board
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2019-04-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Led trainings for UChicago Peer Mentors and informed them of their responsibilities
+        * Provided direct support and direction to the incoming first-years and transfer students by responding to their questions, as they complete various tasks related to their transition to the College and the University of Chicago
+
+  - title: Data Scientist
+    company: Actelligent-Capital
+    company_url: https://www.actelligent-capital.com/
+    company_logo: 
+    location: Hong Kong
+    date_start: '2020-05-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Extracted 20+ years of raw financial data from 100K+ companies to calculate the financial metrics in each factor of the Fama and French model using SQL and Python
+        * Identified and prioritized the most relevant metrics across 1000+ industries and sectors using a Machine Learning model to ultimately predict stock price performance and risks
+        * Presented optimization recommendations to minimize the calculation time for financial metrics via Cython
+
+  - title: Financial Services Intern
+    company: Shanghai Commercial & Savings Bank
+    company_url: https://www.scsb.com.tw/
+    company_logo: 
+    location: Taipei, Taiwan
+    date_start: '2019-06-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Analyzed and improved the marketing strategy of SCSB’s credit card to increase its reach, engagement, and sales through Google Analytics and AdWords
+        * Researched on the performance of startups on OurCrowd (a SCSB-sponsored startup investing platform) to assist the investment team with adjusting the investment plans
+        * Extracted data from the database to analyze target audience’s engagement with the online bank by Python
 
 design:
   columns: '2'
