@@ -95,12 +95,12 @@ item:
   # organization_url: https://www.oracle.com/index.html
   # title: "Oracle Certified Associate, Java SE 7 Programmer"
   # url: ""
-- certificate_url: https://drive.google.com/file/d/1OafgXHFvbszNOrPETqxHYabg8FRCUl-8/view
+- certificate_url: #https://drive.google.com/file/d/1OafgXHFvbszNOrPETqxHYabg8FRCUl-8/view
 date_end: ""
 date_start: "2017-08-30"
 description: ""
 organization: "The Wharton School of the University of Pennsylvania"
-organization_url: https://www.wharton.upenn.edu/
+organization_url: "" #https://www.wharton.upenn.edu/
 title: "Certificate of Advanced Negotiation"
 url: ""
 
