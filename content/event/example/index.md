@@ -1,8 +1,8 @@
 ---
-abstract: I gave an UChicago Information Session at Taipei Wego High School
+abstract: 
 slides: #example
 url_pdf: ""
-summary: An example talk using Wowchemy's Markdown slides feature.
+summary: On behalf of UChicago Admissions Office, I gave a talk about UChicago at Taipei Wego High School.
 title: UChicago Infosession
 location: Wowchemy HQ
 date: 2030-06-01T13:00:00Z
