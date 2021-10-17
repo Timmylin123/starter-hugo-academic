@@ -1,7 +1,7 @@
 ---
 slides: ""
 url_pdf: ""
-summary: An interactive program that solves Anagrams in 1 second!
+summary: ""
 url_video: ""
 date: 2021-10-14T03:56:13.241Z
 external_link: ""
