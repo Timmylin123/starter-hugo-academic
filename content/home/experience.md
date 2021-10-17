@@ -39,14 +39,29 @@ experience:
         * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
   
         
-  - title: Professor of Semiconductor Physics
-    company: University X
+  - title: Computer Science Grader
+    company: University of Chicago
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    company_logo: 
+    location: Chicago
+    date_start: '2020-09-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
+        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
+
+  - title: Computer Science Grader
+    company: University of Chicago
+    company_url: ''
+    company_logo: 
+    location: Chicago
+    date_start: '2020-09-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
+        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
 design:
   columns: '2'
