@@ -3,13 +3,13 @@ abstract:
 slides: #example
 url_pdf: ""
 summary: On behalf of UChicago Admissions Office, I gave a talk about UChicago at Taipei Wego High School.
-title: UChicago Infosession
-location: Wowchemy HQ
-date: 2030-06-01T13:00:00Z
-date_end: 2030-06-01T15:00:00Z
+title: UChicago Information Session
+location: "Taipei, Taiwan"
+date: 2021-09-17T15:00:00Z
+date_end: 2021-09-17T17:00:00Z
 all_day: false
-event: Wowchemy Conference
-event_url: https://example.org
+event: 
+event_url: 
 featured: false
 authors: []
 url_video: ""
