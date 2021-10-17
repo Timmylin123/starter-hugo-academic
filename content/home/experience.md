@@ -25,19 +25,19 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: CEO
-    company: GenCoin
-    company_url: ''
-    company_logo: org-gc
-    location: California
-    date_start: '2021-01-01'
+  - title: Data Science Fellow
+    company: Upfront Healthcare Services
+    company_url: https://upfronthealthcare.com/
+    company_logo: 
+    location: Chicago
+    date_start: '2021-06-15'
     date_end: ''
     description: |2-
         Responsibilities include:
-        
-        * Analysing
-        * Modelling
-        * Deploying
+        * Iteratively prototype, develop, and automate data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
+        * Organize and structure large amounts of data into compelling reports and dashboards using SQL and Tableau
+        * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
+  
         
   - title: Professor of Semiconductor Physics
     company: University X
