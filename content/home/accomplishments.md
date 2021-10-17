@@ -92,7 +92,7 @@ item:
   date_start: "2018-09-14"
   description: ""
   organization: Oracle | Integrated Cloud Applications and Platform Services
-  organization_url: https://www.oracle.com/index.html/
+  organization_url: https://www.oracle.com/index.html
   title: "Oracle Certified Associate, Java SE 7 Programmer"
   url: ""
   # - certificate_url: https://drive.google.com/file/d/1OafgXHFvbszNOrPETqxHYabg8FRCUl-8/view
