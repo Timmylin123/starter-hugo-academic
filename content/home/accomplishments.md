@@ -31,21 +31,29 @@ item:
   organization_url: https://www.adobe.com/
   title: Adobe Certified Associate Graphic Design & Illustration Using Adobe Illustrator CC 2015
   url: ""
-- certificate_url: https://www.edx.org
+- certificate_url: https://drive.google.com/file/d/1uv2mxFA_dvIH6SfXROpQPigjcntqE3vi/view?usp=sharing
   date_end: ""
-  date_start: "2021-01-01"
-  description: Formulated informed blockchain models, hypotheses, and use cases.
-  organization: edX
-  organization_url: https://www.edx.org
-  title: Blockchain Fundamentals
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
-  date_end: "2020-12-21"
-  date_start: "2020-07-01"
+  date_start: "2018-08-12"
   description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
-  title: 'Object-Oriented Programming in R'
+  organization: Adobe
+  organization_url: https://www.adobe.com/
+  title: Adobe Certified Associate Visual Design Using Adobe Photoshop CC 2015
+  url: ""
+- certificate_url: https://drive.google.com/file/d/1TCDjRA5v_nEy3mB9huli5qqtasjYm4ha/view?usp=sharing
+  date_end: ""
+  date_start: "2018-08-31"
+  description: ""
+  organization: https://certiport.pearsonvue.com/
+  organization_url: Certiport - Pearson VUE
+  title: "MOS: Microsoft Office Access 2010"
+  url: ""
+- certificate_url: https://drive.google.com/file/d/1TCDjRA5v_nEy3mB9huli5qqtasjYm4ha/view?usp=sharing
+  date_end: ""
+  date_start: "2018-08-31"
+  description: ""
+  organization: https://certiport.pearsonvue.com/
+  organization_url: Certiport - Pearson VUE
+  title: "MOS: Microsoft Office Access 2010"
   url: ""
 
 design:
