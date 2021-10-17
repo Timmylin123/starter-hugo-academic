@@ -87,22 +87,22 @@ item:
   organization_url: https://about.citiprogram.org/news/citi-program-joins-brany/
   title: "Social and Behavioral Sciences IRB Human Subjects Protection Training Course"
   url: ""
-  - certificate_url: https://drive.google.com/file/d/1eGx61QMXFcsu4z1nv6hlGSPLQ5Ud4Zb6/view?usp=sharing
-  date_end: ""
-  date_start: "2018-09-14"
-  description: ""
-  organization: Oracle | Integrated Cloud Applications and Platform Services
-  organization_url: https://www.oracle.com/index.html
-  title: "Oracle Certified Associate, Java SE 7 Programmer"
-  url: ""
-  # - certificate_url: https://drive.google.com/file/d/1OafgXHFvbszNOrPETqxHYabg8FRCUl-8/view
+  # - certificate_url: https://drive.google.com/file/d/1eGx61QMXFcsu4z1nv6hlGSPLQ5Ud4Zb6/view?usp=sharing
   # date_end: ""
-  # date_start: "2017-08-30"
+  # date_start: "2018-09-14"
   # description: ""
-  # organization: The Wharton School of the University of Pennsylvania
-  # organization_url: https://www.wharton.upenn.edu/
-  # title: "Certificate of Advanced Negotiation"
+  # organization: Oracle | Integrated Cloud Applications and Platform Services
+  # organization_url: https://www.oracle.com/index.html
+  # title: "Oracle Certified Associate, Java SE 7 Programmer"
   # url: ""
+  - certificate_url: https://drive.google.com/file/d/1OafgXHFvbszNOrPETqxHYabg8FRCUl-8/view
+  date_end: ""
+  date_start: "2017-08-30"
+  description: ""
+  organization: The Wharton School of the University of Pennsylvania
+  organization_url: https://www.wharton.upenn.edu/
+  title: "Certificate of Advanced Negotiation"
+  url: ""
 
 design:
   columns: '2' 
