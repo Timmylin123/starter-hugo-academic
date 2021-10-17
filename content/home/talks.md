@@ -21,4 +21,3 @@ content:
 design:
   view: 2
 ---
-I gave an info session about UChicago!
