@@ -39,7 +39,7 @@ experience:
         * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
   
         
-  - title: Computer Science Grader
+  - title: Computer Science Grader of CMSC 11800/11900
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
@@ -51,7 +51,7 @@ experience:
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
         * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
-  - title: Research Assistant
+  - title: Computer Science Research Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
