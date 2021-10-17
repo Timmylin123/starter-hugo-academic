@@ -12,14 +12,14 @@ event:
 event_url: 
 featured: false
 authors: []
-url_video: ""
-url_slides: ""
+url_video: "https://youtu.be/rOm9XmIrarg"
+url_slides: "https://drive.google.com/file/d/1HRdGFFOVYqW_NJDQIwH_Ar0BSkZekIGW/view?usp=sharing"
 address:
-  street: 450 Serra Mall
-  city: Stanford
+  street: "No. 50, Zhuhai Rd, Beitou District"
+  city: "Taipei"
   region: CA
-  postcode: "94305"
-  country: United States
+  postcode: "11254"
+  country: Taiwan
 links:
   # - icon: twitter
   #   icon_pack: fab
