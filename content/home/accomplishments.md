@@ -47,13 +47,37 @@ item:
   organization_url: Certiport - Pearson VUE
   title: "MOS: Microsoft Office Access 2010"
   url: ""
-- certificate_url: https://drive.google.com/file/d/1TCDjRA5v_nEy3mB9huli5qqtasjYm4ha/view?usp=sharing
+- certificate_url: https://drive.google.com/file/d/1AYQe3MC1ElXJUjMtdmvCYERTz-c3QrZ4/view?usp=sharing
+  date_end: ""
+  date_start: "2018-08-12"
+  description: ""
+  organization: https://certiport.pearsonvue.com/
+  organization_url: Certiport - Pearson VUE
+  title: "MOS: Microsoft Office Excel 2010 Expert"
+  url: ""
+- certificate_url: https://drive.google.com/file/d/1xTT0hW5Fdj_0HjSkgVdAfK2rANJiIzgB/view?usp=sharing
+  date_end: ""
+  date_start: "2018-08-19"
+  description: ""
+  organization: https://certiport.pearsonvue.com/
+  organization_url: Certiport - Pearson VUE
+  title: "MOS: Microsoft Office PowerPoint 2010"
+  url: ""
+- certificate_url: https://drive.google.com/file/d/18a5_gfxepxE9jDl6nzh3twqDqS-FOyW7/view?usp=sharing
+  date_end: ""
+  date_start: "2018-07-20"
+  description: ""
+  organization: https://certiport.pearsonvue.com/
+  organization_url: Certiport - Pearson VUE
+  title: "MOS: Microsoft Office Word 2010 Expert"
+  url: ""
+- certificate_url: https://drive.google.com/file/d/1JkEBINl4dPirNMKGxoVPjda2efaG5gML/view?usp=sharing
   date_end: ""
   date_start: "2018-08-31"
   description: ""
   organization: https://certiport.pearsonvue.com/
   organization_url: Certiport - Pearson VUE
-  title: "MOS: Microsoft Office Access 2010"
+  title: "MOS: Microsoft Office Specialist 2010 Master"
   url: ""
 
 design:
