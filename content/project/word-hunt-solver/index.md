@@ -4,7 +4,7 @@ date: 2021-10-14T03:56:28.034Z
 draft: false
 featured: false
 tags:
-  - Python
+  - Interactive
 image:
   filename: featured.png
   focal_point: Smart
