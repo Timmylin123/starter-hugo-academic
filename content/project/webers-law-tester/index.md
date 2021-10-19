@@ -1,5 +1,5 @@
 ---
-title: Weber's Law Tester
+title: Weber's Law Tester On Vision
 date: 2021-10-17T06:03:15.789Z
 draft: false
 featured: false
