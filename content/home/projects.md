@@ -27,8 +27,8 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Python
-    tag: Python
+  - name: Interactive
+    tag: Interactive
   - name: Other
     tag: Demo
 
