@@ -8,7 +8,7 @@ external_link: ""
 url_slides: ""
 title: Anagrams Solver
 tags:
-  - Python
+  - Interactive
 links: []
 image:
   caption: ""
