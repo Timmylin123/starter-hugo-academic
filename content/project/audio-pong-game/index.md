@@ -17,4 +17,4 @@ I designed an interactive program with Python that allows a player to play **Pon
 
 In my interactive program, a player would use their voice to control the paddle by raising and lowering their pitches. As the ball passes through a specific section on the screen, my interactive program would make a sound (not literal audio) to indicate where the ball's location is. As described, my interactive program would allow a player to play the Pong Game without their hands and eyes. 
 
-Here is a [video demo](https://youtu.be/fQEl4lWYaAk) of myself playing the game. Here is the [python code](https://github.com/tinghanlin/eyes-hands-free-pong-game) for my interactive program! Feel free to git clone my folder and run “python3 pong-audio.py*”* in my folder to launch the program!
+Here is a [video demo](https://youtu.be/fQEl4lWYaAk) of myself playing the game. Here is the [python code](https://github.com/tinghanlin/eyes-hands-free-pong-game) for my interactive program! Feel free to git clone my folder and run "python3 pong-audio.py" in my folder to launch the program!
