@@ -11,6 +11,8 @@ image:
   focal_point: Smart
   preview_only: false
 ---
+This is a project I designed for CMSC 20300 Introduction to Human-Computer Interaction.
+
 I designed an interactive program with Python that allows a player to play **Pong Game** without using eyes and hands.
 
 **Pong Game** is a two-dimensional sports game that simulates table tennis. The player controls an in-game paddle by moving it vertically across the left or right side of the screen. They can compete against another player controlling a second paddle on the opposing side. 
