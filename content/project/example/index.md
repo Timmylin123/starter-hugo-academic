@@ -3,7 +3,7 @@ slides: ""
 url_pdf: ""
 summary: ""
 url_video: ""
-date: 2021-10-14T03:56:13.241Z
+date: 2021-10-27T05:51:22.633Z
 external_link: ""
 url_slides: ""
 title: Anagrams Solver
