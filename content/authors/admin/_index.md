@@ -5,8 +5,8 @@ avatar_filename: avatar.jpg
 bio: My research interests include human-computer integration and human-robot /
   human-AI interaction.
 interests:
-  - Human Computer Interaction
   - Human Robot Interaction
+  - Human Computer Interaction
   - UI/UX Design
 social:
   - icon: github
@@ -35,4 +35,4 @@ email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-Ting-Han (Timmy) Lin is a computer science master’s student at the University of Chicago. His research interests are in human-computer integration and human-robot / human-AI interaction. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
+Ting-Han (Timmy) Lin is a computer science master’s student at the University of Chicago. His research interests are in human-robot / human-AI interaction and human-computer integration. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
