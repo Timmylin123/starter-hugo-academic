@@ -1,6 +1,6 @@
 ---
 title: Word Hunt Solver
-date: 2021-10-14T03:56:28.034Z
+date: 2021-10-27T05:51:35.573Z
 draft: false
 featured: false
 tags:
