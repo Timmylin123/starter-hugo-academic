@@ -45,7 +45,7 @@ experience:
     company_logo: 
     location: Chicago
     date_start: '2018-09-01'
-    date_end: 
+    date_end: '2021-06-15'
     description: |2-
         Responsibilities include:
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
@@ -57,11 +57,47 @@ experience:
     company_logo: 
     location: Taipei, Taiwan
     date_start: '2015-09-01'
-    date_end: 
+    date_end: '2018-06-30'
     description: |2-
-        Responsibilities include:
-        * Created a new human-robot interaction research with Professor Sarah Sebo at UChicago Department of Computer Science to investigate how NAO robots can facilitate deep conversations among human subjects
-        * Controlled NAO robot via Choregraphe and Python and designed a program on Unity Game Engine that enables NAO to ask questions to pairs of participants and guide them in a meaningful conversation
+        Honors & Awards:
+        • Valedictorian (2018)
+        • High Honor Roll (2015-2018)
+        • Honor Scholarship Prize (2015-2018)
+        • 1st Place Schoolwide 50-Meter Swimming Race (2017)
+        • Certificate of Excellence (2016)
+        • Congenial Award (2016)
+        • 1st Place Taipei English Spelling Bee (2016)
+        • 1st Place Schoolwide Badminton Men's Double (2016)
+        • Outstanding Performance Award (2015)
+        • High Distinction Award Schoolwide Table Tennis Men's Single (2015)
+
+​
+
+# LEADERSHIP
+
+# • Class Leader
+
+# • Director of 2018 Graduation Presentation 
+
+# • Director and Chair of Wego Model United Nations
+
+# • Teaching Assistant for AP Calculus BC, AP Statistics & AP Chemistry
+
+# • Guide and English Translator in Taipei City Arts Promotion Office
+
+# ​
+
+# ACTIVITIES & SOCIETIES
+
+# • Harvard Model Congress Asia
+
+# • Yale Model United Nations Advanced
+
+# • English Drama Contest
+
+# • Volunteer Club
+
+# • Bartending Club
 
 design:
   columns: '2'
