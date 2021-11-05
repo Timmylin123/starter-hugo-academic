@@ -32,11 +32,8 @@ experience:
     location: Chicago
     date_start: '2021-09-01'
     date_end: ''
-    description: |2-
-        Responsibilities include:
-        * Iteratively prototype, develop, and automate data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
-        * Organize and structure large amounts of data into compelling reports and dashboards using SQL and Tableau
-        * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
+    description:
+        
   
         
   - title: Bachelor's Degree in Economics, 2018-2021
@@ -47,9 +44,28 @@ experience:
     date_start: '2018-09-01'
     date_end: '2021-06-15'
     description: |2-
-        Responsibilities include:
-        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
-        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
+        Honors & Awards:
+        * Bridge Builder Award (2021)
+        * Metcalf Scholarship Award (2019-2021)
+        * Most Talented Award University Cup (2020)
+        * Dean’s List (2018-2019)
+        * Peer Mentor of the Summer Award (2019)
+        * 2nd Place IM Sports Billiards Singles (2019)
+        * 3rd Place IM Sports Billiards Doubles  (2019)
+
+        Leadership Experience:
+        * IM Sports Representative
+        * President of Jugglers Enriching Lives Like Yours Club
+        * Vice-President and Events Chair of Taiwanese American Student Association
+
+        Activities & Societies:
+        * Lambda Phi Epsilon
+        * Intercollegiate Financial Journal
+        * UChicago International Student Advisory Committee
+        * Virtual China Green Energy and Sustainability Competition
+        * Global Engineering & Quantum Computing Trek
+        * UChicago Got Talent Show
+
 
   - title: High School Diploma, 2015-2018
     company: Taipei Wego Senior High School
@@ -78,7 +94,7 @@ experience:
         * Teaching Assistant for AP Calculus BC, AP Statistics & AP Chemistry
         * Guide and English Translator in Taipei City Arts Promotion Office
 
-        Activities & Societies
+        Activities & Societies:
         * Harvard Model Congress Asia
         * Yale Model United Nations Advanced
         * English Drama Contest
