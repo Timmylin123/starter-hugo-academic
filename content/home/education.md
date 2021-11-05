@@ -60,16 +60,16 @@ experience:
     date_end: '2018-06-30'
     description: |2-
         Honors & Awards:
-        • Valedictorian (2018)
-        • High Honor Roll (2015-2018)
-        • Honor Scholarship Prize (2015-2018)
-        • 1st Place Schoolwide 50-Meter Swimming Race (2017)
-        • Certificate of Excellence (2016)
-        • Congenial Award (2016)
-        • 1st Place Taipei English Spelling Bee (2016)
-        • 1st Place Schoolwide Badminton Men's Double (2016)
-        • Outstanding Performance Award (2015)
-        • High Distinction Award Schoolwide Table Tennis Men's Single (2015)
+        * Valedictorian (2018)
+        * High Honor Roll (2015-2018)
+        * Honor Scholarship Prize (2015-2018)
+        * 1st Place Schoolwide 50-Meter Swimming Race (2017)
+        * Certificate of Excellence (2016)
+        * Congenial Award (2016)
+        * 1st Place Taipei English Spelling Bee (2016)
+        * 1st Place Schoolwide Badminton Men's Double (2016)
+        * Outstanding Performance Award (2015)
+        * High Distinction Award Schoolwide Table Tennis Men's Single (2015)
 
 ​
 
