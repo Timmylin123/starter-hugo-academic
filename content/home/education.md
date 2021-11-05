@@ -71,11 +71,19 @@ experience:
         * Outstanding Performance Award (2015)
         * High Distinction Award Schoolwide Table Tennis Men's Single (2015)
 
+        Leadership Experience:
+        * Class Leader
+        * Director of 2018 Graduation Presentation
+        * Director and Chair of Wego Model United Nations
+        * Teaching Assistant for AP Calculus BC, AP Statistics & AP Chemistry
+        * Guide and English Translator in Taipei City Arts Promotion Office
 
-        Honors & Awards:
-      
-        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
-        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
+        Activities & Societies
+        * Harvard Model Congress Asia
+        * Yale Model United Nations Advanced
+        * English Drama Contest
+        * Volunteer Club
+        * Bartending Club
 
 design:
   columns: '2'
