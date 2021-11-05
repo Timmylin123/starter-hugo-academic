@@ -58,11 +58,12 @@ experience:
     location: Taipei, Taiwan
     date_start: '2015-09-01'
     date_end: '2018-06-30'
-    description: |2-
+    description: |2- 
+        Honors & Awards:
         Honors & Awards:
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
         * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
-       |2-
+
         Honors & Awards:
       
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
