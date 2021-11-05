@@ -59,45 +59,9 @@ experience:
     date_start: '2015-09-01'
     date_end: '2018-06-30'
     description: |2-
-        Honors & Awards:
-        * Valedictorian (2018)
-        * High Honor Roll (2015-2018)
-        * Honor Scholarship Prize (2015-2018)
-        * 1st Place Schoolwide 50-Meter Swimming Race (2017)
-        * Certificate of Excellence (2016)
-        * Congenial Award (2016)
-        * 1st Place Taipei English Spelling Bee (2016)
-        * 1st Place Schoolwide Badminton Men's Double (2016)
-        * Outstanding Performance Award (2015)
-        * High Distinction Award Schoolwide Table Tennis Men's Single (2015)
-
-​
-
-# LEADERSHIP
-
-# • Class Leader
-
-# • Director of 2018 Graduation Presentation 
-
-# • Director and Chair of Wego Model United Nations
-
-# • Teaching Assistant for AP Calculus BC, AP Statistics & AP Chemistry
-
-# • Guide and English Translator in Taipei City Arts Promotion Office
-
-# ​
-
-# ACTIVITIES & SOCIETIES
-
-# • Harvard Model Congress Asia
-
-# • Yale Model United Nations Advanced
-
-# • English Drama Contest
-
-# • Volunteer Club
-
-# • Bartending Club
+        Responsibilities include:
+        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
+        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
 design:
   columns: '2'
