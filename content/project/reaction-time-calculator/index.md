@@ -10,8 +10,6 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-This is a project I designed for CMSC 20300 Introduction to Human-Computer Interaction.
-
 I designed an interactive program with Python that allows a player to test his or her reaction time.
 
 Once a player starts my interactive program, the terminal prompts will ask him or her to press the ENTER key when they see the word **PIKACHU.** My program would test a player's reaction time for 30 trials and give summary results of reaction time in the end. Notice that the reaction time measured in my program is the time when a player sees the word **PIKACHU** to the time him or her hit the ENTER key on the keyboard.
