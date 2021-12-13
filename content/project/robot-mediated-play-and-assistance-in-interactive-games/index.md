@@ -7,7 +7,7 @@ links:
   - url: https://drive.google.com/file/d/1-5HmHHC5kPk_qA8Rhm6B1EXQX6RR8puI/view?usp=sharing
     name: Slides
 image:
-  filename: featured
+  filename: featured.png
   focal_point: Smart
   preview_only: false
 ---
