@@ -3,9 +3,7 @@ title: Robot-Mediated Play and Assistance in Interactive Games
 date: 2021-12-13T15:57:02.132Z
 draft: false
 featured: false
-links:
-  - url: https://drive.google.com/file/d/1-5HmHHC5kPk_qA8Rhm6B1EXQX6RR8puI/view?usp=sharing
-    name: Slides
+links: []
 image:
   filename: featured.png
   focal_point: Smart
