@@ -14,7 +14,7 @@ main:
     url: '#work'
     weight: 50
   - name: Education
-    url: 'content/education/'
+    url: 'education/'
     weight: 70
   - name: Certification
     url: '#certification'
