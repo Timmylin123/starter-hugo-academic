@@ -31,7 +31,7 @@ experience:
     company_logo: 
     location: Chicago
     date_start: '2021-06-15'
-    date_end: ''
+    date_end: '2022-02-15'
     description: |2-
         Responsibilities include:
         * Iteratively prototype, develop, and automate data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
@@ -45,7 +45,7 @@ experience:
     company_logo: 
     location: Chicago
     date_start: '2020-09-01'
-    date_end: 
+    date_end: '2022-03-01'
     description: |2-
         Responsibilities include:
         * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
@@ -69,7 +69,7 @@ experience:
     company_logo: 
     location: Chicago
     date_start: '2019-04-01'
-    date_end: 
+    date_end: '2021-12-01'
     description: |2-
         Responsibilities include:
         * Led trainings for UChicago Peer Mentors and informed them of their responsibilities
@@ -81,7 +81,7 @@ experience:
     company_logo: 
     location: Hong Kong
     date_start: '2020-05-01'
-    date_end: 
+    date_end: '2020-09-30'
     description: |2-
         Responsibilities include:
         * Extracted 20+ years of raw financial data from 100K+ companies to calculate the financial metrics in each factor of the Fama and French model using SQL and Python
@@ -94,7 +94,7 @@ experience:
     company_logo: 
     location: Taipei, Taiwan
     date_start: '2019-06-01'
-    date_end: 
+    date_end: '2019-08-31'
     description: |2-
         Responsibilities include:
         * Analyzed and improved the marketing strategy of SCSB’s credit card to increase its reach, engagement, and sales through Google Analytics and AdWords
