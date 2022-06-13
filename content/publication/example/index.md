@@ -27,10 +27,10 @@ publication_types: ["1"]
 publication: In *International Symposium on Robot and Human Interactive Communication (RO-MAN)*
 publication_short: In *RO-MAN*
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Robots are becoming increasingly prominent in the entertainment sphere, where they interact with guests in themed environments to tell stories, often in place of human characters. To evaluate the potential benefits of robots in these contexts compared to humans, we created an interactive puzzle game where either a robot or a human actor served as a diegetic ``game guide'' character that is both a cooperative partner and an omniscient game master. In the game, participants solve a crime mystery by asking the game guide for information to complete tasks and for hints to solve puzzles. We conducted a between-subjects study ($n=42$) to investigate how players' game experiences differed when the game guide was a human compared to a robot. Our results show that participants playing with a robot had more fun, felt less awkward and judged, and felt more connected with the robot while solving tasks compared to participants playing with a human. These results suggest that robots can be effective alternatives to human actors in broader contexts such as immersive entertainment spaces (e.g. escape rooms) to provide greater enjoyment and promote more social interaction with in-game characters.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: Benefits of an Interactive Robot Character in Immersive Puzzle Games
 
 tags: []
 
@@ -54,7 +54,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
+  caption: ""
   focal_point: ""
   preview_only: false
 
