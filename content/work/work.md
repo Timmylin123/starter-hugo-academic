@@ -25,6 +25,44 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+ 
+  - title: DATA 21200 (Spring 2022) Mathematical Methods for Data Science II Teaching Assistant
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2022-03-01'
+    date_end: '2022-06-01'
+    description: |2-
+        Responsibilities include:
+        * Led weekly discussion sessions and office hours to help students better understand the course materials about mathematics in data science
+        * Organized course materials on Canvas and Slack to help students know where to find the right resources
+        * Graded students' exams and provide comprehensive feedback on their work   
+        
+  - title: Human-Computer Interaction Research Assistant
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2020-01-01'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Conducted research with Professor Ken Nakagaki at UChicago Department of Computer Science to build a system that allows spatial interaction with an actuated user interface for throwing and catching
+        
+  - title: CMSC 11800 (Winter 2022) Introduction to Data Science I Teaching Assistant
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2022-01-01'
+    date_end: '2022-03-01'
+    description: |2-
+        Responsibilities include:
+        * Led weekly lab sessions and office hours to help students better understand the course materials about data science
+        * Organized course materials on Canvas, Ed, and git to help students know where to find the right resources
+        * Graded students' projects and exams and provide comprehensive feedback on their work
+
   - title: Data Science Fellow
     company: Upfront Healthcare Services
     company_url: https://upfronthealthcare.com/
@@ -37,21 +75,8 @@ experience:
         * Iteratively prototype, develop, and automate data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
         * Organize and structure large amounts of data into compelling reports and dashboards using SQL and Tableau
         * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
-  
-        
-  - title: Computer Science Grader of CMSC 11800/11900
-    company: University of Chicago
-    company_url: https://www.uchicago.edu/
-    company_logo: 
-    location: Chicago
-    date_start: '2020-09-01'
-    date_end: '2022-03-01'
-    description: |2-
-        Responsibilities include:
-        * Grade students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
-        * Assist in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
-  - title: Computer Science Research Assistant
+  - title: Human-Robot Interaction Research Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
@@ -63,17 +88,17 @@ experience:
         * Created a new human-robot interaction research with Professor Sarah Sebo at UChicago Department of Computer Science to investigate how NAO robots can facilitate deep conversations among human subjects
         * Controlled NAO robot via Choregraphe and Python and designed a program on Unity Game Engine that enables NAO to ask questions to pairs of participants and guide them in a meaningful conversation
 
-  - title: UChicago Peer Mentor Advisory Board
+  - title: CMSC 11800 (Autumn 2020, 2021) Introduction to Data Science I Grader
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
     location: Chicago
-    date_start: '2019-04-01'
+    date_start: '2020-09-01'
     date_end: '2021-12-01'
     description: |2-
         Responsibilities include:
-        * Led trainings for UChicago Peer Mentors and informed them of their responsibilities
-        * Provided direct support and direction to the incoming first-years and transfer students by responding to their questions, as they complete various tasks related to their transition to the College and the University of Chicago
+        * Graded students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
+        * Assisted in lab sessions and answer student’s programming questions to help students better understand the course materials about data science and Machine Learning
 
   - title: Data Scientist
     company: Actelligent-Capital
@@ -101,6 +126,17 @@ experience:
         * Researched on the performance of startups on OurCrowd (a SCSB-sponsored startup investing platform) to assist the investment team with adjusting the investment plans
         * Extracted data from the database to analyze target audience’s engagement with the online bank by Python
 
+  - title: UChicago Peer Mentor & Advisory Board
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2019-04-01'
+    date_end: '2021-12-01'
+    description: |2-
+        Responsibilities include:
+        * Led trainings for UChicago Peer Mentors and informed them of their responsibilities
+        * Provided direct support and direction to the incoming first-years and transfer students by responding to their questions, as they complete various tasks related to their transition to the College and the University of Chicago
 design:
   columns: '2'
 ---

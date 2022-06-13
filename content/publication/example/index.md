@@ -6,6 +6,8 @@ title: "Benefits of an Interactive Robot Character in Immersive Puzzle Games"
 # and it will be replaced with their full name and linked to their profile.
 authors:
 - admin
+- Spencer Ng
+- Dr. Sarah Sebo
 
 # Author notes (optional)
 # author_notes:
