@@ -15,19 +15,19 @@ main:
     weight: 30
   - name: Work
     url: 'work/'
-    weight: 50
+    weight: 40
   - name: Education
     url: 'education/'
-    weight: 70
+    weight: 50
   - name: Certification
     url: 'certification/'
-    weight: 90
+    weight: 60
   - name: Talks
     url: '#talks'
-    weight: 110
+    weight: 70
   - name: Contact
     url: '#contact'
-    weight: 130
+    weight: 80
 
 
 # Link to a PDF of your resume/CV from the menu.
