@@ -72,9 +72,9 @@ experience:
     date_end: '2022-02-15'
     description: |2-
         Responsibilities include:
-        * Iteratively prototype, develop, and automate data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
-        * Organize and structure large amounts of data into compelling reports and dashboards using SQL and Tableau
-        * Prototype algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
+        * Iteratively prototyped, developed, and automated data insights pipelines for anomaly detection through Microsoft Azure Synapse Analytics and Apache Spark Databricks
+        * Organized and structured large amounts of data into compelling reports and dashboards using SQL and Tableau
+        * Prototyped algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
 
   - title: Human-Robot Interaction Research Assistant
     company: University of Chicago
