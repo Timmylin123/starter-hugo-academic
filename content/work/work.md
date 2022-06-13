@@ -38,13 +38,13 @@ experience:
         * Led weekly discussion sessions and office hours to help students better understand the course materials about mathematics in data science
         * Organized course materials on Canvas and Slack to help students know where to find the right resources
         * Graded students' exams and provide comprehensive feedback on their work   
-        
+
   - title: Human-Computer Interaction Research Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
     location: Chicago
-    date_start: '2020-01-01'
+    date_start: '2022-01-01'
     date_end: 
     description: |2-
         Responsibilities include:
