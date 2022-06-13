@@ -8,8 +8,8 @@ authors:
 - admin
 
 # Author notes (optional)
-author_notes:
-- "Equal contribution"
+# author_notes:
+# - "Equal contribution"
 
 date: "2022-06-12T00:00:00Z"
 doi: ""
