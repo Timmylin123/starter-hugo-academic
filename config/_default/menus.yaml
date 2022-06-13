@@ -8,10 +8,10 @@ main:
     url: '#about'
     weight: 10
   - name: Publication
-    url: 'publication/'
+    url: '#publications'
     weight: 20
   - name: Portfolio
-    url: 'project/'
+    url: '#projects'
     weight: 30
   - name: Work
     url: 'work/'
@@ -23,7 +23,7 @@ main:
     url: 'certification/'
     weight: 90
   - name: Talks
-    url: 'talks/'
+    url: '#talks'
     weight: 110
   - name: Contact
     url: '#contact'
