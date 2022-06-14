@@ -13,8 +13,8 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
 
-<br> 6/4/2022 Graduated from the Univeristy of Chicago with M.S. in Computer Science and B.A. in Economics
-<br> 4/30/2022 Joined CHI 2022 Annual Conference
-<br> 4/4/2022 Demonstrated at Museum of Science and Industry Exhibition
-<br> 3/4/2022 Demonstrated in UChicago PhD Visit Day Demo
-<br> 2/13/2022 Participated in TEI 2022 Annual Conference
+<br> <b>6/4/2022</b>  Graduated from the UChicago with M.S.in CS and B.A. in Econ
+<br> <b>4/30/2022</b>  Joined CHI 2022 Annual Conference
+<br> <b>4/4/2022</b>  Demonstrated at Museum of Science and Industry Exhibition
+<br> <b>3/4/2022</b>  Demonstrated in UChicago PhD Visit Day Demo
+<br> <b>2/13/2022</b>  Participated in TEI 2022 Annual Conference
