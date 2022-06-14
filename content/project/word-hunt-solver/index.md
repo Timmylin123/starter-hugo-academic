@@ -10,7 +10,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-I designed an interactive program with Python that can show immediate solutions to the game **Word Hunt**. 
+I constructed an interactive program with Python that can show immediate solutions to the game **Word Hunt**. 
 
 Word Hunt is an 80-second minigame developed by [Game Pigeon](http://gamepigeonapp.com/). A player is given 16 letters on a 4x4 grid, then he will have to find out word combinations from those letters. Words can be formed in any direction but they have to be on a straight line with each letter being adjacent to the following letter in the way the word is spelled. This game is played by 2 people through text messages. The winner is the person who got the most word combo after time is passed.
 
