@@ -76,6 +76,18 @@ experience:
         * Organized and structured large amounts of data into compelling reports and dashboards using SQL and Tableau
         * Prototyped algorithms to promote interactive use cases including intelligent outreach and dynamic personalization
 
+  - title: CMSC 11900 (Winter 2021) Introduction to Data Science II Grader
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2021-01-15'
+    date_end: '2022-03-15'
+    description: |2-
+        Responsibilities include:
+        * Graded students' programming assignments through Python and help with subversion, git, canvas, and gradescope to assist the professors with the instruction of the course
+        * Assisted in lab sessions and answer student’s programming questions to help students better understand the course materials about data science
+
   - title: Human-Robot Interaction Research Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
