@@ -31,7 +31,7 @@ experience:
     company_logo: 
     location: Chicago
     date_start: '2021-09-01'
-    date_end: ''
+    date_end: '2022-06-01'
     description: |2-
         Leadership Experience:
         * Robot Design Judge at the FIRST LEGO League Qualifier tournament (2021)
