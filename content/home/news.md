@@ -13,8 +13,8 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
 
-<br> <b>06/04/2022</b>  Graduated from the UChicago with M.S.in CS and B.A. in Econ
-<br> <b>05/30/2022</b>  Paper titled "Benefits of an Interactive Robot Character in Immersive Puzzle Games" accepted at RO-MAN 2022 Annual Conference
+<br> <b>06/04/2022</b>  Graduated from UChicago with M.S. in CS and B.A. in Econ
+<br> <b>05/30/2022</b>  Paper titled "Benefits of an Interactive Robot Character in Immersive Puzzle Games" was accepted at RO-MAN 2022 Annual Conference
 <br> <b>04/30/2022</b>  Joined CHI 2022 Annual Conference
 <br> <b>04/04/2022</b>  Demonstrated at Museum of Science and Industry Exhibition
 <br> <b>03/28/2022</b>  Served as the TA for DATA 21200 (Spring 2022) taught by Prof. David Biron
@@ -23,7 +23,7 @@ design:
 <br> <b>01/10/2022</b>  Served as the TA for CMSC 11800 (Winter 2022) taught by Prof. Will Trimble
 <br> <b>12/12/2021</b>  Invited to become the Robot Design Judge for Illinois FIRST FLL Challenge Qualifier Tournament
 <br> <b>09/27/2021</b>  Served as the Grader for CMSC 11800 (Autumn 2021) taught by Prof. Michael Franklin and  Prof. Dan Nicolae
-<br> <b>09/14/2021</b>  Inivted to Taipei Wego High School and gave a talk about UChicago
+<br> <b>09/14/2021</b>  Inivited to Taipei Wego High School and gave a talk about UChicago
 
   
 
