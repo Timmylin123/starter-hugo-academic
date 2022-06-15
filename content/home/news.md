@@ -13,7 +13,7 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
 
-<br> <p style="color:maroon;"><b>06/04/2022</b>Graduated from UChicago with M.S. in CS and B.A. in Econ</p>
+<br> <p><b style="color:maroon;">06/04/2022</b>Graduated from UChicago with M.S. in CS and B.A. in Econ</p>
 <br> <p style="color:maroon;"><b>05/30/2022</b>  Paper titled "<b>Benefits of an Interactive Robot Character in Immersive Puzzle Games</b>" was accepted at RO-MAN 2022 Annual Conference</p>
 <br> <p style="color:maroon;"><b>04/30/2022</b>  Joined CHI 2022 Annual Conference</p>
 <br> <p style="color:maroon;"><b>04/04/2022</b>  Demonstrated at Museum of Science and Industry Exhibition</p>
