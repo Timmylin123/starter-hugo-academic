@@ -13,8 +13,8 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
 
-<br> <b>06/04/2022</b>  Graduated from UChicago with M.S. in CS and B.A. in Econ
-<br> <b>05/30/2022</b>  Paper titled "Benefits of an Interactive Robot Character in Immersive Puzzle Games" was accepted at RO-MAN 2022 Annual Conference
+<br> <p style="color:maroon;"><b>06/04/2022</b></p>  Graduated from UChicago with M.S. in CS and B.A. in Econ
+<br> <b>05/30/2022</b>  Paper titled "<b>Benefits of an Interactive Robot Character in Immersive Puzzle Games</b>" was accepted at RO-MAN 2022 Annual Conference
 <br> <b>04/30/2022</b>  Joined CHI 2022 Annual Conference
 <br> <b>04/04/2022</b>  Demonstrated at Museum of Science and Industry Exhibition
 <br> <b>03/28/2022</b>  Served as the TA for DATA 21200 (Spring 2022) taught by Prof. David Biron
