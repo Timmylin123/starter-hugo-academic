@@ -39,10 +39,10 @@ featured: true
 
 # Custom links (uncomment lines below)
 links:
- - name: Custom Link
-   url: http://example.org
+ - name: Web
+   url: https://www.the-ifj.com/2019/05/13/autonomous-cars-driving-the-future-forward/
 
-url_pdf: 'https://www.the-ifj.com/2019/05/13/autonomous-cars-driving-the-future-forward/'
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
