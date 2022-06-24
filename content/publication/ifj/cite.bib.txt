@@ -1,0 +1,8 @@
+@inproceedings{journal1,
+  title={Autonomous Cars: Driving the Future Forward?},
+  author={Lin, Ting-Han},
+  booktitle={Intercollegiate Finance Journal Spring 2019},
+  pages={4--5},
+  year={2019},
+  organization={Intercollegiate Finance Journal}
+}
