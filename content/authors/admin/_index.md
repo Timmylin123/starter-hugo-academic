@@ -35,4 +35,4 @@ email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-Ting-Han Lin (Timmy Lin, 林廷翰) is a Computer Science researcher at the University of Chicago. His research interests are in human-robot / human-AI interaction and human-computer interaction. He received M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022. He is originally from Taipei, Taiwan, and he is fluent in both English and Mandarin.
+Ting-Han Lin (Timmy Lin, 林廷翰) is a Computer Science researcher at the University of Chicago. He received M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022. His research interests are in social human-robot interaction and designing robot-actuated user interfaces.
