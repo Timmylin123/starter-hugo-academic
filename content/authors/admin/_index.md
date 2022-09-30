@@ -18,8 +18,10 @@ social:
 organizations:
   - name: University of Chicago
     url: https://www.uchicago.edu/
-  - name: Human-Robot Interaction Lab
+  - name: Human-Robot Interaction Lab (HRI Lab)
     url: https://hri.cs.uchicago.edu/
+  - url: https://www.axlab.cs.uchicago.edu/
+    name: Actuated Experience Lab (AxLab)
 education:
   courses:
     - course: M.S. in Computer Science
