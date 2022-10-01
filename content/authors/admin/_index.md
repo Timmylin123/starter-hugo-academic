@@ -18,10 +18,10 @@ social:
 organizations:
   - name: University of Chicago
     url: https://www.uchicago.edu/
-  - name: Human-Robot Interaction Lab (HRI Lab)
+  - name: Human-Robot Interaction Lab
     url: https://hri.cs.uchicago.edu/
   - url: https://www.axlab.cs.uchicago.edu/
-    name: Actuated Experience Lab (AxLab)
+    name: Actuated Experience Lab
 education:
   courses:
     - course: M.S. in Computer Science
@@ -37,4 +37,4 @@ email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-Ting-Han Lin (Timmy Lin, 林廷翰) is a Computer Science researcher at the University of Chicago. He received M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022. His research interests are in social human-robot interaction and designing robot-actuated user interfaces.
+Ting-Han Lin (Timmy Lin, 林廷翰) is a Computer Science researcher at the University of Chicago. He received M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022. His research interests are in social human-robot interaction and designing robot-actuated user interfaces. He was born and raised in Taiwan.
