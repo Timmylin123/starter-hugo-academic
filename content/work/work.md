@@ -25,7 +25,19 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
- 
+  - title: CMSC 20300 (Autumn 2022) Introduction to Human-Computer Interaction Teaching Assistant
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2022-09-26'
+    date_end: ''
+    description: |2-
+        Responsibilities include:
+        * Led weekly office hours to help students better understand the course materials about data science
+        * Organized course materials on Canvas and Wiki to help students know where to find the right resources
+        * Graded students' in-class exercises, projects and quizzes and provide comprehensive feedback on their work
+
   - title: DATA 21200 (Spring 2022) Mathematical Methods for Data Science II Teaching Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
