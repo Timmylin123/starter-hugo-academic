@@ -24,7 +24,7 @@ design:
 <p><b style="color:maroon;">03/04/2022</b>  Demonstrated swarm robot user interface at UChicago PhD Visit Day</p>
 <p><b style="color:maroon;">02/13/2022</b>  Participated in TEI 2022 Annual Conference</p>
 <p><b style="color:maroon;">01/10/2022</b>  Served as the TA for CMSC 11800 (Winter 2022) Introduction to Data Science I taught by Prof. Will Trimble</p>
-<p><b style="color:maroon;">12/12/2021</b>  Invited to become the Robot Design Judge for [Illinois FIRST FLL Challenge Qualifier Tournament](https://www.firstillinoisrobotics.org/fll-challenge/) </p>
+<p><b style="color:maroon;">12/12/2021</b>  Invited to become the Robot Design Judge for Illinois FIRST FLL Challenge Qualifier Tournament </p>
 <p><b style="color:maroon;">09/27/2021</b>  Served as the Grader for CMSC 11800 (Autumn 2021) Introduction to Data Science I taught by Prof. Michael Franklin and  Prof. Dan Nicolae</p>
 <p><b style="color:maroon;">09/14/2021</b>  Inivited to Taipei Wego High School and gave a talk about UChicago College</p>
 
