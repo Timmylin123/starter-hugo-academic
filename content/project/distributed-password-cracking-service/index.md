@@ -1,5 +1,7 @@
 ---
 title: Distributed Password Cracking Service
+tags:
+  - Interactive
 date: 2022-06-14T21:30:29.639Z
 draft: false
 featured: false

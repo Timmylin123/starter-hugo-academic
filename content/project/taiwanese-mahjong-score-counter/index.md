@@ -1,5 +1,7 @@
 ---
 title: Taiwanese Mahjong Score Counter App
+tags:
+  - Interactive
 date: 2022-10-06T16:16:27.992Z
 draft: false
 featured: false
