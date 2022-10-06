@@ -16,4 +16,4 @@ In our app, we use SwiftUI to build our interface, and we also load free Mahjong
 
 \*In Taiwanese Mahjong, sets can be formed by stealing or taking another player's discarding tile (open sets) or be formed from yourself (concealed sets). Many scoring elements depend on whether sets are open or concealed.
 
-W﻿e are aimming to upload this app to App Store and here is a [preview video](https://youtu.be/3PMM8xGXyas) of how the app looks like.
+W﻿e are aimming to upload this app to App Store and here is a [preview video](https://youtu.be/3PMM8xGXyas) of how the app looks like. I also have an inVision prototype for this work [here](https://invis.io/EQ123W3TZD3J).
