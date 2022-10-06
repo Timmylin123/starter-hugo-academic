@@ -33,6 +33,9 @@ experience:
     date_start: '2021-09-01'
     date_end: '2022-06-01'
     description: |2-
+        Honors & Awards:
+        * Dean’s List (2021-2022)
+        
         Leadership Experience:
         * Robot Design Judge at the FIRST LEGO League Qualifier tournament (2021)
 
