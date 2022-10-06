@@ -1,5 +1,7 @@
 ---
 title: Event Tracker App Prototype
+tags:
+  - Interactive
 date: 2022-10-05T17:42:30.441Z
 draft: false
 featured: false
