@@ -40,9 +40,9 @@ summary: Our results show that participants playing with a robot had more fun,
   social interaction with in-game characters.
 url_dataset: ""
 url_project: ""
-publication_short: In *RO-MAN*
+publication_short: In *RO-MAN 2022*
 url_source: ""
-url_video: ""
+url_video: "https://youtu.be/vLUVS3w9X7s"
 doi: 10.1109/RO-MAN53752.2022.9900828
 projects: null
 date: 2022-06-12T00:00:00Z
