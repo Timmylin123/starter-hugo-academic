@@ -1,5 +1,6 @@
 ---
-title: Benefits of an Interactive Robot Character in Immersive Puzzle Games
+title: "[RO-MAN 2022] Benefits of an Interactive Robot Character in Immersive
+  Puzzle Games"
 abstract: Robots are becoming increasingly prominent in the entertainment
   sphere, where they interact with guests in themed environments to tell
   stories, often in place of human characters. To evaluate the potential
@@ -42,12 +43,12 @@ url_dataset: ""
 url_project: ""
 publication_short: In *RO-MAN 2022*
 url_source: ""
-url_video: "https://youtu.be/vLUVS3w9X7s"
+url_video: https://youtu.be/vLUVS3w9X7s
 doi: 10.1109/RO-MAN53752.2022.9900828
 projects: null
-date: 2022-06-12T00:00:00Z
+date: 2022-06-12T00:00:00.000Z
 url_slides: ""
-publishDate: 2022-06-12T00:00:00Z
+publishDate: 2022-06-12T00:00:00.000Z
 url_poster: ""
 url_code: ""
 ---
