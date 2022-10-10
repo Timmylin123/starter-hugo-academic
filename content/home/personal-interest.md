@@ -18,31 +18,32 @@ design:
 <p>
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/7-ball.gif" width="250" >
+    <IMG SRC="uploads/7-ball.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/ball-spin.gif" width="250" >
+    <IMG SRC="uploads/ball-spin.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/5-ball.gif" width="250" >
+    <IMG SRC="uploads/5-ball.gif" width="250" class="center">
   </div>
 </div>
 </p>
 
+<p>
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/blind-juggle.gif" width="250" >
+    <IMG SRC="uploads/blind-juggle.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/yoyo.gif" width="250">
+    <IMG SRC="uploads/yoyo.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/rings.gif" width="250">
+    <IMG SRC="uploads/rings.gif" width="250" class="center">
   </div>
 </div>
+</p>
 
-
-<IMG SRC="uploads/chef.gif" width="750" >
-
-
+<p>
+<IMG SRC="uploads/chef.gif" width="750" class="center" >
+</p>
 
