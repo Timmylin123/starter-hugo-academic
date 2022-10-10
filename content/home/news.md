@@ -29,4 +29,3 @@ design:
 <p><b style="color:maroon;">09/14/2021</b>  Inivited to Taipei Wego High School and gave a talk about UChicago College</p>
 
 
-

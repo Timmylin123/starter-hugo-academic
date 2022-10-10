@@ -13,5 +13,5 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
  
-<IMG SRC="7-ball.gif">
+<IMG SRC="uploads/7-ball.gif">
 
