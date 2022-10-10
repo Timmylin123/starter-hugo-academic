@@ -15,7 +15,7 @@ design:
 ---
 <p>I really enjoy juggling during my free time. Ever since elementary school, I have been leading charity performances. I can juggle up to seven balls. </p>
 
-<IMG SRC="uploads/7-ball.gif" alt="Your GIF" max-height="50" >
+<IMG SRC="uploads/7-ball.gif" alt="Your GIF" height="10" >
 <IMG SRC="uploads/5-ball.gif">
 <IMG SRC="uploads/ball-spin.gif">
 <IMG SRC="uploads/blind-juggle.gif">
