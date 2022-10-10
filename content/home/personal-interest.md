@@ -29,13 +29,13 @@ design:
 
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/blind-juggle.gif" width="300" >
+    <IMG SRC="uploads/blind-juggle.gif" width="250" >
   </div>
   <div class="column">
-    <IMG SRC="uploads/yoyo.gif" width="300">
+    <IMG SRC="uploads/yoyo.gif" width="250">
   </div>
   <div class="column">
-    <IMG SRC="uploads/rings.gif" width="300">
+    <IMG SRC="uploads/rings.gif" width="250">
   </div>
 </div>
 
