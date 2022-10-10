@@ -2,7 +2,7 @@
 widget: pages
 widget_id: UChicago Information Session
 headless: true
-weight: 70
+weight: 90
 title: Recent & Upcoming Talks
 subtitle: null
 content:

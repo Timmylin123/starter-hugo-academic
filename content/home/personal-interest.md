@@ -5,7 +5,7 @@ headless: true
 # ... Put Your Section Options Here (title etc.) ...
 title: Personal Interests
 subtitle:
-weight: 28  # section position on page
+weight: 50  # section position on page
 design:
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns: '2'
@@ -42,7 +42,7 @@ design:
 </div>
 
 
-<IMG SRC="uploads/chef.gif" width="300" >
+<IMG SRC="uploads/chef.gif" width="750" >
 
 
 
