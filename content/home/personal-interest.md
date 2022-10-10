@@ -17,13 +17,13 @@ design:
 
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/7-ball.gif" width="200" >
+    <IMG SRC="uploads/7-ball.gif" width="250" >
   </div>
   <div class="column">
-     <IMG SRC="uploads/5-ball.gif" width="200" >
+     <IMG SRC="uploads/5-ball.gif" width="250" >
   </div>
   <div class="column">
-    <IMG SRC="uploads/ball-spin.gif" width="200" >
+    <IMG SRC="uploads/ball-spin.gif" width="250" >
   </div>
 </div>
 
