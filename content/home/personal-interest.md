@@ -15,11 +15,11 @@ design:
 ---
 <p>I really enjoy juggling during my free time. Ever since elementary school, I have been leading charity performances. I can juggle up to seven balls. </p>
 
-<IMG SRC="uploads/7-ball.gif" alt="Your GIF" width="10" >
-<IMG SRC="uploads/5-ball.gif" height="10" >
-<IMG SRC="uploads/ball-spin.gif" width="10" >
-<IMG SRC="uploads/blind-juggle.gif" height="10" width="10" >
-<IMG SRC="uploads/chef.gif">
-<IMG SRC="uploads/rings.gif">
-<IMG SRC="uploads/yoyo.gif">
+<IMG SRC="uploads/7-ball.gif" width="100" >
+<IMG SRC="uploads/5-ball.gif" width="100" >
+<IMG SRC="uploads/ball-spin.gif" width="100" >
+<IMG SRC="uploads/blind-juggle.gif" width="200" >
+<IMG SRC="uploads/chef.gif" width="300" >
+<IMG SRC="uploads/rings.gif" width="300">
+<IMG SRC="uploads/yoyo.gif" width="300">
 
