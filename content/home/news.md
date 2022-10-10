@@ -28,6 +28,5 @@ design:
 <p><b style="color:maroon;">09/27/2021</b>  Served as the Grader for CMSC 11800 (Autumn 2021) Introduction to Data Science I taught by Prof. Michael Franklin and  Prof. Dan Nicolae</p>
 <p><b style="color:maroon;">09/14/2021</b>  Inivited to Taipei Wego High School and gave a talk about UChicago College</p>
 
-  
-<IMG SRC="uploads/7-ball.gif">
+
 
