@@ -15,7 +15,7 @@ design:
 ---
 <p>During my free time, I really enjoy juggling! I can juggle pins, rings, yoyos, and up to 7 balls, and I often perform juggling at charity performances and give juggling lessons to people at all ages.</p>
 
-<p align="center">
+<p>
 <div class="row">
   <div class="column">
     <IMG SRC="uploads/7-ball.gif" width="250" class="center">
@@ -44,6 +44,8 @@ design:
 </p>
 
 <p>
-<IMG SRC="uploads/chef.gif" width="750" class="center" >
+<div class="row">
+<IMG SRC="uploads/chef.gif" width="750" class="center">
+</div>
 </p>
 
