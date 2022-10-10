@@ -15,7 +15,18 @@ design:
 ---
 <p>I really enjoy juggling during my free time. Ever since elementary school, I have been leading charity performances. I can juggle up to seven balls. </p>
 
-<IMG SRC="uploads/7-ball.gif" width="300" > <IMG SRC="uploads/5-ball.gif" width="300" > <IMG SRC="uploads/ball-spin.gif" width="300" >
+<div class="row">
+  <div class="column">
+    <IMG SRC="uploads/7-ball.gif" width="300" >
+  </div>
+  <div class="column">
+     <IMG SRC="uploads/5-ball.gif" width="300" >
+  </div>
+  <div class="column">
+    <IMG SRC="uploads/ball-spin.gif" width="300" >
+  </div>
+</div>
+
 <IMG SRC="uploads/blind-juggle.gif" width="300" >
 <IMG SRC="uploads/chef.gif" width="300" >
 <IMG SRC="uploads/rings.gif" width="300">
