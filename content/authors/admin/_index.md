@@ -2,8 +2,7 @@
 title: Ting-Han Lin
 role: HRI Researcher at UChicago
 avatar_filename: avatar.jpg
-bio: My research interests include human-robot / human-AI interaction and
-  human-computer interaction.
+bio: ""
 interests:
   - Human Robot Interaction
   - Human Computer Interaction
