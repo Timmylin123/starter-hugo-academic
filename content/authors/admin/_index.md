@@ -1,7 +1,7 @@
 ---
 title: Ting-Han Lin
 role: HRI Researcher at UChicago
-avatar_filename: avatar.jpg
+avatar_filename: screen-shot-2022-10-21-at-1.26.46-pm.png
 bio: ""
 interests:
   - Human Robot Interaction
