@@ -21,7 +21,7 @@ slides: null
 url_pdf: ""
 publication_types:
   - "1"
-authors: ['Joe Smith*', 'Bob Smith*', 'Someone else']
+authors: [admin, 'Spencer Ng*', 'Sarah Sebo']
   # - admin
   # - Spencer Ng
   # - Sarah Sebo
