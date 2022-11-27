@@ -21,7 +21,7 @@ slides: null
 url_pdf: ""
 publication_types:
   - "1"
-authors: [admin, 'Spencer Ng*', 'Sarah Sebo']
+authors: [admin*, 'Spencer Ng*', 'Sarah Sebo (*equal contribution)']
   # - admin
   # - Spencer Ng
   # - Sarah Sebo
