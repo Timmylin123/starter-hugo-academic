@@ -37,12 +37,13 @@ experience:
         * Dean’s List (2021-2022)
         
         Leadership Experience:
-        * Robot Design Judge at the FIRST LEGO League Qualifier tournament (2021)
+        * Robot Design Judge at the 2021 FIRST LEGO League Qualifier tournament
+        * President of Jugglers Enriching Lives Like Yours Club
 
-
-  
+        Activities & Societies:
+        * Lambda Phi Epsilon
         
-  
+
         
   - title: Bachelor's Degree in Economics, 2018-2021
     company: University of Chicago
