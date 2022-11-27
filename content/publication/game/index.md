@@ -21,11 +21,10 @@ slides: null
 url_pdf: ""
 publication_types:
   - "1"
-authors: 
-#['Ting-Han Lin*', 'Spencer Ng*', 'Sarah Sebo (*equal contribution)']
-  - "admin"
-  - "Spencer Ng*"
-  - "Sarah Sebo (*equal contribution)"
+authors: ['Ting-Han Lin*', 'Spencer Ng*', 'Sarah Sebo (*equal contribution)']
+  # - admin
+  # - Spencer Ng
+  # - Sarah Sebo
 publication: In *2022 31st IEEE International Conference on Robot and Human
   Interactive Communication (RO-MAN)*
 featured: true
