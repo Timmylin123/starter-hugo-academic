@@ -1,5 +1,5 @@
 ---
-title: "Autonomous Cars: Driving the Future Forward?"
+title: "[IFJ 2019] Autonomous Cars: Driving the Future Forward?"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 
