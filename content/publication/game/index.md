@@ -21,10 +21,10 @@ slides: null
 url_pdf: ""
 publication_types:
   - "1"
-authors:
-  - admin
-  - Spencer Ng
-  - Sarah Sebo
+authors: ['Joe Smith*', 'Bob Smith*', 'Someone else']
+  # - admin
+  # - Spencer Ng
+  # - Sarah Sebo
 publication: In *2022 31st IEEE International Conference on Robot and Human
   Interactive Communication (RO-MAN)*
 featured: true
