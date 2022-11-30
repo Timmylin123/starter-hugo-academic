@@ -1,6 +1,6 @@
 ---
 title: Ting-Han Lin
-role: HRI Researcher at UChicago
+role: Interaction Designer & HRI Researcher at UChicago CS
 avatar_filename: screen-shot-2022-10-21-at-1.26.46-pm.png
 bio: ""
 interests:
@@ -36,6 +36,10 @@ email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
 ---
-Hello! My name is **Ting-Han Lin**. I usually go by **Timmy**. I am currently an HRI researcher at the University of Chicago advised by Prof. Sarah Sebo and Prof. Ken Nakagaki. I received both M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022 (*[4-year Joint BA/MS in Computer Science](http://collegecatalog.uchicago.edu/thecollege/jointdegreecomsci/)*). Before coming to the United States for college, I was born and raised in Taiwan.
+Hello! My name is **Ting-Han Lin**, and I go by **Timmy**. I am currently an interaction designer and HRI researcher at the University of Chicago advised by Prof. Sarah Sebo and Prof. Ken Nakagaki. I received both M.S. in Computer Science and B.A. in Economics from the University of Chicago in 2022 (*[4-year Joint BA/MS in Computer Science](http://collegecatalog.uchicago.edu/thecollege/jointdegreecomsci/)*). Before coming to the United States for college, I was born and raised in Taiwan.
 
-My research interest lies in the intersection of **multi-robot team control** and **human-robot interaction**. I design and build swarm user interfaces to facilitate novel interactions between humans and robots. One of my research projects allows users to spatially throw and catch objects between the digital and the physical worlds with a swarm user interface. I also seek to bring people closer to robots by (1) facilitating new forms of human-robot interaction, (2) making robots more accessible, programmable, and interactive with people, and (3) letting people know robots are intelligent companions that have the potential to do many tasks. Two of my research projects have investigated the potentiality of employing robots as game masters in interactive games and using robots as ice-breakers in group settings. Soon, I envision our future living environment will be accompanied by many robotic systems, so I am excited to research into how groups of people can interact with groups of robots.
+My research interest lies in the intersection of **multi-robot team control** and **human-robot interaction**. Specifically, I design **intelligent robotic systems** with a research goal to better integrate robots into our world by (1) facilitating new forms of human-robot interaction, (2) making robots more accessible, programmable, and interactive with people, and (3) showing people the intelligence of robots.
+
+Two of my research projects investigated the potentiality of employing robots as game masters in interactive games and using robots as ice-breakers in group settings. One of my projects allows users to spatially throw and catch objects between the digital and the physical worlds via a swarm user interface.
+
+Soon, I envision our future living environment will be accompanied by many intelligent robotic systems, and I am excited to research into how groups of people can interact with various forms of robots.
