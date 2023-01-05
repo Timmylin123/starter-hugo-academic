@@ -25,13 +25,37 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
+  - title: DATA 21100 (Winter 2023) Mathematical Methods for Data Science I Teaching Assistant
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2023-01-03'
+    date_end:
+    description: |2-
+        Responsibilities include:
+        * Led weekly discussion sessions and office hours to help students better understand the course materials about mathematics in data science
+        * Organized course materials on Canvas and Slack to help students know where to find the right resources
+        * Graded students' exams and provide comprehensive feedback on their work   
+
+  - title: MPCS 51230 (Winter 2023) User Interface and User Experience Design Grader
+    company: University of Chicago
+    company_url: https://www.uchicago.edu/
+    company_logo: 
+    location: Chicago
+    date_start: '2023-01-03'
+    date_end: 
+    description: |2-
+        Responsibilities include:
+        * Graded students' UI/UX assignments and assisted the professor with the instruction of the course
+
   - title: CMSC 20300 (Autumn 2022) Introduction to Human-Computer Interaction Teaching Assistant
     company: University of Chicago
     company_url: https://www.uchicago.edu/
     company_logo: 
     location: Chicago
     date_start: '2022-09-26'
-    date_end: ''
+    date_end: '2022-12-13'
     description: |2-
         Responsibilities include:
         * Led weekly office hours to help students better understand the course materials about data science
