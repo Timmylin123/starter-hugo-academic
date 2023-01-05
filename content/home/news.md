@@ -13,7 +13,7 @@ design:
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
 
-<p><b style="color:maroon;">01/03/2023</b>  Served as the teaching assistant for DATA 21100 (Winter 2023) Mathematical Methods for Data Science I taught by Prof. David Biron</p>
+<p><b style="color:maroon;">01/03/2023</b>  Served as the TA for DATA 21100 (Winter 2023) Mathematical Methods for Data Science I taught by Prof. David Biron</p>
 <p><b style="color:maroon;">11/07/2022</b>  Two research papers got onto the R&R stage for CHI 2023! </p>
 <p><b style="color:maroon;">10/19/2022</b> Paper titled "<b>Benefits of an Interactive Robot Character in Immersive Puzzle Games</b>" is featured on UChicago Computer Science Department <a href="https://cs.uchicago.edu/news/uchicago-research-tests-whether-robots-or-humans-are-better-game-partners/"> Check it out here!</a> </p>
 <p><b style="color:maroon;">09/26/2022</b>  Served as the TA for CMSC 20300 (Autumn 2022) Introduction to Human-Computer Interaction taught by Prof. Ken Nakagaki</p>
