@@ -20,7 +20,7 @@ abstract: Despite clear benefits to well-being, strangers in close physical
 draft: false
 featured: false
 image:
-  filename: featured
+  filename: mc.png
   focal_point: Smart
   preview_only: false
 date: 2023-02-22T01:22:20.425Z
