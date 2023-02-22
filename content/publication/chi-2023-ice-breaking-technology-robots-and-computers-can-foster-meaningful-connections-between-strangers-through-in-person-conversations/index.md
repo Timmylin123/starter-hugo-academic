@@ -3,7 +3,7 @@ title: "[CHI 2023] Ice-Breaking Technology: Robots and Computers Can Foster
   Meaningful Connections between Strangers through In-Person Conversations"
 publication_types:
   - "0"
-abstract: Despite clear benefits to well-being, strangers in close physical
+abstract: "Despite clear benefits to well-being, strangers in close physical
   proximity regularly ignore each other due to their tendency to underestimate
   the positive consequences of social connection. In a between-subjects study (N
   = 49 pairs, 98 participants), we investigated the effectiveness of a humanoid
@@ -16,7 +16,7 @@ abstract: Despite clear benefits to well-being, strangers in close physical
   those in conversations facilitated by a poster. These results suggest that
   technology-enabled conversation facilitators can be useful in breaking the ice
   between strangers, ultimately helping them develop closer connections over
-  face-to-face conversations and enhance their overall happiness.
+  face-to-face conversations and enhance their overall happiness. "
 draft: false
 featured: false
 image:
