@@ -20,7 +20,7 @@ abstract: We introduce ThrowIO, a novel style of actuated tangible user
 draft: false
 featured: false
 image:
-  filename: featured
+  filename: featured.png
   focal_point: Smart
   preview_only: false
 date: 2023-03-06T19:27:56.207Z
