@@ -18,7 +18,7 @@ abstract: Robots are becoming increasingly prominent in the entertainment
   entertainment contexts such as escape rooms to provide greater enjoyment and
   promote more social interaction with in-game characters.
 slides: null
-url_pdf: ""
+url_pdf: "game.pdf"
 publication_types:
   - "1"
 authors: ['Ting-Han Lin*', 'Spencer Ng*', 'Sarah Sebo (*equal contribution)']
