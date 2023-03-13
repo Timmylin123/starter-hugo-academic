@@ -2,7 +2,7 @@
 title: "[CHI 2023] Ice-Breaking Technology: Robots and Computers Can Foster
   Meaningful Connections between Strangers through In-Person Conversations"
 publication_types:
-  - "0"
+  - "1"
 authors: 
   - Alex Wuqi Zhang
   - admin
@@ -30,4 +30,5 @@ image:
   preview_only: false
 date: 2023-02-22T01:22:20.425Z
 url_video: https://youtu.be/GA6pVleSgAU
+url_pdf: "ice-breaking_technology.pdf"
 ---
