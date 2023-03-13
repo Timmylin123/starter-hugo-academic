@@ -24,4 +24,5 @@ image:
   focal_point: Smart
   preview_only: false
 date: 2023-02-22T01:22:20.425Z
+url_video: https://youtu.be/GA6pVleSgAU
 ---
