@@ -1,6 +1,6 @@
 ---
 title: Ting-Han Lin
-role: Interaction Designer & HRI Researcher at UChicago CS
+role: Incoming PhD student at UChicago CS
 avatar_filename: screen-shot-2022-10-21-at-1.26.46-pm.png
 bio: ""
 interests:
