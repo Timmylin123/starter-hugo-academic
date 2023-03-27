@@ -30,9 +30,9 @@ publication: In *2022 31st IEEE International Conference on Robot and Human
 featured: true
 tags: []
 image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
+caption: ""
+focal_point: ""
+preview_only: false
 summary: Our results show that participants playing with a robot had more fun,
   felt less judged, and felt more connected with the robot while solving tasks
   compared to those playing with a human. These results suggest that robots can

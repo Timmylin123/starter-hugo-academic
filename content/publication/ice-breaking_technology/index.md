@@ -22,6 +22,14 @@ abstract: Despite clear benefits to well-being, strangers in close physical
   technology-enabled conversation facilitators can be useful in breaking the ice
   between strangers, ultimately helping them develop closer connections over
   face-to-face conversations and enhance their overall happiness.
+summary: We found that the humanoid robot facilitator was able to elicit the greatest
+  compliance to the deep conversation questions. Additionally, participants in
+  conversations facilitated by either the humanoid robot or the computer screen
+  reported greater happiness and connection to their conversation partner than
+  those in conversations facilitated by a poster. These results suggest that
+  technology-enabled conversation facilitators can be useful in breaking the ice
+  between strangers, ultimately helping them develop closer connections over
+  face-to-face conversations and enhance their overall happiness.
 draft: false
 featured: false
 image:

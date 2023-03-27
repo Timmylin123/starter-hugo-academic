@@ -30,7 +30,7 @@ publication_short: In *The IFJ*
 abstract: No longer just a relic of science fiction movies, autonomous cars have become a reality. Autonomous cars are heavily researched and developed by both large technology companies and traditional car manufacturers.Within a couple of years, autonomous cars will be able to transport people from one place to another on a massive scale. However, their emergence would actually lead to safety concerns and umemployment crisis. With these drawbacks in mind, would autonomous cars drive our future forward?
 
 # Summary. An optional shortened abstract.
-summary:
+summary: No longer just a relic of science fiction movies, autonomous cars have become a reality. Autonomous cars are heavily researched and developed by both large technology companies and traditional car manufacturers.Within a couple of years, autonomous cars will be able to transport people from one place to another on a massive scale. However, their emergence would actually lead to safety concerns and umemployment crisis. With these drawbacks in mind, would autonomous cars drive our future forward?
 
 tags: []
 
@@ -54,9 +54,9 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
+caption: ""
+focal_point: ""
+preview_only: false
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
