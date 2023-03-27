@@ -1,7 +1,7 @@
 ---
 title: Ting-Han Lin
-role: Incoming PhD student at UChicago CS
-avatar_filename: screen-shot-2022-10-21-at-1.26.46-pm.png
+role: Incoming CS PhD student at UChicago
+avatar_filename: avatar.jpg
 bio: ""
 interests:
   - Human Robot Interaction
