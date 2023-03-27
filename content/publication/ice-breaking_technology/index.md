@@ -28,8 +28,7 @@ summary: We found that the humanoid robot facilitator was able to elicit the gre
   reported greater happiness and connection to their conversation partner than
   those in conversations facilitated by a poster. These results suggest that
   technology-enabled conversation facilitators can be useful in breaking the ice
-  between strangers, ultimately helping them develop closer connections over
-  face-to-face conversations and enhance their overall happiness.
+  between strangers, ultimately helping them develop closer connections.
 draft: false
 featured: false
 image:

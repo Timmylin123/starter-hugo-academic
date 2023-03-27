@@ -21,7 +21,9 @@ abstract: We introduce ThrowIO, a novel style of actuated tangible user
   robots, ceiling hardware design, and software control. Overall, ThrowIO opens
   up novel spatial, dynamic, and tangible interaction for users via overhanging
   robots, which has great potential to be integrated into our everyday space.
-summary: Overall, ThrowIO opens up novel spatial, dynamic, and tangible interaction for users via overhanging robots, which has great potential to be integrated into our everyday space.
+summary: By computationally facilitating throwing and catching interaction, ThrowIO
+  can be applied in many applications including kinesthetic learning, gaming,
+  immersive haptic experience, ceiling storage, and communication. Overall, ThrowIO opens up novel spatial, dynamic, and tangible interaction for users via overhanging robots, which has great potential to be integrated into our everyday space.
 draft: false
 featured: false
 image:
