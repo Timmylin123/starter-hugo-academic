@@ -18,13 +18,13 @@ design:
 <p>
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/7-ball.gif" width="250" class="center">
+    <IMG SRC="uploads/7-balls.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/ball-spin.gif" width="250" class="center">
+    <IMG SRC="uploads/ball-spins.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/5-ball.gif" width="250" class="center">
+    <IMG SRC="uploads/5-balls.gif" width="250" class="center">
   </div>
 </div>
 </p>
@@ -32,13 +32,13 @@ design:
 <p>
 <div class="row">
   <div class="column">
-    <IMG SRC="uploads/blind-juggle.gif" width="250" class="center">
+    <IMG SRC="uploads/blind-juggling.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/yoyo.gif" width="250" class="center">
+    <IMG SRC="uploads/yoyos.gif" width="250" class="center">
   </div>
   <div class="column">
-    <IMG SRC="uploads/rings.gif" width="250" class="center">
+    <IMG SRC="uploads/ring.gif" width="250" class="center">
   </div>
 </div>
 </p>
