@@ -1,0 +1,29 @@
+---
+title: "[CHI 2023] Ice-Breaking Technology: Robots and Computers Can Foster
+  Meaningful Connections between Strangers through In-Person Conversations"
+publication_types:
+  - "0"
+authors: []
+abstract: Despite the clear benefits that social connection offers to
+  well-being, strangers in close physical proximity regularly ignore each other
+  due to their tendency to underestimate the positive consequences of social
+  connection. In a between-subjects study (N = 49 pairs, 98 participants), we
+  investigated the effectiveness of a humanoid robot, a computer screen, and a
+  poster at stimulating meaningful, face-to-face conversations between two
+  strangers by posing progressively deeper questions. We found that the humanoid
+  robot facilitator was able to elicit the greatest compliance with the deep
+  conversation questions. Additionally, participants in conversations
+  facilitated by either the humanoid robot or the computer screen reported
+  greater happiness and connection to their conversation partner than those in
+  conversations facilitated by a poster. These results suggest that
+  technology-enabled conversation facilitators can be useful in breaking the ice
+  between strangers, ultimately helping them develop closer connections through
+  face-to-face conversations and thereby enhance their overall well-being.
+draft: false
+featured: false
+image:
+  filename: featured
+  focal_point: Smart
+  preview_only: false
+date: 2023-04-30T19:14:08.376Z
+---
