@@ -2,7 +2,9 @@
 title: "[CHI 2023] Ice-Breaking Technology: Robots and Computers Can Foster
   Meaningful Connections between Strangers through In-Person Conversations"
 publication_types:
-  - "0"
+  - "1"
+publication: In *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems*
+
 authors:
 - Alex Wuqi Zhang
 - admin
@@ -24,6 +26,13 @@ abstract: Despite the clear benefits that social connection offers to
   technology-enabled conversation facilitators can be useful in breaking the ice
   between strangers, ultimately helping them develop closer connections through
   face-to-face conversations and thereby enhance their overall well-being.
+
+summary: 
+  We found that the humanoid robot facilitator was able to elicit the greatest compliance with the deep conversation questions. Additionally, participants in conversations facilitated by either the humanoid robot or the computer screen reported greater happiness and connection to their conversation partner than those in
+  conversations facilitated by a poster. These results suggest that
+  technology-enabled conversation facilitators can be useful in breaking the ice
+  between strangers. 
+
 draft: false
 featured: false
 image:
@@ -33,4 +42,9 @@ image:
 date: 2023-04-30T19:14:08.376Z
 
 url_pdf: "ice-breaking-technology.pdf"
+
+# Custom links (uncomment lines below)
+links:
+ - name: ACM
+   url: https://dl.acm.org/doi/10.1145/3544548.3581135?fbclid=IwAR27eYXF-5SwbEf_TOMjFIUYWO4pDOruu-BqZSDdI-ptxrbC5lF5MXzS1fo
 ---
