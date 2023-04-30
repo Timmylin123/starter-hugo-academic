@@ -44,11 +44,16 @@ url_project: ""
 publication_short: In *RO-MAN 2022*
 url_source: ""
 url_video: https://www.youtube.com/watch?v=FcXLPujoc9E
-doi: 10.1109/RO-MAN53752.2022.9900828
+doi: ""
 projects: null
 date: 2022-06-12T00:00:00.000Z
 url_slides: ""
 publishDate: 2022-06-12T00:00:00.000Z
 url_poster: ""
 url_code: ""
+
+# Custom links (uncomment lines below)
+links:
+ - name: IEEE
+   url: https://ieeexplore.ieee.org/document/9900828
 ---
