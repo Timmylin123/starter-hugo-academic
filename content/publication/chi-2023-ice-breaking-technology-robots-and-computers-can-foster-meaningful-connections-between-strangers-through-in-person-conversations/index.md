@@ -3,7 +3,12 @@ title: "[CHI 2023] Ice-Breaking Technology: Robots and Computers Can Foster
   Meaningful Connections between Strangers through In-Person Conversations"
 publication_types:
   - "0"
-authors: []
+authors:
+- Alex Wuqi Zhang
+- admin
+- Xuan Zhao
+- Sarah Sebo
+
 abstract: Despite the clear benefits that social connection offers to
   well-being, strangers in close physical proximity regularly ignore each other
   due to their tendency to underestimate the positive consequences of social

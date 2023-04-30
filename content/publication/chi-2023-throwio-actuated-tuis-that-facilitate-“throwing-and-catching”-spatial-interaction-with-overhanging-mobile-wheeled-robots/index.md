@@ -3,6 +3,12 @@ title: "[CHI 2023] ThrowIO: Actuated TUIs that Facilitate “Throwing and
   Catching” Spatial Interaction with Overhanging Mobile Wheeled Robots"
 publication_types:
   - "0"
+
+authors:
+- admin
+- Willa Yunqi Yang
+- Ken Nakagaki
+
 abstract: We introduce ThrowIO, a novel style of actuated tangible user
   interface that facilitates throwing and catching spatial interaction powered
   by mobile wheeled robots on overhanging surfaces. In our approach, users throw
