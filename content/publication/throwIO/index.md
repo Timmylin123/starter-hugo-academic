@@ -45,6 +45,7 @@ image:
 date: 2023-04-30T19:17:51.593Z
 
 url_pdf: "throwIO.pdf"
+url_video: https://www.youtube.com/watch?v=9ZkKF5lPJgE
 
 # Custom links (uncomment lines below)
 links:
