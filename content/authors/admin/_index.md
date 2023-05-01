@@ -23,6 +23,9 @@ organizations:
     name: Actuated Experience Lab
 education:
   courses:
+    - course: Ph.D. in Computer Science
+      institution: University of Chicago
+      year: 2028
     - course: M.S. in Computer Science
       institution: University of Chicago
       year: 2022
