@@ -42,6 +42,7 @@ image:
 date: 2023-04-30T19:14:08.376Z
 
 url_pdf: "ice-breaking-technology.pdf"
+url_video: https://youtu.be/GA6pVleSgAU
 
 # Custom links (uncomment lines below)
 links:
