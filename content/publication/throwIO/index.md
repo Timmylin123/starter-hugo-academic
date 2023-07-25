@@ -49,6 +49,14 @@ url_video: https://www.youtube.com/watch?v=9ZkKF5lPJgE
 
 # Custom links (uncomment lines below)
 links:
+ - name: Preview
+   url: https://www.youtube.com/watch?v=_GUBpkZzFCc
+
+ - name: Talk
+   url: https://www.youtube.com/watch?v=-Fqzq-b_hHE
+
+# Custom links (uncomment lines below)
+links:
  - name: ACM
    url: https://dl.acm.org/doi/10.1145/3544548.3581267?fbclid=IwAR1NYVTKMuYF1zzBgmdYRIwDKk0kiBv1JvcfYoygjaXl2Yw4G7Xc9lpWg2k
 ---
