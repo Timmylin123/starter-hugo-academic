@@ -19,21 +19,21 @@ main:
   # - name: Personal Interests
   #   url: '#personal-interest'
   #   weight: 50
-  - name: Work
-    url: 'work/'
-    weight: 60
-  - name: Education
-    url: 'education/'
-    weight: 70
+  # - name: Work
+  #   url: 'work/'
+  #   weight: 60
+  # - name: Education
+  #   url: 'education/'
+  #   weight: 70
   - name: Certification
     url: 'certification/'
     weight: 80
   - name: Talks
     url: '#talks'
     weight: 90
-  - name: Contact
-    url: '#contact'
-    weight: 100
+  # - name: Contact
+  #   url: '#contact'
+  #   weight: 100
   - name: CV
     url: uploads/resume.pdf
     weight: 110
