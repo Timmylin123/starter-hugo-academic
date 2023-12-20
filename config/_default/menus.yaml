@@ -25,12 +25,12 @@ main:
   # - name: Education
   #   url: 'education/'
   #   weight: 70
-  - name: Certification
-    url: 'certification/'
-    weight: 80
-  - name: Talks
-    url: '#talks'
-    weight: 90
+  # - name: Certification
+  #   url: 'certification/'
+  #   weight: 80
+  # - name: Talks
+  #   url: '#talks'
+  #   weight: 90
   # - name: Contact
   #   url: '#contact'
   #   weight: 100
