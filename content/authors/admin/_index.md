@@ -3,10 +3,6 @@ title: Ting-Han Lin
 role: CS PhD student at UChicago
 avatar_filename: avatar.png
 bio: ""
-# interests:
-#   - Human Robot Interaction
-#   - Human Computer Interaction
-#   - UI/UX Design
 social:
   - icon: github
     icon_pack: fab
@@ -14,6 +10,11 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/ting-han/
+  - display:
+      header: false
+    link: https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=1&gmla=AH70aAWwIx_iRht1dZVA4M0WeaS2qxM5zv6CyQb9Va1zN3nHToYDhb3_LylNHJwYsxFDuA9ZqtUb0owE500uhg&user=Fmvh74YAAAAJ
+    icon_pack: fab
+    icon: google-scholar
 organizations:
   - name: University of Chicago
     url: https://www.uchicago.edu/
@@ -21,20 +22,6 @@ organizations:
     url: https://hri.cs.uchicago.edu/
   - url: https://www.axlab.cs.uchicago.edu/
     name: Actuated Experience Lab
-# education:
-#   courses:
-#     - course: Ph.D. in Computer Science
-#       institution: University of Chicago
-#       year: 2028
-#     - course: M.S. in Computer Science
-#       institution: University of Chicago
-#       year: 2022
-#     - course: B.A. in Economics
-#       institution: University of Chicago
-#       year: 2022
-#     - course: High School Diploma
-#       institution: Taipei Wego Senior High School
-#       year: 2018
 email: tinghan@uchicago.edu
 superuser: true
 highlight_name: true
