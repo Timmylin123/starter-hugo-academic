@@ -5,7 +5,7 @@ avatar_filename: avatar.png
 bio: ""
 social:
   - icon: google-scholar
-    icon_pack: fab
+    icon_pack: ai
     link: https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=1&gmla=AH70aAWwIx_iRht1dZVA4M0WeaS2qxM5zv6CyQb9Va1zN3nHToYDhb3_LylNHJwYsxFDuA9ZqtUb0owE500uhg&user=Fmvh74YAAAAJ
   - icon: linkedin
     icon_pack: fab
