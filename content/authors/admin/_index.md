@@ -10,6 +10,11 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/ting-han/
+  - display:
+      header: false
+    link: https://github.com/tinghanlin
+    icon_pack: fab
+    icon: github
 organizations:
   - name: University of Chicago
     url: https://www.uchicago.edu/
