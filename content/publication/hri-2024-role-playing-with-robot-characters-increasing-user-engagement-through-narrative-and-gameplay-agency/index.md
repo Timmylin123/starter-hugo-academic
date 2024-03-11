@@ -3,8 +3,6 @@ publication_types:
   - "1"
 authors:
   - admin
-  - Willa Yunqi Yang
-  - Ken Nakagaki
 publication: In *Proceedings of the 2024 ACM/IEEE International Conference on
   Human-Robot Interaction*
 abstract: Live entertainment is moving towards a greater participatory culture,
