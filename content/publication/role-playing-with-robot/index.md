@@ -3,10 +3,8 @@ publication_types:
   - "1"
 
 authors:
-- Spencer Ng
-- admin
-- You Li
-- Sarah Sebo
+[Spencer Ng, admin, You Li, Sarah Sebo]
+
 
 publication: In *Proceedings of the 2024 ACM/IEEE International Conference on
   Human-Robot Interaction*
