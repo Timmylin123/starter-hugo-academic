@@ -3,7 +3,7 @@ publication_types:
   - "1"
 
 authors:
-["Spencer Ng", "Ting-Han Lin", admin, "You Li", "Sarah Sebo"]
+- admin
 
 
 publication: In *Proceedings of the 2024 ACM/IEEE International Conference on
