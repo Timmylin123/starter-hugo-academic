@@ -1,8 +1,13 @@
 ---
 publication_types:
   - "1"
+
 authors:
-  - admin
+- Spencer Ng
+- admin
+- You Li
+- Sarah Sebo
+
 publication: In *Proceedings of the 2024 ACM/IEEE International Conference on
   Human-Robot Interaction*
 abstract: Live entertainment is moving towards a greater participatory culture,
@@ -28,7 +33,7 @@ abstract: Live entertainment is moving towards a greater participatory culture,
   broader robot interactions where gameplay elements and role-playing in stories
   can be incorporated.
 draft: false
-url_pdf: throwIO.pdf
+url_pdf: role-playing-with-robot.pdf
 featured: false
 summary: Our results show that increasing user agency in a role-playing
   experience, in either its narrative or its gameplay, improves users' flow
@@ -39,17 +44,15 @@ summary: Our results show that increasing user agency in a role-playing
   that creating either narrative or gameplay agency can improve user engagement,
   which can extend to broader robot interactions where gameplay elements and
   role-playing in stories can be incorporated.
-url_video: https://www.youtube.com/watch?v=9ZkKF5lPJgE
+url_video: 
 title: "[HRI 2024] Role-Playing with Robot Characters: Increasing User
   Engagement through Narrative and Gameplay Agency"
 date: 2024-03-11T20:57:32.529Z
 links:
   - name: ACM
-    url: https://dl.acm.org/doi/10.1145/3544548.3581267?fbclid=IwAR1NYVTKMuYF1zzBgmdYRIwDKk0kiBv1JvcfYoygjaXl2Yw4G7Xc9lpWg2k
-  - name: Preview
-    url: https://www.youtube.com/watch?v=_GUBpkZzFCc
-  - name: Talk
-    url: https://www.youtube.com/watch?v=-Fqzq-b_hHE
+    url: https://dl.acm.org/doi/10.1145/3610977.3634941?fbclid=IwAR3E6FHd9yz6VvnSjAX8XUdTtUynN0xr2D6zQygP1JTD-846hQc9kxQvflo
+
+
 image:
   filename: featured
   focal_point: Smart
