@@ -21,7 +21,7 @@ slides: null
 url_pdf: "game.pdf"
 publication_types:
   - "1"
-authors: ['Ting-Han Lin *', 'Spencer Ng *', 'Sarah Sebo (*equal contribution)']
+authors: ['Ting-Han Lin (*)', 'Spencer Ng (*)', 'Sarah Sebo (*equal contribution)']
   # - admin
   # - Spencer Ng
   # - Sarah Sebo
