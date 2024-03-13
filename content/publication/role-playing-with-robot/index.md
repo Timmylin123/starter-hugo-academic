@@ -3,7 +3,7 @@ publication_types:
   - "1"
 
 authors:
-  - 'Spencer Ng **'
+  - 'Spencer W Ng **'
   - admin
   - 'You Li'
   - 'Sarah Sebo'
