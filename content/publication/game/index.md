@@ -23,7 +23,7 @@ publication_types:
   - "1"
 authors: 
   - 'Ting-Han Lin*'
-  - 'Spencer Ng*'
+  - 'Spencer Ng'
   - 'Sarah Sebo (*equal contribution)'
 
 publication: In *2022 31st IEEE International Conference on Robot and Human
