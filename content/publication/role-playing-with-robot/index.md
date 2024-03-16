@@ -45,7 +45,9 @@ summary: Our results show that increasing user agency in a role-playing
   that creating either narrative or gameplay agency can improve user engagement,
   which can extend to broader robot interactions where gameplay elements and
   role-playing in stories can be incorporated.
+  
 url_video: https://www.youtube.com/watch?v=LggfmUpKx20
+
 title: "[HRI 2024] Role-Playing with Robot Characters: Increasing User
   Engagement through Narrative and Gameplay Agency"
 date: 2024-03-11T20:57:32.529Z
