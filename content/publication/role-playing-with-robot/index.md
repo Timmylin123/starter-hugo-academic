@@ -35,6 +35,8 @@ abstract: Live entertainment is moving towards a greater participatory culture,
   can be incorporated.
 draft: false
 url_pdf: role-playing-with-robot.pdf
+url_video: "https://www.youtube.com/watch?v=LggfmUpKx20"
+
 featured: false
 summary: Our results show that increasing user agency in a role-playing
   experience, in either its narrative or its gameplay, improves users' flow
@@ -45,8 +47,8 @@ summary: Our results show that increasing user agency in a role-playing
   that creating either narrative or gameplay agency can improve user engagement,
   which can extend to broader robot interactions where gameplay elements and
   role-playing in stories can be incorporated.
-  
-url_video: https://www.youtube.com/watch?v=LggfmUpKx20
+
+
 
 title: "[HRI 2024] Role-Playing with Robot Characters: Increasing User
   Engagement through Narrative and Gameplay Agency"
