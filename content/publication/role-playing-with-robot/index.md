@@ -1,40 +1,20 @@
 ---
-title: "[CHI 2023] ThrowIO: Actuated TUIs that Facilitate “Throwing and
-  Catching” Spatial Interaction with Overhanging Mobile Wheeled Robots"
+title: "[HRI 2024] Role-Playing with Robot Characters: Increasing User Engagement through Narrative and Gameplay Agency"
+
 publication_types:
   - "1"
-publication: In *Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems*
-
-  
+publication: In *Proceedings of the 2024 ACM/IEEE International Conference on Human-Robot Interaction*
 
 authors:
+- spencer
 - admin
-- Willa Yunqi Yang
-- Ken Nakagaki
+- You Li
+- Sarah Sebo
 
-abstract: We introduce ThrowIO, a novel style of actuated tangible user
-  interface that facilitates throwing and catching spatial interaction powered
-  by mobile wheeled robots on overhanging surfaces. In our approach, users throw
-  and stick objects that are embedded with magnets to an overhanging
-  ferromagnetic surface where wheeled robots can move and drop them at desired
-  locations, allowing users to catch them. The thrown objects are tracked with
-  an RGBD camera system to perform closed-loop robotic manipulations. By
-  computationally facilitating throwing and catching interaction, our approach
-  can be applied in many applications including kinesthetic learning, gaming,
-  immersive haptic experience, ceiling storage, and communication. We
-  demonstrate the applications with a proof-of-concept system enabled by wheeled
-  robots, ceiling hardware design, and software control. Overall, ThrowIO opens
-  up novel spatial, dynamic, and tangible interaction for users via overhanging
-  robots, which has great potential to be integrated into our everyday space.
+abstract: Live entertainment is moving towards a greater participatory culture, with dynamic narratives told through audience interaction. Robot characters offer a unique opportunity to mitigate the challenges of creating personalized entertainment at scale. However, robots often cannot react to audience responses, limiting opportunities for audience participation. In this work, we explore methods to increase user agency in live entertainment experiences with robot characters to improve user engagement and enjoyment. In a between-subjects study (N=60), we create an immersive story where users role-play as detectives with two distinct robot characters. Users either (1) have greater involvement and self-identification in the story by talking with the robots in-character (narrative condition), (2) have a more active role in solving puzzles (gameplay condition), or (3) follow along without being prompted by the robots for input (control condition). Our results show that increasing user agency in a role-playing experience, in either its narrative or its gameplay, improves users' flow state, sense of autonomy and competence, verbal engagement, and perceptions of the robot characters' engagement. Increasing narrative agency also led to longer unprompted reactions from participants, while gameplay agency improved feelings of immersion and relatedness with the robots. These findings suggest that creating either narrative or gameplay agency can improve user engagement, which can extend to broader robot interactions where gameplay elements and role-playing in stories can be incorporated.
 
 summary: 
-  By computationally facilitating throwing and catching interaction, our approach
-  can be applied in many applications including kinesthetic learning, gaming,
-  immersive haptic experience, ceiling storage, and communication. We
-  demonstrate the applications with a proof-of-concept system enabled by wheeled
-  robots, ceiling hardware design, and software control. Overall, ThrowIO opens
-  up novel spatial, dynamic, and tangible interaction for users via overhanging
-  robots, which has great potential to be integrated into our everyday space.
+  Our results show that increasing user agency in a role-playing experience, in either its narrative or its gameplay, improves users' flow state, sense of autonomy and competence, verbal engagement, and perceptions of the robot characters' engagement. Increasing narrative agency also led to longer unprompted reactions from participants, while gameplay agency improved feelings of immersion and relatedness with the robots. These findings suggest that creating either narrative or gameplay agency can improve user engagement, which can extend to broader robot interactions where gameplay elements and role-playing in stories can be incorporated.
 
 draft: false
 featured: false
@@ -42,19 +22,14 @@ image:
   filename: featured
   focal_point: Smart
   preview_only: false
-date: 2023-04-30T19:17:51.593Z
+date: 2024-03-15T19:17:51.593Z
 
-url_pdf: "throwIO.pdf"
-url_video: https://www.youtube.com/watch?v=9ZkKF5lPJgE
+url_pdf: "role-playing-with-robot.pdf"
+url_video: https://www.youtube.com/watch?v=LggfmUpKx20
 
 # Custom links (uncomment lines below)
 links:
  - name: ACM
-   url: https://dl.acm.org/doi/10.1145/3544548.3581267?fbclid=IwAR1NYVTKMuYF1zzBgmdYRIwDKk0kiBv1JvcfYoygjaXl2Yw4G7Xc9lpWg2k
+   url: https://dl.acm.org/doi/10.1145/3610977.3634941?fbclid=IwAR3E6FHd9yz6VvnSjAX8XUdTtUynN0xr2D6zQygP1JTD-846hQc9kxQvflo
 
- - name: Preview
-   url: https://www.youtube.com/watch?v=_GUBpkZzFCc
-
- - name: Talk
-   url: https://www.youtube.com/watch?v=-Fqzq-b_hHE
 ---
