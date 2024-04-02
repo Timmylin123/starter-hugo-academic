@@ -1,5 +1,5 @@
 ---
 title: Spencer Ng
-superuser: true
+superuser: false
 highlight_name: false
 ---
