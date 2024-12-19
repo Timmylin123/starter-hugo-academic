@@ -8,6 +8,8 @@ image:
   focal_point: Smart
   preview_only: false
 links:
+ - name: Video
+   url: https://youtu.be/btN04SQishs
  - name: GitHub
    url: https://github.com/tinghanlin/criminal_wall
 ---
