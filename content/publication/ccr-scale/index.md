@@ -25,7 +25,7 @@ image:
   preview_only: false
 date: 2025-02-24T19:17:51.593Z
 
-url_pdf: 
+url_pdf: "ccr-scale.pdf"
 url_video: https://youtu.be/025dEf-z5M8
 
 # Custom links (uncomment lines below)
