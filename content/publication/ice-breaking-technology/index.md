@@ -48,7 +48,8 @@ url_video: https://youtu.be/GA6pVleSgAU
 links:
  - name: ACM
    url: https://dl.acm.org/doi/10.1145/3544548.3581135?fbclid=IwAR27eYXF-5SwbEf_TOMjFIUYWO4pDOruu-BqZSDdI-ptxrbC5lF5MXzS1fo
- - name: Preview
+ - name: Preview Video
    url: https://youtu.be/cjZhUQJvQDY
-   
+ - name: BibTeX Citation
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:LNsRoch85v8J:scholar.google.com/&output=citation&scisdr=ClEw7irAEKTD-WeSuAc:AFWwaeYAAAAAZ9SUoAcQAAKZAjv4G--3qgxxofE&scisig=AFWwaeYAAAAAZ9SUoHTR3_wq5S2M5xKeU_lirko&scisf=4&ct=citation&cd=-1&hl=en
 ---

@@ -57,6 +57,6 @@ url_code: ""
 links:
  - name: IEEE
    url: https://ieeexplore.ieee.org/document/9900828
- - name: BibTeX citation
+ - name: BibTeX Citation
    url: https://scholar.googleusercontent.com/scholar.bib?q=info:mDx3MUyUbuAJ:scholar.google.com/&output=citation&scisdr=ClEw7irAEKTD-WeV1rM:AFWwaeYAAAAAZ9STzrOz61RdqG7bp1IqpnBLh9Y&scisig=AFWwaeYAAAAAZ9STzqM-jrgqR7i6DsQjA7QWmaY&scisf=4&ct=citation&cd=-1&hl=en
 ---

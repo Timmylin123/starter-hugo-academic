@@ -51,10 +51,10 @@ url_video: https://www.youtube.com/watch?v=9ZkKF5lPJgE
 links:
  - name: ACM
    url: https://dl.acm.org/doi/10.1145/3544548.3581267?fbclid=IwAR1NYVTKMuYF1zzBgmdYRIwDKk0kiBv1JvcfYoygjaXl2Yw4G7Xc9lpWg2k
-
- - name: Preview
+ - name: Preview Video
    url: https://www.youtube.com/watch?v=_GUBpkZzFCc
-
  - name: Talk
    url: https://www.youtube.com/watch?v=-Fqzq-b_hHE
+ - name: BibTeX Citation
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:QiIP9CfUge0J:scholar.google.com/&output=citation&scisdr=ClEw7irAEKTD-WeTCaA:AFWwaeYAAAAAZ9SVEaD9N6xt8MEYyFpqx15A21Q&scisig=AFWwaeYAAAAAZ9SVEYHwuNMG8eMKyiSkdW1chUs&scisf=4&ct=citation&cd=-1&hl=en
 ---
