@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wide iPad Robot Face</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temi Robot Face</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
       background-color: #cce0ff;
       display: flex;
       justify-content: center;
@@ -19,9 +18,9 @@
 
     .face {
       position: relative;
-      width: 90vw; /* responsive width based on screen */
-      max-width: 600px; /* still keeps your \"iPad feel\" width limit */
-      aspect-ratio: 3 / 2; /* 600x400 ratio automatically */
+      width: 90vw;
+      max-width: 600px;
+      aspect-ratio: 3 / 2;
     }
 
     .eye {
@@ -63,7 +62,6 @@
       transition: all 0.08s ease-in-out;
     }
 
-    /* 12 smoother phases */
     .mouth.p1 { width: 100px; height: 30px; border-radius: 0 0 100px 100px; }
     .mouth.p2 { width: 110px; height: 35px; border-radius: 0 0 110px 110px; }
     .mouth.p3 { width: 120px; height: 40px; border-radius: 0 0 120px 120px; }
@@ -86,6 +84,13 @@
   </div>
 
   <script>
+    // Force full screen height
+    function resizeFullScreen() {
+      document.body.style.height = window.innerHeight + "px";
+    }
+    window.addEventListener('resize', resizeFullScreen);
+    window.addEventListener('load', resizeFullScreen);
+
     function blinkEye(eye) {
       eye.style.height = "20px";
       setTimeout(() => {
