@@ -1,78 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Robot Face</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .face {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background: #333;
-            border-radius: 50%;
-        }
-        .eye {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 50%;
-            top: 80px;
-            animation: blink 4s infinite;
-        }
-        .eye.left {
-            left: 60px;
-        }
-        .eye.right {
-            right: 60px;
-        }
-        @keyframes blink {
-            0%, 90%, 100% {
-                height: 50px;
-            }
-            92%, 98% {
-                height: 5px;
-            }
-        }
-        .mouth {
-            position: absolute;
-            bottom: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 20px;
-            background: white;
-            border-radius: 10px;
-            animation: smile 4s infinite;
-        }
-        @keyframes smile {
-            0%, 100% {
-                width: 120px;
-                height: 20px;
-                border-radius: 10px;
-            }
-            50% {
-                width: 80px;
-                height: 10px;
-                border-radius: 50px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speaking Cute Face (Better Mouth)</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #cce0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .eye {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: black;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: height 0.2s ease;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .eye.left {
+      top: 35%;
+      left: 30%;
+    }
+
+    .eye.right {
+      top: 35%;
+      right: 30%;
+    }
+
+    .mouth {
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 50px;
+      background: black;
+      border-radius: 0 0 100px 100px;
+      transition: all 0.3s ease;
+    }
+
+    .mouth.speaking {
+      width: 140px;
+      height: 80px;
+      background: black;
+      border-radius: 0 0 140px 140px;
+    }
+  </style>
 </head>
 <body>
-    <div class="face">
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="mouth"></div>
-    </div>
+  <div class="face">
+    <div class="eye left" id="eyeLeft"></div>
+    <div class="eye right" id="eyeRight"></div>
+    <div class="mouth" id="mouth"></div>
+  </div>
+
+  <script>
+    function blinkEye(eye) {
+      eye.style.height = "10px";
+      setTimeout(() => {
+        eye.style.height = "60px";
+      }, 150);
+    }
+
+    function randomBlink() {
+      const left = document.getElementById("eyeLeft");
+      const right = document.getElementById("eyeRight");
+
+      blinkEye(left);
+      blinkEye(right);
+
+      const nextBlink = Math.random() * 5000 + 2000;
+      setTimeout(randomBlink, nextBlink);
+    }
+
+    function mouthSpeaking() {
+      const mouth = document.getElementById("mouth");
+
+      // Toggle speaking class on and off
+      mouth.classList.toggle("speaking");
+
+      const nextMove = Math.random() * 300 + 200; // 200ms–500ms
+      setTimeout(mouthSpeaking, nextMove);
+    }
+
+    window.onload = () => {
+      randomBlink();
+      mouthSpeaking();
+    };
+  </script>
 </body>
 </html>
