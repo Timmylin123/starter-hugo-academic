@@ -38,7 +38,7 @@ main:
     url: uploads/resume.pdf
     weight: 110
   - name: Temporary
-    url: uploads/resume.pdf
+    url: uploads/testing.html
     weight: 130
 
 
