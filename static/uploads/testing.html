@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smoother Speaking Mouth (More Stages)</title>
+  <title>Wide iPad Robot Face</title>
   <style>
     body {
       margin: 0;
@@ -12,12 +12,13 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     .face {
       position: relative;
-      width: 100%;
-      height: 100%;
+      width: 600px; /* wider for iPad feel */
+      height: 400px;
     }
 
     .eye {
@@ -26,7 +27,6 @@
       height: 80px;
       background: black;
       border-radius: 50%;
-      top: 30%;
       transition: height 0.08s ease;
     }
 
@@ -42,16 +42,18 @@
     }
 
     .eye.left {
-      left: 28%;
+      top: 100px;
+      left: 60px; /* wider apart */
     }
 
     .eye.right {
-      right: 28%;
+      top: 100px;
+      right: 60px; /* wider apart */
     }
 
     .mouth {
       position: absolute;
-      bottom: 25%;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
       background: black;
@@ -109,11 +111,11 @@
 
         let delay;
         if (index === 7) {
-          delay = Math.random() * 250 + 300; // biggest mouth stays longer
+          delay = Math.random() * 250 + 300;
         } else if (index === 0 || index === 11) {
-          delay = Math.random() * 100 + 80; // smallest mouth quicker
+          delay = Math.random() * 100 + 80;
         } else {
-          delay = Math.random() * 150 + 100; // medium speed
+          delay = Math.random() * 150 + 100;
         }
 
         index = (index + 1) % phases.length;
