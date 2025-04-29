@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wide iPad Robot Face</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
       background-color: #cce0ff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       overflow: hidden;
     }
 
     .face {
       position: relative;
-      width: 600px; /* wider for iPad feel */
-      height: 400px;
+      width: 90vw; /* responsive width based on screen */
+      max-width: 600px; /* still keeps your \"iPad feel\" width limit */
+      aspect-ratio: 3 / 2; /* 600x400 ratio automatically */
     }
 
     .eye {
@@ -43,12 +46,12 @@
 
     .eye.left {
       top: 100px;
-      left: 60px; /* wider apart */
+      left: 60px;
     }
 
     .eye.right {
       top: 100px;
-      right: 60px; /* wider apart */
+      right: 60px;
     }
 
     .mouth {
