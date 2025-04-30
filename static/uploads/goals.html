@@ -8,15 +8,17 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       background-color: #cce0ff;
       font-family: sans-serif;
     }
 
-    body {
+    .fullscreen-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
+      padding: 20px; /* in case panel gets too big */
+      box-sizing: border-box;
     }
 
     .container {
@@ -25,7 +27,7 @@
       border-radius: 24px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
       max-width: 800px;
-      width: 95%;
+      width: 100%;
       box-sizing: border-box;
     }
 
@@ -56,27 +58,29 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>SMART Goals</h1>
-    <div class="smart-item">
-      <span>S – Specific</span>
-      <p>Be clear and specific about what you want to achieve.</p>
-    </div>
-    <div class="smart-item">
-      <span>M – Measurable</span>
-      <p>Track your progress and know when you've met your goal.</p>
-    </div>
-    <div class="smart-item">
-      <span>A – Achievable</span>
-      <p>Set a goal that is realistic and attainable for you.</p>
-    </div>
-    <div class="smart-item">
-      <span>R – Relevant</span>
-      <p>Ensure the goal is important and meaningful to you.</p>
-    </div>
-    <div class="smart-item">
-      <span>T – Time-bound</span>
-      <p>Set a deadline to stay focused and motivated.</p>
+  <div class="fullscreen-wrapper">
+    <div class="container">
+      <h1>SMART Goals</h1>
+      <div class="smart-item">
+        <span>S – Specific</span>
+        <p>Be clear and specific about what you want to achieve.</p>
+      </div>
+      <div class="smart-item">
+        <span>M – Measurable</span>
+        <p>Track your progress and know when you've met your goal.</p>
+      </div>
+      <div class="smart-item">
+        <span>A – Achievable</span>
+        <p>Set a goal that is realistic and attainable for you.</p>
+      </div>
+      <div class="smart-item">
+        <span>R – Relevant</span>
+        <p>Ensure the goal is important and meaningful to you.</p>
+      </div>
+      <div class="smart-item">
+        <span>T – Time-bound</span>
+        <p>Set a deadline to stay focused and motivated.</p>
+      </div>
     </div>
   </div>
 </body>
