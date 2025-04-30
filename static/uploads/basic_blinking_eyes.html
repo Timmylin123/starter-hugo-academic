@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temi Robot Face</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: #cce0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .face {
+      position: relative;
+      width: 90vw;
+      max-width: 600px;
+      aspect-ratio: 3 / 2;
+    }
+
+    .eye {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: black;
+      border-radius: 50%;
+      transition: height 0.08s ease;
+      overflow: hidden;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.08s ease;
+    }
+
+    .eye.left {
+      top: 80px;
+      left: 40px;
+    }
+
+    .eye.right {
+      top: 80px;
+      right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="face">
+    <div class="eye left" id="eyeLeft"></div>
+    <div class="eye right" id="eyeRight"></div>
+  </div>
+
+  <script>
+    function resizeFullScreen() {
+      document.body.style.height = window.innerHeight + "px";
+    }
+    window.addEventListener('resize', resizeFullScreen);
+    window.addEventListener('load', resizeFullScreen);
+
+    function blinkEye(eye) {
+      eye.style.height = "30px";
+      setTimeout(() => {
+        eye.style.height = "120px";
+      }, 100);
+    }
+
+    function randomBlink() {
+      const left = document.getElementById("eyeLeft");
+      const right = document.getElementById("eyeRight");
+
+      blinkEye(left);
+      blinkEye(right);
+
+      const nextBlink = Math.random() * 2000 + 1000;
+      setTimeout(randomBlink, nextBlink);
+    }
+
+    window.onload = () => {
+      randomBlink();
+    };
+  </script>
+</body>
+</html>

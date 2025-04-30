@@ -38,7 +38,7 @@ main:
     url: uploads/resume.pdf
     weight: 110
   - name: Temporary
-    url: uploads/testing.html
+    url: uploads/basic_blinking_eyes.html
     weight: 130
   - name: Temporary2
     url: uploads/goals.html

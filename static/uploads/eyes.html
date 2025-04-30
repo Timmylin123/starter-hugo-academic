@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temi Robot Eyes - Emotions</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #cce0ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+
+    .face {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 90vw;
+      max-width: 600px;
+      height: 300px;
+      margin-bottom: 20px;
+    }
+
+    .eye {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: black;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      top: 18px;
+      right: 18px;
+      transition: all 0.3s ease;
+    }
+
+    /* Neutral */
+    .neutral {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    /* Happy: upward-arc eyes (smile) */
+    .happy {
+      width: 100px;
+      height: 50px;
+      background: none;
+      border-bottom: 10px solid black;
+      border-radius: 0 0 100px 100px;
+      transform: translateY(30px);
+    }
+
+    .happy::after {
+      display: none;
+    }
+
+    /* Sad: downward-arc eyes (frown) */
+    .sad {
+      width: 100px;
+      height: 50px;
+      background: none;
+      border-top: 10px solid black;
+      border-radius: 100px 100px 0 0;
+      transform: translateY(30px);
+    }
+
+    .sad::after {
+      display: none;
+    }
+
+    /* Angry: slanted inward */
+    .angry.left {
+      transform: rotate(-25deg);
+      width: 100px;
+      height: 60px;
+      border-radius: 50% 50% 40% 40%;
+    }
+
+    .angry.right {
+      transform: rotate(25deg);
+      width: 100px;
+      height: 60px;
+      border-radius: 50% 50% 40% 40%;
+    }
+
+    .angry::after {
+      top: 10px;
+      right: 10px;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Surprised: large open circular */
+    .surprised {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+    }
+
+    .surprised::after {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Tired: narrow, horizontal */
+    .tired {
+      width: 120px;
+      height: 40px;
+      border-radius: 50% / 25%;
+    }
+
+    .tired::after {
+      top: 8px;
+      right: 16px;
+      width: 18px;
+      height: 8px;
+    }
+
+    /* Excited: enlarged and lifted */
+    .excited {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      transform: translateY(-10px);
+    }
+
+    .excited::after {
+      top: 12px;
+      right: 16px;
+    }
+
+    /* Confused: asymmetrical eye shapes */
+    .confused.left {
+      width: 100px;
+      height: 70px;
+      transform: rotate(-15deg);
+      border-radius: 60% 50%;
+    }
+
+    .confused.right {
+      width: 120px;
+      height: 100px;
+      transform: rotate(10deg);
+      border-radius: 50%;
+    }
+
+    .confused::after {
+      top: 16px;
+      right: 16px;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4d79ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3355cc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="face">
+    <div class="eye neutral left" id="eyeLeft"></div>
+    <div class="eye neutral right" id="eyeRight"></div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="setEmotion('neutral')">Neutral</button>
+    <button onclick="setEmotion('happy')">Happy 😊</button>
+    <button onclick="setEmotion('sad')">Sad 😢</button>
+    <button onclick="setEmotion('angry')">Angry 😠</button>
+    <button onclick="setEmotion('surprised')">Surprised 😲</button>
+    <button onclick="setEmotion('tired')">Tired 😴</button>
+    <button onclick="setEmotion('excited')">Excited 🤩</button>
+    <button onclick="setEmotion('confused')">Confused 🤔</button>
+  </div>
+
+  <script>
+    function setEmotion(emotion) {
+      const eyeLeft = document.getElementById('eyeLeft');
+      const eyeRight = document.getElementById('eyeRight');
+
+      // Reset all emotion classes
+      eyeLeft.className = 'eye left';
+      eyeRight.className = 'eye right';
+
+      if (emotion === 'neutral') {
+        eyeLeft.classList.add('neutral');
+        eyeRight.classList.add('neutral');
+      } else if (emotion === 'confused' || emotion === 'angry') {
+        eyeLeft.classList.add(emotion, 'left');
+        eyeRight.classList.add(emotion, 'right');
+      } else {
+        eyeLeft.classList.add(emotion);
+        eyeRight.classList.add(emotion);
+      }
+    }
+  </script>
+
+</body>
+</html>
