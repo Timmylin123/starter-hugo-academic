@@ -38,10 +38,10 @@ main:
     url: uploads/resume.pdf
     weight: 110
   - name: Temporary
-    url: uploads/basic_blinking_eyes.html
+    url: uploads/TemiFullScreen.html
     weight: 130
   - name: Temporary2
-    url: uploads/goals.html
+    url: uploads/TemiSideScreen.html
     weight: 140
 
 

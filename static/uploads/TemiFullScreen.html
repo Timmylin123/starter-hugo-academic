@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temi Robot Face</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: #cce0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .face {
+      position: relative;
+      width: 90vw;
+      max-width: 600px;
+      aspect-ratio: 3 / 2;
+    }
+
+    .eye {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      background: black;
+      border-radius: 50%;
+      transition: height 0.08s ease;
+      overflow: hidden;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.08s ease;
+    }
+
+    .eye.left {
+      top: 80px;
+      left:40px;
+    }
+
+    .eye.right {
+      top: 80px;
+      right: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="face" id="facebox">
+    <div class="eye left" id="eyeLeft"></div>
+    <div class="eye right" id="eyeRight"></div>
+  </div>
+
+  <script>
+    function resizeFullScreen() {
+      document.body.style.height = window.innerHeight + "px";
+    }
+    window.addEventListener('resize', resizeFullScreen);
+    window.addEventListener('load', resizeFullScreen);
+
+    function blinkEye(eye) {
+      eye.animate([
+        {transform: 'scaleY(1)'},
+        {transform: 'scaleY(0.2)'},
+        {transform: 'scaleY(1)'}
+      ], {
+        duration: 200,
+        easing: 'ease-in-out'
+      });
+    }
+
+    function randomBlink() {
+      const left = document.getElementById("eyeLeft");
+      const right = document.getElementById("eyeRight");
+
+      blinkEye(left);
+      blinkEye(right);
+
+      const nextBlink = Math.random() * 2000 + 4000;
+      setTimeout(randomBlink, nextBlink);
+    }
+
+    window.onload = () => {
+      fullscreen(facebox);
+      randomBlink();
+    };
+    
+    function fullscreen(facebox) {
+      facebox.animate([
+        {transform: 'scale(0.2)'},
+        {transform: 'scale(1)'},
+      ], {
+        duration: 400,
+        easing: 'ease-in-out'
+      }); 
+    }
+    
+    function sidescreen(facebox) {
+      facebox.animate([
+        {transform: 'scale(4)'},
+        {transform: 'scale(1)'},
+      ], {
+        duration: 400,
+        easing: 'ease-in-out'
+      }); 
+    }  
+  </script>
+</body>
+</html>
