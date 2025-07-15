@@ -56,5 +56,5 @@ links:
  - name: Talk
    url: https://www.youtube.com/watch?v=-Fqzq-b_hHE
  - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:QiIP9CfUge0J:scholar.google.com/&output=citation&scisdr=ClEw7irAEKTD-WeTCaA:AFWwaeYAAAAAZ9SVEaD9N6xt8MEYyFpqx15A21Q&scisig=AFWwaeYAAAAAZ9SVEYHwuNMG8eMKyiSkdW1chUs&scisf=4&ct=citation&cd=-1&hl=en
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:QiIP9CfUge0J:scholar.google.com/&output=citation&scisdr=CgJN6Q2BEKTD9sXIz_Q:AAZF9b8AAAAAaHbO1_Q7D3--XCn2kdws-_YVN9w&scisig=AAZF9b8AAAAAaHbO1025pnNOkbyKJ8WtlIIUlIM&scisf=4&ct=citation&cd=-1&hl=en&scfhb=1
 ---

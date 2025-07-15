@@ -58,5 +58,5 @@ links:
  - name: IEEE
    url: https://ieeexplore.ieee.org/document/9900828
  - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:mDx3MUyUbuAJ:scholar.google.com/&output=citation&scisdr=ClEw7irAEKTD-WeV1rM:AFWwaeYAAAAAZ9STzrOz61RdqG7bp1IqpnBLh9Y&scisig=AFWwaeYAAAAAZ9STzqM-jrgqR7i6DsQjA7QWmaY&scisf=4&ct=citation&cd=-1&hl=en
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:mDx3MUyUbuAJ:scholar.google.com/&output=citation&scisdr=CgJN6Q2BEKTD9sXJPEU:AAZF9b8AAAAAaHbPJEWIt1gHmNg3dQXnyjWLZQU&scisig=AAZF9b8AAAAAaHbPJEjn2zAOLFfiDdVuZd0Qhik&scisf=4&ct=citation&cd=-1&hl=en&scfhb=1
 ---
