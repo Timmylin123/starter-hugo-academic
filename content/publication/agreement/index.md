@@ -2,8 +2,8 @@
 title: "[CHB 2025] The Impact of a Robot's Agreement (or Disagreement) on Human-Human Interpersonal Closeness in a Two-Person Decision-Making Task"
 
 publication_types:
-  - "1"
-publication: In *2025 Computers in Human Behavior journal*
+  - "2"
+publication: In *2025 Computers in Human Behavior Journal*
 
 authors:
 - admin
