@@ -37,13 +37,15 @@ main:
   - name: CV
     url: uploads/resume.pdf
     weight: 110
-  - name: Temporary
-    url: uploads/TemiFullScreen.html
+  - name: Temi-Eyes
+    url: uploads/TemiFullScreenOpen.html
     weight: 130
-  - name: Temporary2
-    url: uploads/TemiSideScreen.html
+  - name: Temi-Sleep
+    url: uploads/TemiFullScreenToSleep.html
     weight: 140
-
+  - name: Temi-Awake
+    url: uploads/TemiFullScreenToAwake.html
+    weight: 150
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.

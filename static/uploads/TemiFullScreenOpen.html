@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temi Robot Face - Open</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #cce0ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      /* Expose page background for sleep crescent cutout */
+      body {
+        --bg-color: #cce0ff;
+      }
+
+      .face {
+        position: relative;
+        width: 90vw;
+        max-width: 600px;
+        aspect-ratio: 3 / 2;
+        --sleep-lid-offset: -34px;
+        --sleep-lid-scale: 1;
+        --sleep-cover-scale: 1;
+      }
+
+      /* Utility class to suppress lid transitions during JS-prep steps */
+      .face.lid-prep .eye::after,
+      .face.lid-prep .eye::before {
+        transition: none !important;
+      }
+
+      .eye {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        background: black;
+        border-radius: 50%;
+        /* Smooth transitions for mode changes */
+        transition: transform 240ms ease-in-out, filter 260ms ease-in-out;
+        overflow: hidden;
+      }
+
+      .eye::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 24px;
+        height: 24px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.08s ease;
+      }
+
+      .eye.left {
+        top: 80px;
+        left: -20px;
+      }
+
+      .eye.right {
+        top: 80px;
+        right: -20px;
+      }
+
+      /* Sleep mode: draw closed eyelids without changing layout */
+      .is-sleep .eye {
+        background: transparent;
+        /* prevent highlight/filter from showing while asleep */
+        filter: none !important;
+      }
+
+      /* Gentle breathing motion for closed eyelids */
+      @keyframes sleepBreathOffset {
+        0% {
+          margin-top: 0;
+        }
+        45% {
+          margin-top: -1.8px;
+        }
+        100% {
+          margin-top: 0;
+        }
+      }
+
+      /* Crescent eyelid: two overlapping discs create a moon shape */
+      .is-sleep .eye::before {
+        /* Base disc (dark), fills the whole eye */
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 170px;
+        height: 170px;
+        background: radial-gradient(
+          circle at 50% 68%,
+          #101010 48%,
+          #090909 82%,
+          #050505 100%
+        );
+        border-radius: 50%;
+        box-shadow: 0 12px 18px rgba(0, 0, 0, 0.36) inset;
+        margin-top: 0;
+        animation: sleepBreathOffset 4.4s ease-in-out infinite;
+        transform-origin: 50% 100%;
+        transform: scaleY(var(--sleep-lid-scale, 0.7));
+        transition: transform 320ms ease;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .is-sleep .eye::after {
+        /* Cutout disc (page background) raised so only the lower arc remains */
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: var(--sleep-lid-offset, -34px);
+        width: 180px;
+        height: 180px;
+        background: var(--bg-color, #cce0ff);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) inset;
+        margin-top: 0;
+        animation: sleepBreathOffset 4.4s ease-in-out infinite;
+        transform-origin: 50% 100%;
+        transform: scaleY(var(--sleep-cover-scale, 0.7));
+        transition: top 420ms ease, transform 320ms ease,
+          opacity 200ms ease-in-out;
+        z-index: 1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="face" id="facebox">
+      <div class="eye left" id="eyeLeft"></div>
+      <div class="eye right" id="eyeRight"></div>
+    </div>
+
+    <script>
+      // left and right eyes
+      const left = document.getElementById("eyeLeft");
+      const right = document.getElementById("eyeRight");
+      const face = document.getElementById("facebox");
+
+      function setSleepLidScale(value) {
+        if (face) face.style.setProperty("--sleep-lid-scale", value);
+      }
+
+      function setSleepCoverScale(value) {
+        if (face) face.style.setProperty("--sleep-cover-scale", value);
+      }
+
+      function setSleepLidOffset(value) {
+        if (face) face.style.setProperty("--sleep-lid-offset", value);
+      }
+
+      // Blink Params
+      const BLINK = {
+        // action durations in ms
+        close: 90,
+        hold: 60,
+        open: 110,
+        // blinking interval in second
+        meanSec: 2.3,
+        stdSec: 2.0,
+        doubleProb: 0.12, // double-blinking probability
+        // safety bounds
+        minIntervalSec: 0.5,
+        maxIntervalSec: 8.0,
+      };
+
+      const SLEEP = {
+        // time to become sleepy/sleep in second
+        toSleepySec: 4,
+        toSleepSec: 8,
+        // the blinking slows down in sleepy/sleep mode
+        sleepyMultiplier: 2.0,
+        sleepMultiplier: 3.0,
+        // eye wandering time interval in ms
+        wanderEveryMs: 900,
+        wanderEveryMsSleepy: 1300,
+        wanderEveryMsSleep: 1800,
+      };
+
+      // Per-mode visual shapes (vertical openness + highlight baseline)
+      const SHAPE = {
+        awake: { baseScaleY: 1.0, hlBaseDy: 0, hlAlpha: 1.0 },
+        sleepy: { baseScaleY: 0.7, hlBaseDy: 4, hlAlpha: 0.85 },
+        sleep: { baseScaleY: 0.3, hlBaseDy: 8, hlAlpha: 0.7 },
+      };
+
+      // mutable states
+      const state = {
+        // mode is awake by default
+        mode: "awake", // 'awake' | 'sleepy' | 'sleep'
+        // timer for engagement, blink, and wandering
+        lastEngagedAt: Date.now(),
+        nextBlinkTimer: null,
+        wanderTimer: null,
+        // cooldown time to prevent overlap blinking
+        blinkCooldownMs: 200,
+        lastBlinkAt: 0,
+        pendingDouble: false, // LOG: true only for the second blink of a double
+        // mode transition guard
+        transitioning: false,
+        modeTransitionTimer: null,
+        transitionAnimations: [],
+      };
+
+      function stopTransitionAnimations() {
+        state.transitionAnimations.forEach((anim) => {
+          try {
+            anim.cancel();
+          } catch (err) {
+            console.warn("[MODE] Failed to cancel animation", err);
+          }
+        });
+        state.transitionAnimations = [];
+      }
+
+      // get the next blinking interval
+      function nextIntervalMs() {
+        // Box-Muller transform
+        // turn two random numbers to sample from a standard normal distribution
+        const u = Math.random() || 1e-6,
+          v = Math.random() || 1e-6;
+        let z = Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+        // apply blinking interval stats
+        let sec = BLINK.meanSec + BLINK.stdSec * z;
+        // apply multipliers for sleepy/sleep modes
+        if (state.mode === "sleepy") sec *= SLEEP.sleepyMultiplier;
+        if (state.mode === "sleep") sec *= SLEEP.sleepMultiplier;
+        // apply safety bounds
+        sec = Math.max(
+          BLINK.minIntervalSec,
+          Math.min(BLINK.maxIntervalSec, sec)
+        );
+        console.log(`[SCHEDULE] Next blink in ${sec.toFixed(2)}s`); // LOG
+        return sec * 1000;
+      }
+
+      // apply baseline eye openness and highlight placement per mode
+      function applyEyeShapeForMode() {
+        const s = SHAPE[state.mode] || SHAPE.awake;
+        // Set the baseline vertical openness (no horizontal distortion)
+        if (state.mode === "sleep") {
+          const sleepyScale = SHAPE.sleepy.baseScaleY;
+          left.style.transform = `scaleY(${sleepyScale})`;
+          right.style.transform = `scaleY(${sleepyScale})`;
+        } else {
+          left.style.transform = `scaleY(${s.baseScaleY})`;
+          right.style.transform = `scaleY(${s.baseScaleY})`;
+        }
+        // baseline highlight offset and dimming via drop-shadow trick
+        const dx = 0;
+        const dy = s.hlBaseDy;
+        const col = `rgba(255,255,255,${s.hlAlpha})`;
+        left.style.filter = `drop-shadow(${dx}px ${dy}px 0 ${col})`;
+        right.style.filter = `drop-shadow(${dx}px ${dy}px 0 ${col})`;
+      }
+
+      // helper for blinking an eye
+      function blinkEye(
+        eye,
+        close = BLINK.close,
+        hold = BLINK.hold,
+        open = BLINK.open
+      ) {
+        const s = SHAPE[state.mode] || SHAPE.awake;
+        const base = s.baseScaleY;
+        const k1 = close / (close + hold + open);
+        const k2 = (close + hold) / (close + hold + open);
+        eye.animate(
+          [
+            // set animation with time intervals defined
+            { transform: `scaleY(${base})`, offset: 0 },
+            { transform: `scaleY(${(base * 0.2).toFixed(3)})`, offset: k1 },
+            { transform: `scaleY(${(base * 0.2).toFixed(3)})`, offset: k2 },
+            { transform: `scaleY(${base})`, offset: 1 },
+          ],
+          {
+            duration: close + hold + open,
+            easing: "ease-in-out",
+            iterations: 1,
+          }
+        );
+      }
+
+      // blink both eyes once
+      function doBlink() {
+        const now = Date.now();
+        // Skip blinking entirely while asleep
+        if (state.mode === "sleep") return;
+        // apply cooldown protection
+        if (now - state.lastBlinkAt < state.blinkCooldownMs) return;
+        const intervalSec = state.lastBlinkAt
+          ? (now - state.lastBlinkAt) / 1000
+          : 0; // LOG
+        // update last-blink record
+        state.lastBlinkAt = now;
+        const isDoublePart = state.pendingDouble === true; // LOG
+        console.log(
+          `[BLINK] Mode=${
+            state.mode
+          } Double=${isDoublePart} Interval=${intervalSec.toFixed(2)}s`
+        ); // LOG
+        state.pendingDouble = false; // LOG clear
+
+        // blink eyes
+        blinkEye(left), blinkEye(right);
+      }
+
+      // schedule a self-perpetuating blink loop
+      function scheduleBlinkLoop() {
+        // reset next-blink timer
+        clearTimeout(state.nextBlinkTimer);
+
+        state.nextBlinkTimer = setTimeout(() => {
+          doBlink();
+          if (Math.random() < BLINK.doubleProb) {
+            console.log("[BLINK] Double blink triggered"); // LOG
+            state.pendingDouble = true;
+            setTimeout(doBlink, 200);
+          }
+          scheduleBlinkLoop();
+        }, nextIntervalMs());
+      }
+
+      // move the highlights subtly to look like it's wandering around
+      function wanderHighlights() {
+        const s = SHAPE[state.mode] || SHAPE.awake;
+        const amp = 2; // subtle amplitude in px
+        const col = `rgba(255,255,255,${s.hlAlpha})`;
+        for (const eye of [left, right]) {
+          const dx = (Math.random() * 2 - 1) * amp;
+          const dy = s.hlBaseDy + (Math.random() * 2 - 1) * amp;
+          eye.style.filter = `drop-shadow(${dx}px ${dy}px 0 ${col})`;
+        }
+      }
+
+      // setup/refresh the wandering timer
+      function startWanderTimer() {
+        clearInterval(state.wanderTimer);
+        // wandering period based on modes
+        const period =
+          state.mode === "awake"
+            ? SLEEP.wanderEveryMs
+            : state.mode === "sleepy"
+            ? SLEEP.wanderEveryMsSleepy
+            : SLEEP.wanderEveryMsSleep;
+        console.log(`[WANDER] Timer reset (${period} ms)`); // LOG
+        state.wanderTimer = setInterval(wanderHighlights, period);
+      }
+
+      // update mode based on last time of engagement
+      function updateMode() {
+        // get the time from last engagement in ms
+        const idleSec = (Date.now() - state.lastEngagedAt) / 1000;
+        // determine the next state
+        let next = "awake";
+        if (idleSec >= SLEEP.toSleepSec) next = "sleep";
+        else if (idleSec >= SLEEP.toSleepySec) next = "sleepy";
+        if (next !== state.mode) {
+          console.log(
+            `[MODE] Changing from ${
+              state.mode
+            } → ${next} (idle=${idleSec.toFixed(1)}s)`
+          );
+          setMode(next);
+        } // LOG
+        else {
+          console.log(
+            `[MODE] Still ${state.mode} (idle=${idleSec.toFixed(1)}s)`
+          );
+        } // LOG
+      }
+
+      // Helper: finalize applying classes + timers for current state.mode
+      function finalizeModeApply() {
+        stopTransitionAnimations();
+        const mode = state.mode;
+        const root = face;
+        root.classList.remove("lid-prep");
+        root.classList.toggle("is-awake", mode === "awake");
+        root.classList.toggle("is-sleepy", mode === "sleepy");
+        root.classList.toggle("is-sleep", mode === "sleep");
+        if (mode !== "sleep") {
+          setSleepLidOffset("-34px");
+          setSleepLidScale("1");
+          setSleepCoverScale("1");
+        }
+        applyEyeShapeForMode();
+        startWanderTimer();
+        scheduleBlinkLoop();
+      }
+
+      // Transition: awake/sleepy -> sleep (reveal the crescent from the bottom)
+      function animateToSleep(prevBase) {
+        stopTransitionAnimations();
+        const root = face;
+
+        // Prepare elliptical lid the same height as sleepy before revealing
+        root.classList.add("lid-prep");
+        setSleepLidOffset("-34px");
+        setSleepCoverScale("0.7");
+        setSleepLidScale("0");
+        root.classList.remove("is-awake", "is-sleepy");
+        root.classList.add("is-sleep");
+        applyEyeShapeForMode();
+
+        // Allow the browser to register the new state before animating the reveal
+        requestAnimationFrame(() => {
+          root.classList.remove("lid-prep");
+          requestAnimationFrame(() => {
+            setSleepLidScale("0.7");
+          });
+        });
+
+        const settleMs = 520;
+        clearTimeout(state.modeTransitionTimer);
+        state.modeTransitionTimer = setTimeout(() => {
+          setSleepLidOffset("-34px");
+          setSleepCoverScale("0.7");
+          setSleepLidScale("0.7");
+          root.classList.remove("lid-prep");
+          startWanderTimer();
+          scheduleBlinkLoop();
+          state.transitioning = false;
+        }, settleMs);
+      }
+
+      // Transition: sleep -> awake/sleepy (cover lifts off, highlight returns)
+      function animateFromSleep(nextMode) {
+        stopTransitionAnimations();
+        const root = face;
+        const liftDuration = 220;
+        const liftTargetOffset = "-220px";
+        const sleepyScale = SHAPE.sleepy.baseScaleY;
+
+        // Prepare cover and lid in sleepy-sized ellipse
+        root.classList.add("lid-prep");
+        setSleepCoverScale("0.7");
+        setSleepLidScale("0.7");
+        setSleepLidOffset("-34px");
+        left.style.transform = `scaleY(${sleepyScale})`;
+        right.style.transform = `scaleY(${sleepyScale})`;
+        requestAnimationFrame(() => {
+          root.classList.remove("lid-prep");
+          requestAnimationFrame(() => {
+            setSleepCoverScale("1");
+            setSleepLidOffset(liftTargetOffset);
+          });
+        });
+
+        clearTimeout(state.modeTransitionTimer);
+        state.modeTransitionTimer = setTimeout(() => {
+          root.classList.remove("is-sleep");
+          root.classList.toggle("is-awake", nextMode === "awake");
+          root.classList.toggle("is-sleepy", nextMode === "sleepy");
+
+          left.style.transform = `scaleY(${sleepyScale})`;
+          right.style.transform = `scaleY(${sleepyScale})`;
+          requestAnimationFrame(() => {
+            applyEyeShapeForMode();
+            startWanderTimer();
+            scheduleBlinkLoop();
+            stopTransitionAnimations();
+            setSleepCoverScale("1");
+            setSleepLidScale("1");
+
+            // allow the cover offset to snap back after the upward motion completes
+            requestAnimationFrame(() => {
+              setSleepLidOffset("-34px");
+            });
+
+            state.transitioning = false;
+          });
+        }, liftDuration);
+      }
+
+      // PUBLIC: manually set a mode and refresh timers (with transitions)
+      function setMode(mode) {
+        if (state.transitioning) return; // ignore while a transition is running
+        const prev = state.mode;
+        if (prev === mode) return;
+        state.mode = mode;
+
+        // Special transitions for entering/leaving sleep
+        if (mode === "sleep" && prev !== "sleep") {
+          state.transitioning = true;
+          animateToSleep(prev);
+          return;
+        }
+        if (prev === "sleep" && (mode === "awake" || mode === "sleepy")) {
+          state.transitioning = true;
+          animateFromSleep(mode);
+          return;
+        }
+
+        // Default case: smooth via CSS transitions
+        finalizeModeApply();
+      }
+
+      // PUBLIC: mark the robot as engaged
+      function markEngaged() {
+        state.lastEngagedAt = Date.now();
+        if (state.mode !== "awake") setMode("awake");
+        console.log("[INIT] Starting awake mode"); // LOG
+      }
+
+      // PUBLIC: trigger a blink now
+      function blinkNow() {
+        doBlink();
+      }
+
+      function resizeFullScreen() {
+        document.body.style.height = window.innerHeight + "px";
+      }
+      window.addEventListener("resize", resizeFullScreen);
+      window.addEventListener("load", resizeFullScreen);
+
+      window.onload = () => {
+        console.log("[INIT] Static awake face"); // LOG
+        fullscreen(facebox);
+        state.mode = "awake";
+        state.lastEngagedAt = Date.now();
+        finalizeModeApply();
+      };
+
+      function fullscreen(facebox) {
+        facebox.animate(
+          [{ transform: "scale(0.2)" }, { transform: "scale(1)" }],
+          {
+            duration: 400,
+            easing: "ease-in-out",
+          }
+        );
+      }
+
+      function sidescreen(facebox) {
+        facebox.animate(
+          [{ transform: "scale(4)" }, { transform: "scale(1)" }],
+          {
+            duration: 400,
+            easing: "ease-in-out",
+          }
+        );
+      }
+      // PUBLIC JS API
+      window.eye = window.eye || {};
+      window.eye.markEngaged = function () {
+        markEngaged();
+      };
+      window.eye.triggerBlinkNow = function () {
+        // Blink immediately, suitable for TTS onset
+        doBlink();
+      };
+      window.eye.setMode = function (mode) {
+        setMode(mode);
+      };
+      window.eye.getState = function () {
+        return { mode: state.mode, lastEngagedAt: state.lastEngagedAt };
+      };
+    </script>
+  </body>
+</html>
