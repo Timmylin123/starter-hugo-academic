@@ -560,8 +560,8 @@
         state.lastEngagedAt = Date.now();
         finalizeModeApply();
         requestAnimationFrame(() => {
-          const sleepyDelayMs = 200;
-          const awakeDelayMs = 1400;
+          const sleepyDelayMs = 2000;
+          const awakeDelayMs = 3400;
           setTimeout(() => {
             setMode("sleepy");
           }, sleepyDelayMs);
