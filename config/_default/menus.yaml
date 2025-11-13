@@ -47,7 +47,7 @@ main:
     url: uploads/TemiFullScreenToAwake.html
     weight: 150
   - name: Temi-Logs
-    url: uploads/logs.html
+    url: logs.html
     weight: 160
 
 # Link to a PDF of your resume/CV from the menu.
