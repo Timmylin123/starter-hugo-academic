@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temi Real-Time Logs</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: monospace; white-space: pre-wrap; background: #111; color: #eee; padding: 20px; }
+        h2 { color: #6cf; }
+    </style>
+</head>
+
+<body>
+    <h2>Temi Live Logs</h2>
+    <div id="logContainer"></div>
+
+    <!-- Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        // REPLACE WITH YOUR SETTINGS
+        var firebaseConfig = {
+            apiKey: "XXXXX",
+            authDomain: "XXXXX.firebaseapp.com",
+            databaseURL: "https://XXXXX-default-rtdb.firebaseio.com",
+            projectId: "XXXXX",
+            storageBucket: "XXXXX.appspot.com",
+            messagingSenderId: "XXXXX",
+            appId: "XXXXX"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        var ref = firebase.database().ref("logs");
+
+        ref.on("child_added", function(snapshot) {
+            const log = snapshot.val();
+            const ts = new Date(log.timestamp).toLocaleString();
+            const msg = `[${ts}] ${log.text}\n`;
+            document.getElementById("logContainer").innerText += msg;
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+
+</body>
+</html>
