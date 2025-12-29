@@ -7,6 +7,9 @@ social:
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.com/citations?hl=en&view_op=list_works&authuser=1&gmla=AH70aAWwIx_iRht1dZVA4M0WeaS2qxM5zv6CyQb9Va1zN3nHToYDhb3_LylNHJwYsxFDuA9ZqtUb0owE500uhg&user=Fmvh74YAAAAJ
+  - icon: publons
+    icon_pack: ai
+    link: https://www.webofscience.com/wos/author/record/OOL-5223-2025
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/ting-han/
