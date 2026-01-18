@@ -32,5 +32,5 @@ links:
  - name: ACM
    url: https://dl.acm.org/doi/10.1145/3610977.3634941?fbclid=IwAR3E6FHd9yz6VvnSjAX8XUdTtUynN0xr2D6zQygP1JTD-846hQc9kxQvflo
  - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:uWIE5VtRZmsJ:scholar.google.com/&output=citation&scisdr=CgJN6Q2BEKTD9sXI4R4:AAZF9b8AAAAAaHbO-R6pNzcHnE7Nf1w7KPZvfnc&scisig=AAZF9b8AAAAAaHbO-VsYt_D6Qz4vdgjma-qr6Jc&scisf=4&ct=citation&cd=-1&hl=en
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:uWIE5VtRZmsJ:scholar.google.com/&output=citation&scisdr=Cn1BSRVuEM_bod5S17I:AHkA5jQAAAAAaW1Uz7LQiaP5D1s9tmmNTG5Js38&scisig=AHkA5jQAAAAAaW1Uz4PHvzgPGhRwd3HJxbM8pro&scisf=4&ct=citation&cd=-1&hl=en
 ---

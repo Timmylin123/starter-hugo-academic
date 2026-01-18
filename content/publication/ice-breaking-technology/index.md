@@ -51,5 +51,5 @@ links:
  - name: Preview Video
    url: https://youtu.be/cjZhUQJvQDY
  - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:LNsRoch85v8J:scholar.google.com/&output=citation&scisdr=CgJN6Q2BEKTD9sXIsUU:AAZF9b8AAAAAaHbOqUUQTYGQz7xcz3l7AOXtUDk&scisig=AAZF9b8AAAAAaHbOqePsMNQLUE213lEk6nXUVWE&scisf=4&ct=citation&cd=-1&hl=en&scfhb=1
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:LNsRoch85v8J:scholar.google.com/&output=citation&scisdr=Cn1BSRVuEM_bod5SjTc:AHkA5jQAAAAAaW1UlTc9ToWrrLXJDgpYSAvaBko&scisig=AHkA5jQAAAAAaW1UlUAPAzuWB-vyGgi2OQv9Km4&scisf=4&ct=citation&cd=-1&hl=en
 ---

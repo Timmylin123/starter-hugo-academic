@@ -31,5 +31,6 @@ url_video: https://youtu.be/d4k8toqaYIo
 links:
  - name: 	Computers in Human Behavior
    url: https://www.sciencedirect.com/science/article/abs/pii/S0747563225002547
-
+ - name: BibTeX Citation
+   url: https://scholar.googleusercontent.com/scholar.bib?q=info:QBCA6aQokFEJ:scholar.google.com/&output=citation&scisdr=Cn1BSRVuEM_bod5TBhE:AHkA5jQAAAAAaW1VHhEPTJBBHBgvJq58fdQDJK4&scisig=AHkA5jQAAAAAaW1VHvn0ltp161CNFECEEfO-9Hk&scisf=4&ct=citation&cd=-1&hl=en
 ---
