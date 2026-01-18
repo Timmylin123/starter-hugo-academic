@@ -25,7 +25,7 @@ image:
 date: 2025-10-12T19:17:51.593Z
 
 url_pdf: 
-url_video: 
+url_video: https://youtu.be/d4k8toqaYIo
 
 # Custom links (uncomment lines below)
 links:
