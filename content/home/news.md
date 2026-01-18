@@ -12,11 +12,10 @@ design:
 
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
+<p><b style="color:maroon;">01/13/2026</b> First-author paper accepted to Transactions on Human-Robot Interaction!</p>
+<p><b style="color:maroon;">12/18/2025</b> My abstract is accepted to HRI Pioneers 2026!</p>
 <p><b style="color:maroon;">10/11/2025</b> First-author paper published in Computers in Human Behavior Jounral!</p>
 <p><b style="color:maroon;">05/13/2025</b> Passed PhD Qualifying Phase!</p>
 <p><b style="color:maroon;">03/06/2025</b> Presented my first-author paper at HRI 2025 Melbourne, Australia</p>
-<p><b style="color:maroon;">03/14/2024</b> One paper got presented at HRI 2024 Boulder, Colorado, USA</p>
-<p><b style="color:maroon;">09/26/2023</b> Officially started my PhD at UChicago!</p>
-<p><b style="color:maroon;">04/23/2023</b> Two papers got presented at CHI 2023 Hamburg, Germany</p>
 
 
