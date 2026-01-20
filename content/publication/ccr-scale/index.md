@@ -30,6 +30,8 @@ url_video: https://youtu.be/025dEf-z5M8
 
 # Custom links (uncomment lines below)
 links:
+ - name: Supplement
+   url: "ccr-scale-supplemental.pdf"
  - name: 	ACM
    url: https://dl.acm.org/doi/10.5555/3721488.3721594
  - name: 	arXiv
