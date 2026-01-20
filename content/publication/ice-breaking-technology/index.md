@@ -50,6 +50,4 @@ links:
    url: https://dl.acm.org/doi/10.1145/3544548.3581135?fbclid=IwAR27eYXF-5SwbEf_TOMjFIUYWO4pDOruu-BqZSDdI-ptxrbC5lF5MXzS1fo
  - name: Preview Video
    url: https://youtu.be/cjZhUQJvQDY
- - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:LNsRoch85v8J:scholar.google.com/&output=citation&scisdr=Cn1BSRVuEM_bod5SjTc:AHkA5jQAAAAAaW1UlTc9ToWrrLXJDgpYSAvaBko&scisig=AHkA5jQAAAAAaW1UlUAPAzuWB-vyGgi2OQv9Km4&scisf=4&ct=citation&cd=-1&hl=en
 ---

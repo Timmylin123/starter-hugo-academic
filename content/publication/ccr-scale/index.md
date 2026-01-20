@@ -34,7 +34,5 @@ links:
    url: https://dl.acm.org/doi/10.5555/3721488.3721594
  - name: 	arXiv
    url: https://arxiv.org/abs/2501.11887
- - name: BibTeX Citation
-   url: https://scholar.googleusercontent.com/scholar.bib?q=info:Y4B9EaG0B9wJ:scholar.google.com/&output=citation&scisdr=Cn1BSRVuEM_bod5S8qY:AHkA5jQAAAAAaW1U6qb8NjAz4GHLWNERhgCl0p4&scisig=AHkA5jQAAAAAaW1U6k4tf8En0CXhvp_wV03eSmM&scisf=4&ct=citation&cd=-1&hl=en
 
 ---
