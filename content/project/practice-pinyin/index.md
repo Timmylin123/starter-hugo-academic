@@ -1,6 +1,6 @@
 ---
 title: Pinyin Typing Trainer
-date: 2025-10-28T15:23:54.589Z
+date: 2025-10-29T15:23:54.589Z
 draft: false
 featured: false
 image:
