@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Pinyin Typing Trainer</title>
+
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    background: #f7f9fc;
+    padding: 40px;
+  }
+
+  h1 { color: #1e3a8a; }
+
+  #char {
+    font-size: 120px;
+    margin: 30px 0;
+    transition: transform 0.2s;
+  }
+
+  #char.correct { transform: scale(1.2); color: #2e7d32; }
+  #char.wrong { transform: scale(0.9); color: #c62828; }
+
+  input {
+    font-size: 24px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 18px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #startBtn {
+    background: #1e3a8a;
+    color: white;
+  }
+
+  #clearBtn {
+    background: #9ca3af;
+  }
+
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 750px;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  th {
+    background: #1e3a8a;
+    color: white;
+  }
+
+  .correct-answer { color: #2e7d32; font-weight: bold; }
+  .wrong-answer { color: #c62828; font-weight: bold; }
+</style>
+</head>
+
+<body>
+
+<h1>Pinyin Typing Trainer</h1>
+
+<div id="char">—</div>
+
+<input
+  id="input"
+  type="text"
+  disabled
+  placeholder="type pinyin, press Enter"
+/>
+
+<div id="feedback"></div>
+<div id="timer"></div>
+
+<div>
+  <button id="startBtn" onclick="startGame()">Play</button>
+  <button id="clearBtn" onclick="clearProgress()">Clear Progress</button>
+</div>
+
+<div id="summary"></div>
+
+<script>
+/* ===================== DATA ===================== */
+
+const deck = [
+    { char: "阿", pinyin: "a" },
+    { char: "爸", pinyin: "ba" },
+    { char: "趴", pinyin: "pa" },
+    { char: "媽", pinyin: "ma" },
+    { char: "罰", pinyin: "fa" },      
+    { char: "達", pinyin: "da" },
+    { char: "他", pinyin: "ta" },
+    { char: "那", pinyin: "na" },
+    { char: "拉", pinyin: "la" },
+    { char: "嘎", pinyin: "ga" },
+    { char: "卡", pinyin: "ka" },
+    { char: "哈", pinyin: "ha" },
+    { char: "炸", pinyin: "zha" },
+    { char: "查", pinyin: "cha" },
+    { char: "沙", pinyin: "sha" },
+    { char: "扎", pinyin: "za" },
+    { char: "擦", pinyin: "ca" },
+    { char: "撒", pinyin: "sa" },
+    { char: "艾", pinyin: "ai" },
+    { char: "白", pinyin: "bai" },
+    { char: "拍", pinyin: "pai" },
+    { char: "買", pinyin: "mai" },
+    { char: "代", pinyin: "dai" },
+    { char: "太", pinyin: "tai" },
+    { char: "奈", pinyin: "nai" },
+    { char: "萊", pinyin: "lai" },
+    { char: "改", pinyin: "gai" },
+    { char: "開", pinyin: "kai" },
+    { char: "海", pinyin: "hai" },
+    { char: "宅", pinyin: "zhai" },
+    { char: "拆", pinyin: "chai" },
+    { char: "曬", pinyin: "shai" },
+    { char: "在", pinyin: "zai" },
+    { char: "菜", pinyin: "cai" },
+    { char: "賽", pinyin: "sai" },
+    { char: "安", pinyin: "an" },
+    { char: "班", pinyin: "ban" },
+    { char: "盤", pinyin: "pan" },
+    { char: "滿", pinyin: "man" },
+    { char: "凡", pinyin: "fan" },
+    { char: "單", pinyin: "dan" },
+    { char: "談", pinyin: "tan" },
+    { char: "南", pinyin: "nan" },
+    { char: "蘭", pinyin: "lan" },
+    { char: "敢", pinyin: "gan" },     
+    { char: "坎", pinyin: "kan" },
+    { char: "漢", pinyin: "han" },
+    { char: "站", pinyin: "zhan" },
+    { char: "產", pinyin: "chan" },
+    { char: "山", pinyin: "shan" },
+    { char: "然", pinyin: "ran" },
+    { char: "贊", pinyin: "zan" },
+    { char: "餐", pinyin: "can" },
+    { char: "散", pinyin: "san" },
+    { char: "昂", pinyin: "ang" },
+    { char: "幫", pinyin: "bang" },
+    { char: "胖", pinyin: "pang" },
+    { char: "忙", pinyin: "mang" },
+    { char: "方", pinyin: "fang" },
+    { char: "當", pinyin: "dang" },    
+    { char: "唐", pinyin: "tang" },
+    { char: "囊", pinyin: "nang" },
+    { char: "朗", pinyin: "lang" },
+    { char: "岡", pinyin: "gang" },
+    { char: "康", pinyin: "kang" },
+    { char: "杭", pinyin: "hang" },
+    { char: "張", pinyin: "zhang" },
+    { char: "場", pinyin: "chang" },
+    { char: "上", pinyin: "shang" },
+    { char: "讓", pinyin: "rang" },
+    { char: "髒", pinyin: "zang" },    
+    { char: "倉", pinyin: "cang" },
+    { char: "桑", pinyin: "sang" },
+    { char: "奧", pinyin: "ao" },
+    { char: "寶", pinyin: "bao" },
+    { char: "跑", pinyin: "pao" },
+    { char: "毛", pinyin: "mao" },
+    { char: "到", pinyin: "dao" },
+    { char: "桃", pinyin: "tao" },
+    { char: "腦", pinyin: "nao" },
+    { char: "老", pinyin: "lao" },
+    { char: "高", pinyin: "gao" },
+    { char: "考", pinyin: "kao" },
+    { char: "好", pinyin: "hao" },
+    { char: "找", pinyin: "zhao" },
+    { char: "超", pinyin: "chao" },
+    { char: "少", pinyin: "shao" },
+    { char: "饒", pinyin: "rao" },
+    { char: "早", pinyin: "zao" },
+    { char: "草", pinyin: "cao" },
+    { char: "掃", pinyin: "sao" },
+    { char: "鵝", pinyin: "e" },
+    { char: "麼", pinyin: "me" },
+    { char: "德", pinyin: "de" },      
+    { char: "特", pinyin: "te" },
+    { char: "呢", pinyin: "ne" },
+    { char: "勒", pinyin: "le" },       
+    { char: "哥", pinyin: "ge" },
+    { char: "克", pinyin: "ke" },
+    { char: "喝", pinyin: "he" },
+    { char: "這", pinyin: "zhe" },
+    { char: "車", pinyin: "che" },
+    { char: "社", pinyin: "she" },
+    { char: "熱", pinyin: "re" },
+    { char: "則", pinyin: "ze" },
+    { char: "策", pinyin: "ce" },
+    { char: "色", pinyin: "se" },
+    { char: "誒", pinyin: "ei" },
+    { char: "北", pinyin: "bei" },
+    { char: "配", pinyin: "pei" },
+    { char: "美", pinyin: "mei" },
+    { char: "非", pinyin: "fei" },
+    { char: "內", pinyin: "nei" },
+    { char: "雷", pinyin: "lei" },     
+    { char: "給", pinyin: "gei" },
+    { char: "黑", pinyin: "hei" },
+    { char: "誰", pinyin: "shei" },     
+    { char: "賊", pinyin: "zei" },
+    { char: "恩", pinyin: "en" },
+    { char: "本", pinyin: "ben" },
+    { char: "噴", pinyin: "pen" },
+    { char: "們", pinyin: "men" },
+    { char: "分", pinyin: "fen" },
+    { char: "嫩", pinyin: "nen" },
+    { char: "根", pinyin: "gen" },
+    { char: "肯", pinyin: "ken" },
+    { char: "恨", pinyin: "hen" },
+    { char: "真", pinyin: "zhen" },
+    { char: "晨", pinyin: "chen" },
+    { char: "神", pinyin: "shen" },
+    { char: "人", pinyin: "ren" },
+    { char: "怎", pinyin: "zen" },
+    { char: "岑", pinyin: "cen" },
+    { char: "森", pinyin: "sen" },
+    { char: "崩", pinyin: "beng" },
+    { char: "朋", pinyin: "peng" },
+    { char: "夢", pinyin: "meng" },
+    { char: "風", pinyin: "feng" },
+    { char: "登", pinyin: "deng" },
+    { char: "騰", pinyin: "teng" },
+    { char: "能", pinyin: "neng" },
+    { char: "冷", pinyin: "leng" },
+    { char: "更", pinyin: "geng" },
+    { char: "坑", pinyin: "keng" },
+    { char: "恆", pinyin: "heng" },
+    { char: "正", pinyin: "zheng" },
+    { char: "成", pinyin: "cheng" },
+    { char: "生", pinyin: "sheng" },
+    { char: "仍", pinyin: "reng" },
+    { char: "增", pinyin: "zeng" },
+    { char: "層", pinyin: "ceng" },
+    { char: "僧", pinyin: "seng" },
+    { char: "兒", pinyin: "er" },
+    { char: "一", pinyin: "yi" },
+    { char: "比", pinyin: "bi" },
+    { char: "批", pinyin: "pi" },
+    { char: "米", pinyin: "mi" },
+    { char: "弟", pinyin: "di" },
+    { char: "梯", pinyin: "ti" },
+    { char: "你", pinyin: "ni" },
+    { char: "理", pinyin: "li" },
+    { char: "機", pinyin: "ji" },
+    { char: "期", pinyin: "qi" },
+    { char: "西", pinyin: "xi" },
+    { char: "知", pinyin: "zhi" },
+    { char: "吃", pinyin: "chi" },
+    { char: "是", pinyin: "shi" },
+    { char: "日", pinyin: "ri" },
+    { char: "子", pinyin: "zi" },
+    { char: "次", pinyin: "ci" },
+    { char: "四", pinyin: "si" },
+    { char: "亞", pinyin: "ya" },
+    { char: "嗲", pinyin: "dia" },
+    { char: "家", pinyin: "jia" },
+    { char: "恰", pinyin: "qia" },
+    { char: "夏", pinyin: "xia" },
+    { char: "眼", pinyin: "yan" },
+    { char: "邊", pinyin: "bian" },
+    { char: "篇", pinyin: "pian" },
+    { char: "面", pinyin: "mian" },
+    { char: "電", pinyin: "dian" },
+    { char: "天", pinyin: "tian" },
+    { char: "年", pinyin: "nian" },
+    { char: "連", pinyin: "lian" },
+    { char: "建", pinyin: "jian" },
+    { char: "前", pinyin: "qian" },
+    { char: "先", pinyin: "xian" },
+    { char: "羊", pinyin: "yang" },
+    { char: "娘", pinyin: "niang" },
+    { char: "亮", pinyin: "liang" },
+    { char: "江", pinyin: "jiang" },
+    { char: "強", pinyin: "qiang" },
+    { char: "香", pinyin: "xiang" },
+    { char: "要", pinyin: "yao" },
+    { char: "標", pinyin: "biao" },
+    { char: "票", pinyin: "piao" },
+    { char: "秒", pinyin: "miao" },
+    { char: "掉", pinyin: "diao" },
+    { char: "條", pinyin: "tiao" },
+    { char: "鳥", pinyin: "niao" },
+    { char: "療", pinyin: "liao" },
+    { char: "叫", pinyin: "jiao" },
+    { char: "橋", pinyin: "qiao" },
+    { char: "笑", pinyin: "xiao" },
+    { char: "也", pinyin: "ye" },
+    { char: "別", pinyin: "bie" },
+    { char: "撇", pinyin: "pie" },
+    { char: "滅", pinyin: "mie" },
+    { char: "疊", pinyin: "die" },
+    { char: "貼", pinyin: "tie" },
+    { char: "捏", pinyin: "nie" },
+    { char: "列", pinyin: "lie" },
+    { char: "接", pinyin: "jie" },
+    { char: "切", pinyin: "qie" },
+    { char: "寫", pinyin: "xie" },
+    { char: "因", pinyin: "yin" },
+    { char: "賓", pinyin: "bin" },
+    { char: "品", pinyin: "pin" },
+    { char: "民", pinyin: "min" },
+    { char: "您", pinyin: "nin" },
+    { char: "林", pinyin: "lin" },
+    { char: "金", pinyin: "jin" },
+    { char: "親", pinyin: "qin" },
+    { char: "心", pinyin: "xin" },
+    { char: "影", pinyin: "ying" },
+    { char: "兵", pinyin: "bing" },
+    { char: "平", pinyin: "ping" },
+    { char: "明", pinyin: "ming" },
+    { char: "丁", pinyin: "ding" },
+    { char: "亭", pinyin: "ting" },
+    { char: "寧", pinyin: "ning" },
+    { char: "靈", pinyin: "ling" },
+    { char: "京", pinyin: "jing" },
+    { char: "青", pinyin: "qing" },
+    { char: "星", pinyin: "xing" },
+    { char: "唷", pinyin: "yo" },  
+    { char: "永", pinyin: "yong" },
+    { char: "囧", pinyin: "jiong" },
+    { char: "瓊", pinyin: "qiong" },
+    { char: "雄", pinyin: "xiong" },
+    { char: "有", pinyin: "you" },
+    { char: "謬", pinyin: "miu" },
+    { char: "牛", pinyin: "niu" },
+    { char: "柳", pinyin: "liu" },
+    { char: "酒", pinyin: "jiu" },
+    { char: "球", pinyin: "qiu" },
+    { char: "休", pinyin: "xiu" },
+    { char: "喔", pinyin: "o" },
+    { char: "波", pinyin: "bo" }, 
+    { char: "坡", pinyin: "po" },
+    { char: "摸", pinyin: "mo" },
+    { char: "佛", pinyin: "fo" },
+    { char: "咯", pinyin: "lo" },
+    { char: "翁", pinyin: "weng" },
+    { char: "東", pinyin: "dong" },
+    { char: "同", pinyin: "tong" },
+    { char: "農", pinyin: "nong" },
+    { char: "龍", pinyin: "long" },
+    { char: "工", pinyin: "gong" },
+    { char: "空", pinyin: "kong" },
+    { char: "紅", pinyin: "hong" },
+    { char: "中", pinyin: "zhong" },
+    { char: "衝", pinyin: "chong" },
+    { char: "榮", pinyin: "rong" },
+    { char: "總", pinyin: "zong" },
+    { char: "從", pinyin: "cong" },
+    { char: "松", pinyin: "song" },
+    { char: "歐", pinyin: "ou" },
+    { char: "剖", pinyin: "pou" },
+    { char: "某", pinyin: "mou" },
+    { char: "否", pinyin: "fou" },
+    { char: "都", pinyin: "dou" },
+    { char: "頭", pinyin: "tou" },
+    { char: "樓", pinyin: "lou" },
+    { char: "狗", pinyin: "gou" },
+    { char: "口", pinyin: "kou" },
+    { char: "後", pinyin: "hou" },
+    { char: "周", pinyin: "zhou" },
+    { char: "抽", pinyin: "chou" },
+    { char: "手", pinyin: "shou" },
+    { char: "肉", pinyin: "rou" },
+    { char: "走", pinyin: "zou" },
+    { char: "湊", pinyin: "cou" },
+    { char: "搜", pinyin: "sou" },
+    { char: "五", pinyin: "wu" },
+    { char: "不", pinyin: "bu" },
+    { char: "普", pinyin: "pu" },
+    { char: "母", pinyin: "mu" },
+    { char: "父", pinyin: "fu" },
+    { char: "讀", pinyin: "du" },
+    { char: "圖", pinyin: "tu" },
+    { char: "奴", pinyin: "nu" },
+    { char: "路", pinyin: "lu" },
+    { char: "古", pinyin: "gu" },
+    { char: "苦", pinyin: "ku" },
+    { char: "虎", pinyin: "hu" },
+    { char: "朱", pinyin: "zhu" },
+    { char: "出", pinyin: "chu" },
+    { char: "書", pinyin: "shu" },
+    { char: "如", pinyin: "ru" },
+    { char: "祖", pinyin: "zu" },
+    { char: "粗", pinyin: "cu" },
+    { char: "蘇", pinyin: "su" },
+    { char: "娃", pinyin: "wa" },
+    { char: "瓜", pinyin: "gua" },
+    { char: "夸", pinyin: "kua" },
+    { char: "花", pinyin: "hua" },
+    { char: "抓", pinyin: "zhua" },
+    { char: "刷", pinyin: "shua" },
+    { char: "外", pinyin: "wai" },
+    { char: "怪", pinyin: "guai" },
+    { char: "快", pinyin: "kuai" },
+    { char: "懷", pinyin: "huai" },
+    { char: "踹", pinyin: "chuai" },
+    { char: "衰", pinyin: "shuai" },
+    { char: "完", pinyin: "wan" },
+    { char: "端", pinyin: "duan" },
+    { char: "團", pinyin: "tuan" },
+    { char: "暖", pinyin: "nuan" },
+    { char: "卵", pinyin: "luan" },
+    { char: "關", pinyin: "guan" },
+    { char: "寬", pinyin: "kuan" },
+    { char: "歡", pinyin: "huan" },
+    { char: "轉", pinyin: "zhuan" },
+    { char: "川", pinyin: "chuan" },
+    { char: "栓", pinyin: "shuan" },
+    { char: "軟", pinyin: "ruan" },
+    { char: "鑽", pinyin: "zuan" },
+    { char: "竄", pinyin: "cuan" },
+    { char: "算", pinyin: "suan" },
+    { char: "王", pinyin: "wang" },
+    { char: "光", pinyin: "guang" },
+    { char: "框", pinyin: "kuang" },
+    { char: "黃", pinyin: "huang" },
+    { char: "壯", pinyin: "zhuang" },
+    { char: "床", pinyin: "chuang" },
+    { char: "爽", pinyin: "shuang" },
+    { char: "約", pinyin: "yue" },
+    { char: "虐", pinyin: "nve" },
+    { char: "略", pinyin: "lve" },
+    { char: "決", pinyin: "jue" },
+    { char: "卻", pinyin: "que" },
+    { char: "學", pinyin: "xue" },
+    { char: "為", pinyin: "wei" },
+    { char: "對", pinyin: "dui" },
+    { char: "推", pinyin: "tui" },
+    { char: "貴", pinyin: "gui" },
+    { char: "愧", pinyin: "kui" },
+    { char: "慧", pinyin: "hui" },
+    { char: "追", pinyin: "zhui" },
+    { char: "吹", pinyin: "chui" },
+    { char: "水", pinyin: "shui" },
+    { char: "瑞", pinyin: "rui" },
+    { char: "罪", pinyin: "zui" },
+    { char: "催", pinyin: "cui" },
+    { char: "隨", pinyin: "sui" },
+    { char: "文", pinyin: "wen" },
+    { char: "頓", pinyin: "dun" },
+    { char: "屯", pinyin: "tun" },
+    { char: "論", pinyin: "lun" },
+    { char: "滾", pinyin: "gun" },
+    { char: "昆", pinyin: "kun" },
+    { char: "混", pinyin: "hun" },
+    { char: "準", pinyin: "zhun" },
+    { char: "春", pinyin: "chun" },
+    { char: "順", pinyin: "shun" },
+    { char: "潤", pinyin: "run" },
+    { char: "尊", pinyin: "zun" },
+    { char: "存", pinyin: "cun" },
+    { char: "損", pinyin: "sun" },
+    { char: "我", pinyin: "wo" },
+    { char: "多", pinyin: "duo" },
+    { char: "托", pinyin: "tuo" },
+    { char: "挪", pinyin: "nuo" },
+    { char: "羅", pinyin: "luo" },
+    { char: "國", pinyin: "guo" },
+    { char: "擴", pinyin: "kuo" },
+    { char: "火", pinyin: "huo" },
+    { char: "桌", pinyin: "zhuo" },
+    { char: "戳", pinyin: "chuo" },
+    { char: "說", pinyin: "shuo" },
+    { char: "若", pinyin: "ruo" },
+    { char: "作", pinyin: "zuo" },
+    { char: "措", pinyin: "cuo" },
+    { char: "所", pinyin: "suo" },
+    { char: "語", pinyin: "yu" },
+    { char: "女", pinyin: "nv" }, // only pronounced "nü"
+    { char: "綠", pinyin: "lv" }, // only pronounced "lü"
+    { char: "局", pinyin: "ju" },
+    { char: "取", pinyin: "qu" },
+    { char: "需", pinyin: "xu" },
+    { char: "園", pinyin: "yuan" },
+    { char: "卷", pinyin: "juan" },
+    { char: "全", pinyin: "quan" },
+    { char: "宣", pinyin: "xuan" },
+    { char: "雲", pinyin: "yun" },
+    { char: "君", pinyin: "jun" },
+    { char: "群", pinyin: "qun" },
+    { char: "尋", pinyin: "xun" }
+    ];
+
+/* ===================== STATE ===================== */
+
+let questions = [];
+let current = null;
+let index = 0;
+let timer = null;
+let timeLeft = 3;
+let userAnswers = [];
+
+const statsKey = "pinyinStats";
+let stats = JSON.parse(localStorage.getItem(statsKey)) || {};
+
+/* ===================== ELEMENTS ===================== */
+
+const charDiv = document.getElementById("char");
+const input = document.getElementById("input");
+const feedback = document.getElementById("feedback");
+const timerDiv = document.getElementById("timer");
+const summaryDiv = document.getElementById("summary");
+const startBtn = document.getElementById("startBtn");
+
+/* ===================== HELPERS ===================== */
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function initStats(char) {
+  if (!stats[char]) {
+    stats[char] = { seen: 0, correct: 0, wrong: 0 };
+  }
+}
+
+function saveStats() {
+  localStorage.setItem(statsKey, JSON.stringify(stats));
+}
+
+/* ===================== GAME FLOW ===================== */
+
+function startGame() {
+  shuffle(deck);
+
+  //UNIQUE-SELECTION LOGIC
+  const usedChars = new Set();
+  questions = [];
+
+  for (const card of deck) {
+    if (!usedChars.has(card.char)) {
+      questions.push(card);
+      usedChars.add(card.char);
+    }
+    if (questions.length === 10) break;
+  }
+
+  index = 0;
+  userAnswers = [];
+  input.disabled = false;
+  startBtn.disabled = true;
+  summaryDiv.innerHTML = "";
+  nextChar();
+  input.focus();
+}
+
+function nextChar() {
+  if (index >= questions.length) {
+    endGame();
+    return;
+  }
+
+  current = questions[index];
+  charDiv.textContent = current.char;
+  charDiv.className = "";
+  input.value = "";
+  feedback.textContent = "";
+
+  timeLeft = 3;
+  timerDiv.textContent = `⏱ ${timeLeft}s`;
+
+  clearInterval(timer);
+  timer = setInterval(() => {
+    timeLeft--;
+    timerDiv.textContent = `⏱ ${timeLeft}s`;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      checkAnswer("");
+    }
+  }, 1000);
+}
+
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") checkAnswer(input.value.trim().toLowerCase());
+});
+
+function checkAnswer(answer) {
+  clearInterval(timer);
+
+  initStats(current.char);
+  stats[current.char].seen++;
+
+  const correct = answer === current.pinyin;
+
+  if (correct) {
+    stats[current.char].correct++;
+    charDiv.className = "correct";
+    feedback.textContent = "✅ Correct";
+  } else {
+    stats[current.char].wrong++;
+    charDiv.className = "wrong";
+    feedback.textContent = `❌ ${current.pinyin}`;
+  }
+
+  userAnswers.push({
+    char: current.char,
+    pinyin: current.pinyin,
+    answer: answer || "(none)"
+  });
+
+  saveStats();
+  index++;
+  setTimeout(nextChar, 500);
+}
+
+/* ===================== SUMMARY ===================== */
+
+function endGame() {
+  input.disabled = true;
+  startBtn.disabled = false;
+  charDiv.textContent = "🎉";
+  timerDiv.textContent = "";
+
+  let score = userAnswers.filter(a => a.answer === a.pinyin).length;
+
+  let html = `<h2>Summary</h2>`;
+  html += `<p>Score: ${score} / ${userAnswers.length}</p>`;
+
+  html += `<table>
+    <tr><th>#</th><th>Char</th><th>Your Answer</th><th>Correct</th></tr>`;
+
+  userAnswers.forEach((a, i) => {
+    const c = a.answer === a.pinyin ? "correct-answer" : "wrong-answer";
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td>${a.char}</td>
+      <td class="${c}">${a.answer}</td>
+      <td>${a.pinyin}</td>
+    </tr>`;
+  });
+
+  html += `</table>`;
+  summaryDiv.innerHTML = html;
+}
+
+/* ===================== CLEAR CACHE ===================== */
+
+function clearProgress() {
+  if (!confirm("Clear all saved progress for this device?")) return;
+  localStorage.removeItem(statsKey);
+  stats = {};
+  summaryDiv.innerHTML = "<p>Progress cleared. Ready for a new player.</p>";
+}
+</script>
+
+</body>
+</html>
