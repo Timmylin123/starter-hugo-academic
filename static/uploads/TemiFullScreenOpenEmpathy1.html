@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temi Robot Face - Random Sparkles + Reflection</title>
+<style>
+html, body {
+  margin:0; padding:0;
+  width:100%; height:100%;
+  background:#cce0ff;
+  display:flex; justify-content:center; align-items:center;
+  overflow:hidden;
+}
+
+.face {
+  position: relative;
+  width: 90vw;
+  max-width: 600px;
+  aspect-ratio: 3 / 2;
+}
+
+.eye {
+  position: absolute;
+  width:170px; height:170px;
+  background:black;
+  border-radius:50%;
+  transition: transform 240ms ease-in-out, filter 260ms ease-in-out;
+  overflow:hidden;
+}
+
+.eye.left { top:80px; left:-20px; }
+.eye.right { top:80px; right:-20px; }
+
+/* Big white reflection */
+.eye::after {
+  content:"";
+  position:absolute;
+  top:30px; right:30px;
+  width:24px; height:24px;
+  background:white;
+  border-radius:50%;
+}
+
+/* Small sparkles */
+.eye .sparkle {
+  position:absolute;
+  background:white;
+  border-radius:50%;
+  pointer-events:none;
+  animation: twinkle 1.2s infinite alternate;
+}
+
+@keyframes twinkle {
+  0%{opacity:0.2;}
+  50%{opacity:1;}
+  100%{opacity:0.2;}
+}
+</style>
+</head>
+<body>
+<div class="face" id="facebox">
+  <div class="eye left" id="eyeLeft"></div>
+  <div class="eye right" id="eyeRight"></div>
+</div>
+
+<script>
+const left = document.getElementById("eyeLeft");
+const right = document.getElementById("eyeRight");
+
+const state = { mode:"awake", lastBlinkAt:0, blinkCooldownMs:200, nextBlinkTimer:null };
+const BLINK = { close:90, hold:60, open:110, meanSec:2.3, stdSec:2.0, doubleProb:0.12, minIntervalSec:0.5, maxIntervalSec:8.0 };
+const SHAPE = { awake:{baseScaleY:1}, sleepy:{baseScaleY:0.7}, sleep:{baseScaleY:0.3} };
+
+// Create random sparkles for an eye
+function createSparkles(eye, count=5) {
+  for(let i=0;i<count;i++){
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    const size = Math.floor(Math.random()*6)+5; // 5-10px
+    const top = Math.random()*(eye.clientHeight - size);
+    const leftPos = Math.random()*(eye.clientWidth - size);
+    sparkle.style.width = sparkle.style.height = size + "px";
+    sparkle.style.top = top + "px";
+    sparkle.style.left = leftPos + "px";
+    sparkle.style.animationDuration = (0.8 + Math.random()*0.8)+"s";
+    eye.appendChild(sparkle);
+  }
+}
+
+// Initialize sparkles
+createSparkles(left,6);
+createSparkles(right,6);
+
+// Blink animation for eye and sparkles
+function blinkEye(eye) {
+  const s = SHAPE[state.mode] || SHAPE.awake;
+  const base = s.baseScaleY;
+  const keyframes = [
+    { transform:`scaleY(${base})` },
+    { transform:`scaleY(${(base*0.2).toFixed(3)})` },
+    { transform:`scaleY(${(base*0.2).toFixed(3)})` },
+    { transform:`scaleY(${base})` }
+  ];
+  eye.animate(keyframes, { duration:BLINK.close+BLINK.hold+BLINK.open, easing:"ease-in-out", iterations:1 });
+
+  // Blink big reflection
+  const reflection = eye.querySelector("::after");
+  // ::after can't be selected in JS; instead, animate the eye's firstChild is not reflection
+  // Instead, we can rely on CSS transform scaleY on the whole eye, so after also scales naturally
+
+  // Blink small sparkles
+  eye.querySelectorAll(".sparkle").forEach(spark=>{
+    spark.animate(keyframes, { duration:BLINK.close+BLINK.hold+BLINK.open, easing:"ease-in-out", iterations:1 });
+  });
+}
+
+function doBlink() {
+  const now = Date.now();
+  if(now - state.lastBlinkAt < state.blinkCooldownMs) return;
+  state.lastBlinkAt = now;
+  blinkEye(left);
+  blinkEye(right);
+}
+
+function nextIntervalMs() {
+  let sec = BLINK.meanSec + (Math.random()*2-1)*BLINK.stdSec;
+  sec = Math.max(BLINK.minIntervalSec, Math.min(BLINK.maxIntervalSec, sec));
+  return sec*1000;
+}
+
+function scheduleBlinkLoop() {
+  clearTimeout(state.nextBlinkTimer);
+  state.nextBlinkTimer = setTimeout(()=>{
+    doBlink();
+    if(Math.random()<BLINK.doubleProb) setTimeout(doBlink,200);
+    scheduleBlinkLoop();
+  }, nextIntervalMs());
+}
+
+window.onload = ()=>{
+  scheduleBlinkLoop();
+};
+</script>
+</body>
+</html>

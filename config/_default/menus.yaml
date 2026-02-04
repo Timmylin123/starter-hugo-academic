@@ -46,9 +46,12 @@ main:
   - name: Temi-Awake
     url: uploads/TemiFullScreenToAwake.html
     weight: 150
+  - name: Temi-Empathy
+    url: uploads/TemiFullScreenOpenEmpathy1.html
+    weight: 160
   - name: Temi-Logs
     url: logs.html
-    weight: 160
+    weight: 170
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
