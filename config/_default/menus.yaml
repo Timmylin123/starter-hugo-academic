@@ -47,7 +47,7 @@ main:
     url: uploads/TemiFullScreenToAwake.html
     weight: 150
   - name: Temi-Empathy
-    url: uploads/TemiFullScreenOpenEmpathy1.html
+    url: uploads/TemiFullScreenEmpathy.html
     weight: 160
   - name: Temi-Logs
     url: logs.html
