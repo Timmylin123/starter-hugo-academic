@@ -1,154 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temi Robot Face - Empathy</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temi Robot Face - Empathy</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #cce0ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
 
-<style>
-html, body {
-  margin:0; padding:0;
-  width:100%; height:100%;
-  background:#cce0ff;
-  display:flex; justify-content:center; align-items:center;
-  overflow:hidden;
-}
+      .face {
+        position: relative;
+        width: 90vw;
+        max-width: 600px;
+        min-height: 320px;
+        aspect-ratio: 3 / 2;
+      }
 
-.face {
-  position: relative;
-  width: 90vw;
-  max-width: 600px;
-  aspect-ratio: 3 / 2;
-}
+      .eye {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        background: #000;
+        border-radius: 50%;
+        transition: transform 220ms ease-in-out;
+        overflow: hidden;
+      }
 
-.eye {
-  position: absolute;
-  width:170px;
-  height:170px;
-  background:black;
-  border-radius:50%;
-  overflow:hidden;
-  transform-origin:center;
-}
+      .eye.left {
+        top: 80px;
+        left: -20px;
+      }
 
-/* Preserve your original positioning */
-.eye.left  { top:80px; left:-20px; }
-.eye.right { top:80px; right:-20px; }
+      .eye.right {
+        top: 80px;
+        right: -20px;
+      }
 
-/* Big reflection */
-.eye::after {
-  content:"";
-  position:absolute;
-  top:30px;
-  right:30px;
-  width:24px;
-  height:24px;
-  background:white;
-  border-radius:50%;
-}
+      .eye::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 24px;
+        height: 24px;
+        background: #fff;
+        border-radius: 50%;
+      }
 
-/* Sparkles */
-.eye .sparkle {
-  position:absolute;
-  background:white;
-  border-radius:50%;
-  pointer-events:none;
-  animation: twinkle 1.2s infinite alternate;
-}
+      .eye .sparkle {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+        opacity: 0.25;
+        animation: twinkle 1.2s ease-in-out infinite;
+      }
 
-@keyframes twinkle {
-  0%{opacity:0.2;}
-  50%{opacity:1;}
-  100%{opacity:0.2;}
-}
+      .eye.blink {
+        animation: blink 260ms ease-in-out;
+      }
 
-/* Temi-safe blink animation */
-.eye.blink {
-  animation: blinkAnim 260ms ease-in-out;
-}
+      @keyframes twinkle {
+        0% {
+          opacity: 0.2;
+          transform: scale(0.85);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.15);
+        }
+        100% {
+          opacity: 0.25;
+          transform: scale(0.9);
+        }
+      }
 
-@keyframes blinkAnim {
-  0%   { transform: scaleY(1); }
-  40%  { transform: scaleY(0.2); }
-  60%  { transform: scaleY(0.2); }
-  100% { transform: scaleY(1); }
-}
-</style>
-</head>
+      @keyframes blink {
+        0% {
+          transform: scaleY(1);
+        }
+        40% {
+          transform: scaleY(0.2);
+        }
+        60% {
+          transform: scaleY(0.2);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="face" id="facebox">
+      <div class="eye left" id="eyeLeft"></div>
+      <div class="eye right" id="eyeRight"></div>
+    </div>
 
-<body>
+    <script>
+      var left = document.getElementById("eyeLeft");
+      var right = document.getElementById("eyeRight");
+      var blinkTimer = null;
 
-<div class="face">
-  <div class="eye left" id="eyeLeft"></div>
-  <div class="eye right" id="eyeRight"></div>
-</div>
+      var BLINK = {
+        meanSec: 2.3,
+        stdSec: 2.0,
+        doubleProb: 0.12,
+        minIntervalSec: 0.5,
+        maxIntervalSec: 8.0,
+      };
 
-<script>
-const left = document.getElementById("eyeLeft");
-const right = document.getElementById("eyeRight");
+      function createSparkles(eye, count) {
+        for (var i = 0; i < count; i++) {
+          var sparkle = document.createElement("div");
+          var size = Math.floor(Math.random() * 6) + 5;
 
-const BLINK = {
-  meanSec: 2.3,
-  stdSec: 2.0,
-  doubleProb: 0.12,
-  minIntervalSec: 0.5,
-  maxIntervalSec: 8.0
-};
+          sparkle.className = "sparkle";
+          sparkle.style.width = size + "px";
+          sparkle.style.height = size + "px";
+          sparkle.style.left = Math.random() * (170 - size) + "px";
+          sparkle.style.top = Math.random() * (170 - size) + "px";
+          sparkle.style.animationDelay = Math.random() * 0.9 + "s";
+          sparkle.style.animationDuration = 0.9 + Math.random() * 0.9 + "s";
 
-// Create sparkles WITHOUT using clientHeight/clientWidth
-function createSparkles(eye, count=6) {
-  for(let i=0;i<count;i++){
-    const sparkle = document.createElement("div");
-    sparkle.className = "sparkle";
+          eye.appendChild(sparkle);
+        }
+      }
 
-    const size = Math.floor(Math.random()*6)+5;
+      function blinkEye(eye) {
+        eye.classList.add("blink");
+        setTimeout(function () {
+          eye.classList.remove("blink");
+        }, 260);
+      }
 
-    // Use fixed 170px instead of clientHeight
-    const top = Math.random()*(170 - size);
-    const leftPos = Math.random()*(170 - size);
+      function doBlink() {
+        blinkEye(left);
+        blinkEye(right);
+      }
 
-    sparkle.style.width = size + "px";
-    sparkle.style.height = size + "px";
-    sparkle.style.top = top + "px";
-    sparkle.style.left = leftPos + "px";
-    sparkle.style.animationDuration = (0.8 + Math.random()*0.8) + "s";
+      function nextIntervalMs() {
+        var sec = BLINK.meanSec + (Math.random() * 2 - 1) * BLINK.stdSec;
+        sec = Math.max(BLINK.minIntervalSec, Math.min(BLINK.maxIntervalSec, sec));
+        return sec * 1000;
+      }
 
-    eye.appendChild(sparkle);
-  }
-}
+      function scheduleBlinkLoop() {
+        clearTimeout(blinkTimer);
+        blinkTimer = setTimeout(function () {
+          doBlink();
+          if (Math.random() < BLINK.doubleProb) {
+            setTimeout(doBlink, 200);
+          }
+          scheduleBlinkLoop();
+        }, nextIntervalMs());
+      }
 
-function blinkEye(eye){
-  eye.classList.add("blink");
-  setTimeout(()=> eye.classList.remove("blink"), 260);
-}
+      function resizeFullScreen() {
+        document.body.style.height = window.innerHeight + "px";
+      }
 
-function doBlink(){
-  blinkEye(left);
-  blinkEye(right);
-}
+      function init() {
+        createSparkles(left, 8);
+        createSparkles(right, 8);
+        scheduleBlinkLoop();
+        resizeFullScreen();
+      }
 
-function nextIntervalMs(){
-  let sec = BLINK.meanSec + (Math.random()*2-1)*BLINK.stdSec;
-  sec = Math.max(BLINK.minIntervalSec,
-        Math.min(BLINK.maxIntervalSec, sec));
-  return sec*1000;
-}
+      window.addEventListener("resize", resizeFullScreen);
+      window.addEventListener("load", init);
 
-function scheduleBlinkLoop(){
-  setTimeout(()=>{
-    doBlink();
-    if(Math.random()<BLINK.doubleProb)
-      setTimeout(doBlink,200);
-    scheduleBlinkLoop();
-  }, nextIntervalMs());
-}
-
-window.onload = function(){
-  createSparkles(left,6);
-  createSparkles(right,6);
-  scheduleBlinkLoop();
-};
-</script>
-
-</body>
+      window.eye = window.eye || {};
+      window.eye.triggerBlinkNow = function () {
+        doBlink();
+      };
+    </script>
+  </body>
 </html>
