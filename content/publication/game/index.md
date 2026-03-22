@@ -24,7 +24,7 @@ publication_types:
 authors: 
   - 'Ting-Han Lin*'
   - 'Spencer Ng*'
-  - 'Sarah Sebo (*equal contribution)'
+  - sarah-sebo-equal
 
 publication: In *2022 31st IEEE International Conference on Robot and Human
   Interactive Communication (RO-MAN)*

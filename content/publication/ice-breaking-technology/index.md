@@ -9,7 +9,7 @@ authors:
 - Alex Wuqi Zhang
 - admin
 - Xuan Zhao
-- Sarah Sebo
+- sarah-sebo
 
 abstract: Despite the clear benefits that social connection offers to
   well-being, strangers in close physical proximity regularly ignore each other
