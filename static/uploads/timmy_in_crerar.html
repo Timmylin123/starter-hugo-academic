@@ -320,17 +320,25 @@
         return;
       }
 
-      const isTracking = Boolean(presenceRow.is_tracking);
-      const isInCrerar = presenceRow.is_in_crerar;
+      const isTracking = presenceRow.effective_is_tracking !== undefined
+        ? Boolean(presenceRow.effective_is_tracking)
+        : Boolean(presenceRow.is_tracking);
+      const isInCrerar = presenceRow.effective_is_in_crerar !== undefined
+        ? presenceRow.effective_is_in_crerar
+        : presenceRow.is_in_crerar;
       const isWorking = isTracking && isInCrerar === true;
 
       iconEl.textContent = isWorking ? '🧑🏻‍💻' : '😌';
       iconEl.style.background = isWorking ? '#e8f8ef' : '#f7eeda';
       titleEl.textContent = isWorking ? 'Timmy Is Working' : 'Timmy Is Taking a Break';
 
-      const readableState = isInCrerar === null
-        ? 'Status Unknown'
-        : isInCrerar ? 'In Crerar' : 'Not In Crerar';
+      const heartbeatAgeSeconds = Number(presenceRow.heartbeat_age_seconds);
+      const isStale = Number.isFinite(heartbeatAgeSeconds) && heartbeatAgeSeconds > 180;
+      const readableState = isStale
+        ? 'Tracker Offline'
+        : isInCrerar === null
+          ? 'Status Unknown'
+          : isInCrerar ? 'In Crerar' : 'Not In Crerar';
       stateEl.textContent = readableState;
 
       updatedEl.textContent = `Updated: ${presenceRow.updated_at ? new Date(presenceRow.updated_at).toLocaleString() : '--'}`;
@@ -399,7 +407,7 @@
 
         const [summaryRows, presenceRows, weeklyRows] = await Promise.all([
           fetchSupabase("crerar_public_summary?select=*"),
-          fetchSupabase("crerar_public_presence?select=profile_id,is_tracking,is_in_crerar,updated_at"),
+          fetchSupabase("crerar_public_presence?select=profile_id,is_tracking,is_in_crerar,updated_at,source,heartbeat_age_seconds,effective_is_tracking,effective_is_in_crerar"),
           fetchSupabase("crerar_public_weekly?select=week_start,total_seconds&order=week_start.desc&limit=26"),
         ]);
 
