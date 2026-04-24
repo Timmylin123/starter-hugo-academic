@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timmy in Crerar</title>
+  <style>
+    :root {
+      --bg: #fff7eb;
+      --text: #3c2c22;
+      --muted: #7a685a;
+      --card: #fffef9;
+      --line: rgba(91, 71, 51, 0.12);
+      --bar: #f4b183;
+      --bar-track: #f4e2c9;
+      --ok: #2f8f60;
+      --danger: #d56a6a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, #ffeccf, transparent 36%), var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.4;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 24px));
+      margin: 16px auto 28px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    h1, h2, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(1.45rem, 3.8vw, 2rem);
+      margin-bottom: 6px;
+    }
+
+    .sub { color: var(--muted); }
+
+    .topbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    button, select {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .meta { color: var(--muted); font-size: 0.9rem; }
+
+    .status-panel {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .status-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background: #f7eeda;
+    }
+
+    .status-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .status-state {
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .summary-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #fff;
+    }
+
+    .summary-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .summary-value {
+      margin-top: 2px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .rows { display: grid; gap: 8px; margin-top: 10px; }
+
+    .row {
+      display: grid;
+      grid-template-columns: 40px 1fr 56px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .day { color: var(--muted); font-weight: 700; font-size: 0.9rem; }
+
+    .track {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--bar-track);
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: var(--bar);
+      transition: width 0.2s ease;
+    }
+
+    .val {
+      text-align: right;
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    .status-ok { color: var(--ok); font-weight: 700; }
+    .status-bad { color: var(--danger); font-weight: 700; }
+
+    @media (max-width: 640px) {
+      .summary-grid { grid-template-columns: 1fr; }
+      .status-panel { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>Timmy in Crerar</h1>
+      <p class="sub">This website tracks Timmy's time in John Crerar Library and encourages everyone to come in person and build a steady work routine.</p>
+    </section>
+
+    <section class="card topbar">
+      <div>
+        <p id="connectionStatus" class="status-bad">Loading...</p>
+        <p id="lastUpdated" class="meta">Last updated: --</p>
+      </div>
+      <button id="refreshBtn" type="button">Refresh</button>
+    </section>
+
+    <section class="card">
+      <h2>Timmy's Current Crerar Status</h2>
+      <div class="status-panel" style="margin-top: 10px;">
+        <div id="timmyIcon" class="status-icon">😌</div>
+        <div>
+          <p id="timmyTitle" class="status-title">Timmy Is Taking a Break</p>
+          <p id="timmyState" class="status-state">Status Unknown</p>
+          <p id="timmyUpdated" class="meta">Updated: --</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Dashboard</h2>
+      <p class="sub">Timmy's total working time in John Crerar Library</p>
+      <div class="summary-grid" style="margin-top: 10px;">
+        <div class="summary-item">
+          <p class="summary-label">Timmy All-time</p>
+          <p id="totalHours" class="summary-value">--</p>
+        </div>
+        <div class="summary-item">
+          <p class="summary-label">Timmy Today</p>
+          <p id="todayHours" class="summary-value">--</p>
+        </div>
+        <div class="summary-item">
+          <p class="summary-label">Timmy This Week</p>
+          <p id="weekHours" class="summary-value">--</p>
+        </div>
+        <div class="summary-item">
+          <p class="summary-label">Timmy This Month</p>
+          <p id="monthHours" class="summary-value">--</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Timmy Weekly Work Trend</h2>
+      <p class="sub">Mon-Sun view for selected week</p>
+      <div style="margin-top: 10px;">
+        <select id="weekSelect"></select>
+      </div>
+      <div id="dayRows" class="rows"></div>
+    </section>
+  </main>
+
+  <script>
+    const SUPABASE_URL = "https://qxmtrhogudduxecfmqxq.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_7jrIXsur89G-5xriJYLu3A_pEzbPoHw";
+
+    function formatHours(totalSeconds) {
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+      if (totalMinutes === 0 && totalSeconds > 0) return '<1m';
+      if (hours > 0) return `${hours}h ${minutes}m`;
+      return `${totalMinutes}m`;
+    }
+
+    function formatHoursCompact(totalSeconds) {
+      const hours = totalSeconds / 3600;
+      if (hours <= 0) return '0h';
+      if (hours >= 10) return `${Math.round(hours)}h`;
+      return `${hours.toFixed(1)}h`;
+    }
+
+    function formatWeekLabel(weekStartISO) {
+      const start = new Date(`${weekStartISO}T00:00:00`);
+      const end = new Date(start);
+      end.setDate(start.getDate() + 6);
+      return `${start.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })} - ${end.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}`;
+    }
+
+    async function fetchSupabase(path) {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || `HTTP ${response.status}`);
+      }
+
+      return response.json();
+    }
+
+    async function callRpc(fnName, body) {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fnName}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || `HTTP ${response.status}`);
+      }
+
+      return response.json();
+    }
+
+    function setStatus(ok, text) {
+      const el = document.getElementById("connectionStatus");
+      el.textContent = text;
+      el.className = ok ? "status-ok" : "status-bad";
+    }
+
+    function setLastUpdated() {
+      document.getElementById("lastUpdated").textContent = `Last updated: ${new Date().toLocaleString()}`;
+    }
+
+    function renderSummary(summaryRow) {
+      document.getElementById("totalHours").textContent = formatHours(summaryRow.total_seconds || 0);
+      document.getElementById("todayHours").textContent = formatHours(summaryRow.today_seconds || 0);
+      document.getElementById("weekHours").textContent = formatHours(summaryRow.this_week_seconds || 0);
+      document.getElementById("monthHours").textContent = formatHours(summaryRow.this_month_seconds || 0);
+    }
+
+    function renderPresence(presenceRow) {
+      const iconEl = document.getElementById('timmyIcon');
+      const titleEl = document.getElementById('timmyTitle');
+      const stateEl = document.getElementById('timmyState');
+      const updatedEl = document.getElementById('timmyUpdated');
+
+      if (!presenceRow) {
+        iconEl.textContent = '😌';
+        titleEl.textContent = 'Timmy Is Taking a Break';
+        stateEl.textContent = 'Status Unknown';
+        updatedEl.textContent = 'Updated: --';
+        return;
+      }
+
+      const isTracking = Boolean(presenceRow.is_tracking);
+      const isInCrerar = presenceRow.is_in_crerar;
+      const isWorking = isTracking && isInCrerar === true;
+
+      iconEl.textContent = isWorking ? '🧑🏻‍💻' : '😌';
+      iconEl.style.background = isWorking ? '#e8f8ef' : '#f7eeda';
+      titleEl.textContent = isWorking ? 'Timmy Is Working' : 'Timmy Is Taking a Break';
+
+      const readableState = isInCrerar === null
+        ? 'Status Unknown'
+        : isInCrerar ? 'In Crerar' : 'Not In Crerar';
+      stateEl.textContent = readableState;
+
+      updatedEl.textContent = `Updated: ${presenceRow.updated_at ? new Date(presenceRow.updated_at).toLocaleString() : '--'}`;
+    }
+
+    function renderWeekDays(rows) {
+      const container = document.getElementById("dayRows");
+      container.innerHTML = "";
+
+      const maxSeconds = Math.max(1, ...rows.map((r) => Number(r.total_seconds || 0)));
+
+      rows.forEach((row) => {
+        const value = Number(row.total_seconds || 0);
+        const percent = Math.max(4, Math.round((value / maxSeconds) * 100));
+
+        const rowEl = document.createElement("div");
+        rowEl.className = "row";
+
+        const dayEl = document.createElement("div");
+        dayEl.className = "day";
+        dayEl.textContent = row.weekday_label;
+
+        const trackEl = document.createElement("div");
+        trackEl.className = "track";
+        const fillEl = document.createElement("div");
+        fillEl.className = "fill";
+        fillEl.style.width = `${percent}%`;
+        trackEl.appendChild(fillEl);
+
+        const valEl = document.createElement("div");
+        valEl.className = "val";
+        valEl.textContent = formatHoursCompact(value);
+
+        rowEl.appendChild(dayEl);
+        rowEl.appendChild(trackEl);
+        rowEl.appendChild(valEl);
+        container.appendChild(rowEl);
+      });
+    }
+
+    async function loadWeekDays(weekStart) {
+      const rows = await callRpc('crerar_public_week_days', { p_week_start: weekStart });
+      renderWeekDays(rows || []);
+    }
+
+    function renderWeekDropdown(weeklyRows) {
+      const select = document.getElementById('weekSelect');
+      select.innerHTML = '';
+
+      weeklyRows.forEach((row, index) => {
+        const option = document.createElement('option');
+        option.value = row.week_start;
+        const label = formatWeekLabel(row.week_start);
+        option.textContent = index === 0 ? `Latest Week (${label})` : label;
+        select.appendChild(option);
+      });
+
+      if (weeklyRows.length > 0) {
+        select.value = weeklyRows[0].week_start;
+      }
+    }
+
+    async function loadDashboard() {
+      try {
+        setStatus(false, "Loading Supabase data...");
+
+        const [summaryRows, presenceRows, weeklyRows] = await Promise.all([
+          fetchSupabase("crerar_public_summary?select=*"),
+          fetchSupabase("crerar_public_presence?select=profile_id,is_tracking,is_in_crerar,updated_at"),
+          fetchSupabase("crerar_public_weekly?select=week_start,total_seconds&order=week_start.desc&limit=26"),
+        ]);
+
+        const summary = summaryRows[0] || {};
+        const presence = (presenceRows && presenceRows[0]) || null;
+
+        renderSummary(summary);
+        renderPresence(presence);
+        renderWeekDropdown(weeklyRows || []);
+
+        const selectedWeekStart = (weeklyRows && weeklyRows[0] && weeklyRows[0].week_start) || null;
+        if (selectedWeekStart) {
+          await loadWeekDays(selectedWeekStart);
+        } else {
+          renderWeekDays([]);
+        }
+
+        setLastUpdated();
+        setStatus(true, "Refresh to get latest info.");
+      } catch (error) {
+        console.error(error);
+        setStatus(false, `Failed to load data: ${String(error.message || error)}`);
+      }
+    }
+
+    document.getElementById("refreshBtn").addEventListener("click", loadDashboard);
+    document.getElementById("weekSelect").addEventListener("change", async (event) => {
+      const weekStart = event.target.value;
+      if (!weekStart) return;
+      try {
+        await loadWeekDays(weekStart);
+      } catch (error) {
+        console.error(error);
+        setStatus(false, `Failed to load selected week: ${String(error.message || error)}`);
+      }
+    });
+
+    const AUTO_REFRESH_MS = 60000;
+    setInterval(() => {
+      void loadDashboard();
+    }, AUTO_REFRESH_MS);
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        void loadDashboard();
+      }
+    });
+
+    loadDashboard();
+  </script>
+</body>
+</html>
