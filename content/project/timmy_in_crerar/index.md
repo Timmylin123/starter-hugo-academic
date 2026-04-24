@@ -7,19 +7,8 @@ links:
  - name: Open Dashboard
    url: uploads/timmy_in_crerar.html
 ---
-Timmy in Crerar is a lightweight location-intelligence project: a mobile app collects validated presence signals at John Crerar Library, a backend stores clean session data, and this website publishes a read-only public dashboard.
+Timmy in Crerar is a lightweight location-intelligence project: a mobile app collects validated presence signals at John Crerar Library, a backend stores clean session data, and this website publishes a read-only public dashboard. 
 
-Architecture highlights:
-- Phone app (React Native + Expo) is the data collector.
-- GPS and geofence logic run on-device to detect when Timmy enters/leaves Crerar.
-- The app is designed to ship as a real standalone build (not only Expo Go) so tracking can continue without a laptop or local dev server.
+A React Native app (via Expo Go / standalone build) runs on the phone to track geolocation and detect entry/exit using on-device geofencing, then sends structured session data (start, end, duration, status) to a Supabase backend that serves as the single source of truth. The website fetches aggregated stats from the backend and displays them as a live dashboard without needing any location permissions.
 
-- Small backend (Supabase style) is the source of truth.
-- Sessions are stored as structured records: `start`, `end`, `duration`, and status transitions.
-- Day/week/month totals are derived from the session table for consistency across all clients.
-- Access uses a single private user identity/token (personal-use workflow).
-
-- Website is a read-only display layer.
-- The site fetches aggregate stats and weekly chart data from backend views/RPC endpoints.
-- No browser location permissions are required, because the web page never collects GPS.
-- Result: fast public visibility of live work stats while keeping collection logic in the phone app.
+Current limitation: during development the app depends on npm start (Expo dev server), and background tracking may stop unless the app is built and configured as a standalone app.
