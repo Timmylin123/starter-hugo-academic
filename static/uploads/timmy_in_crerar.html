@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Timmy in Crerar</title>
   <style>
     :root {
@@ -256,9 +259,11 @@
 
     async function fetchSupabase(path) {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+        cache: 'no-store',
         headers: {
           apikey: SUPABASE_ANON_KEY,
           Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          'Cache-Control': 'no-cache',
         },
       });
 
@@ -273,10 +278,12 @@
     async function callRpc(fnName, body) {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fnName}`, {
         method: 'POST',
+        cache: 'no-store',
         headers: {
           'Content-Type': 'application/json',
           apikey: SUPABASE_ANON_KEY,
           Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          'Cache-Control': 'no-cache',
         },
         body: JSON.stringify(body),
       });
@@ -386,6 +393,7 @@
 
     function renderWeekDropdown(weeklyRows) {
       const select = document.getElementById('weekSelect');
+      const previousValue = select.value;
       select.innerHTML = '';
 
       weeklyRows.forEach((row, index) => {
@@ -397,7 +405,8 @@
       });
 
       if (weeklyRows.length > 0) {
-        select.value = weeklyRows[0].week_start;
+        const hasPreviousValue = weeklyRows.some((row) => row.week_start === previousValue);
+        select.value = hasPreviousValue ? previousValue : weeklyRows[0].week_start;
       }
     }
 
@@ -426,7 +435,7 @@
         }
 
         setLastUpdated();
-        setStatus(true, "Refresh to get latest info.");
+        setStatus(true, "Auto-refreshing every minute.");
       } catch (error) {
         console.error(error);
         setStatus(false, `Failed to load data: ${String(error.message || error)}`);
