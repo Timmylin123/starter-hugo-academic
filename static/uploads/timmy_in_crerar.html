@@ -233,6 +233,7 @@
   <script>
     const SUPABASE_URL = "https://qxmtrhogudduxecfmqxq.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_7jrIXsur89G-5xriJYLu3A_pEzbPoHw";
+    const DAY_BAR_MAX_SECONDS = 12 * 60 * 60;
 
     function formatHours(totalSeconds) {
       const totalMinutes = Math.floor(totalSeconds / 60);
@@ -302,8 +303,8 @@
       el.className = ok ? "status-ok" : "status-bad";
     }
 
-    function setLastUpdated() {
-      document.getElementById("lastUpdated").textContent = `Last updated: ${new Date().toLocaleString()}`;
+    function setLastUpdated(updatedAt) {
+      document.getElementById("lastUpdated").textContent = `Last updated: ${updatedAt.toLocaleString()}`;
     }
 
     function renderSummary(summaryRow) {
@@ -313,7 +314,7 @@
       document.getElementById("monthHours").textContent = formatHours(summaryRow.this_month_seconds || 0);
     }
 
-    function renderPresence(presenceRow) {
+    function renderPresence(presenceRow, refreshedAt) {
       const iconEl = document.getElementById('timmyIcon');
       const titleEl = document.getElementById('timmyTitle');
       const stateEl = document.getElementById('timmyState');
@@ -323,7 +324,7 @@
         iconEl.textContent = '😌';
         titleEl.textContent = 'Timmy Is Taking a Break';
         stateEl.textContent = 'Status Unknown';
-        updatedEl.textContent = 'Updated: --';
+        updatedEl.textContent = `Updated: ${refreshedAt.toLocaleString()}`;
         return;
       }
 
@@ -348,18 +349,18 @@
           : isInCrerar ? 'In Crerar' : 'Not In Crerar';
       stateEl.textContent = readableState;
 
-      updatedEl.textContent = `Updated: ${presenceRow.updated_at ? new Date(presenceRow.updated_at).toLocaleString() : '--'}`;
+      updatedEl.textContent = `Updated: ${refreshedAt.toLocaleString()}`;
     }
 
     function renderWeekDays(rows) {
       const container = document.getElementById("dayRows");
       container.innerHTML = "";
 
-      const maxSeconds = Math.max(1, ...rows.map((r) => Number(r.total_seconds || 0)));
-
       rows.forEach((row) => {
         const value = Number(row.total_seconds || 0);
-        const percent = Math.max(4, Math.round((value / maxSeconds) * 100));
+        const percent = value <= 0
+          ? 0
+          : Math.min(100, Math.round((value / DAY_BAR_MAX_SECONDS) * 100));
 
         const rowEl = document.createElement("div");
         rowEl.className = "row";
@@ -423,8 +424,10 @@
         const summary = summaryRows[0] || {};
         const presence = (presenceRows && presenceRows[0]) || null;
 
+        const refreshedAt = new Date();
+
         renderSummary(summary);
-        renderPresence(presence);
+        renderPresence(presence, refreshedAt);
         renderWeekDropdown(weeklyRows || []);
 
         const selectedWeekStart = (weeklyRows && weeklyRows[0] && weeklyRows[0].week_start) || null;
@@ -434,7 +437,7 @@
           renderWeekDays([]);
         }
 
-        setLastUpdated();
+        setLastUpdated(refreshedAt);
         setStatus(true, "Auto-refreshing every minute.");
       } catch (error) {
         console.error(error);
