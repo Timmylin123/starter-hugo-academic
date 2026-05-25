@@ -79,6 +79,8 @@
   <button onclick="startSimpleVowelsPractice()">Practice Simple Vowels</button>
   <button onclick="startCompoundVowelsPractice()">Practice Compound Vowels</button>
   <button onclick="showHints()">Hint</button>
+  <button onclick="startRandomHangulLettersPractice()">Practice 10 Random Hangul Letters</button>
+  <button onclick="startLyricsHangulPractice()">Testing 10 Random Hangul Letters</button>
 
   <div id="practiceBox" style="display:none;">
     <div id="progress"></div>
@@ -121,55 +123,55 @@
     ];
 
     const basicConsonants = [
-      { char: "ㄱ", roman: "g/k", answers: ["g", "k"] },
-      { char: "ㄴ", roman: "n" },
-      { char: "ㄷ", roman: "d/t", answers: ["d", "t"] },
-      { char: "ㄹ", roman: "r/l", answers: ["r", "l"] },
-      { char: "ㅁ", roman: "m" },
-      { char: "ㅂ", roman: "b/p", answers: ["b", "p"] },
-      { char: "ㅅ", roman: "s" },
-      { char: "ㅇ", roman: "silent at start / ng at end", answers: ["silent", "ng", "none"] },
-      { char: "ㅈ", roman: "j" },
-      { char: "ㅊ", roman: "ch" },
-      { char: "ㅋ", roman: "k" },
-      { char: "ㅌ", roman: "t" },
-      { char: "ㅍ", roman: "p" },
-      { char: "ㅎ", roman: "h" }
+      { char: "ㄱ", roman: "g/k", answers: ["g", "k"], english: "g or k sound" },
+      { char: "ㄴ", roman: "n", english: "n sound" },
+      { char: "ㄷ", roman: "d/t", answers: ["d", "t"], english: "d or t sound" },
+      { char: "ㄹ", roman: "r/l", answers: ["r", "l"], english: "r or l sound" },
+      { char: "ㅁ", roman: "m", english: "m sound" },
+      { char: "ㅂ", roman: "b/p", answers: ["b", "p"], english: "b or p sound" },
+      { char: "ㅅ", roman: "s", english: "s sound" },
+      { char: "ㅇ", roman: "silent at start / ng at end", answers: ["silent", "ng", "none"], english: "silent at the start of a syllable, ng at the end" },
+      { char: "ㅈ", roman: "j", english: "j sound" },
+      { char: "ㅊ", roman: "ch", english: "ch sound" },
+      { char: "ㅋ", roman: "k", english: "strong k sound" },
+      { char: "ㅌ", roman: "t", english: "strong t sound" },
+      { char: "ㅍ", roman: "p", english: "strong p sound" },
+      { char: "ㅎ", roman: "h", english: "h sound" }
     ];
 
     const doubleConsonants = [
-      { char: "ㄲ", roman: "kk" },
-      { char: "ㄸ", roman: "tt" },
-      { char: "ㅃ", roman: "pp" },
-      { char: "ㅆ", roman: "ss" },
-      { char: "ㅉ", roman: "jj" }
+      { char: "ㄲ", roman: "kk", english: "tense kk sound" },
+      { char: "ㄸ", roman: "tt", english: "tense tt sound" },
+      { char: "ㅃ", roman: "pp", english: "tense pp sound" },
+      { char: "ㅆ", roman: "ss", english: "tense ss sound" },
+      { char: "ㅉ", roman: "jj", english: "tense jj sound" }
     ];
 
     const simpleVowels = [
-      { char: "ㅏ", roman: "a" },
-      { char: "ㅑ", roman: "ya" },
-      { char: "ㅓ", roman: "eo" },
-      { char: "ㅕ", roman: "yeo" },
-      { char: "ㅗ", roman: "o" },
-      { char: "ㅛ", roman: "yo" },
-      { char: "ㅜ", roman: "u" },
-      { char: "ㅠ", roman: "yu" },
-      { char: "ㅡ", roman: "eu" },
-      { char: "ㅣ", roman: "i" }
+      { char: "ㅏ", roman: "a", english: "a as in father" },
+      { char: "ㅑ", roman: "ya", english: "ya sound" },
+      { char: "ㅓ", roman: "eo", english: "eo, like aw/uh" },
+      { char: "ㅕ", roman: "yeo", english: "yeo sound" },
+      { char: "ㅗ", roman: "o", english: "o as in go" },
+      { char: "ㅛ", roman: "yo", english: "yo sound" },
+      { char: "ㅜ", roman: "u", english: "u as in moon" },
+      { char: "ㅠ", roman: "yu", english: "yu sound" },
+      { char: "ㅡ", roman: "eu", english: "eu, a flat u sound" },
+      { char: "ㅣ", roman: "i", english: "ee sound" }
     ];
 
     const compoundVowels = [
-      { char: "ㅐ", roman: "ae" },
-      { char: "ㅔ", roman: "e" },
-      { char: "ㅒ", roman: "yae" },
-      { char: "ㅚ", roman: "oe" },
-      { char: "ㅟ", roman: "wi" },
-      { char: "ㅢ", roman: "ui" },
-      { char: "ㅘ", roman: "wa" },
-      { char: "ㅙ", roman: "wae" },
-      { char: "ㅝ", roman: "wo" },
-      { char: "ㅞ", roman: "we" },
-      { char: "ㅖ", roman: "ye" }
+      { char: "ㅐ", roman: "ae", english: "ae, like eh" },
+      { char: "ㅔ", roman: "e", english: "e, like eh" },
+      { char: "ㅒ", roman: "yae", english: "yae sound" },
+      { char: "ㅚ", roman: "oe", english: "oe, often pronounced we" },
+      { char: "ㅟ", roman: "wi", english: "wi sound" },
+      { char: "ㅢ", roman: "ui", english: "ui sound" },
+      { char: "ㅘ", roman: "wa", english: "wa sound" },
+      { char: "ㅙ", roman: "wae", english: "wae sound" },
+      { char: "ㅝ", roman: "wo", english: "wo sound" },
+      { char: "ㅞ", roman: "we", english: "we sound" },
+      { char: "ㅖ", roman: "ye", english: "ye sound" }
     ];
 
     const alphabetList = [
@@ -178,6 +180,158 @@
       ...simpleVowels,
       ...compoundVowels
     ];
+
+    const lyricsHangulDictionary = {
+      "가": "ga",
+      "각": "gak",
+      "간": "gan",
+      "감": "gam",
+      "강": "gang",
+      "거": "geo",
+      "게": "ge",
+      "겨": "gyeo",
+      "결": "gyeol",
+      "계": "gye",
+      "고": "go",
+      "그": "geu",
+      "기": "gi",
+      "길": "gil",
+      "까": "kka",
+      "께": "kke",
+      "껴": "kkyeo",
+      "꾸": "kku",
+      "끝": "kkeut",
+      "끼": "kki",
+      "낌": "kkim",
+      "나": "na",
+      "난": "nan",
+      "내": "nae",
+      "너": "neo",
+      "널": "neol",
+      "네": "ne",
+      "녕": "nyeong",
+      "눈": "nun",
+      "느": "neu",
+      "는": "neun",
+      "다": "da",
+      "대": "dae",
+      "던": "deon",
+      "도": "do",
+      "되": "doe",
+      "드": "deu",
+      "든": "deun",
+      "들": "deul",
+      "따": "tta",
+      "떨": "tteol",
+      "라": "ra",
+      "랑": "rang",
+      "래": "rae",
+      "러": "reo",
+      "렇": "reoh",
+      "려": "ryeo",
+      "로": "ro",
+      "를": "reul",
+      "리": "ri",
+      "린": "rin",
+      "림": "rim",
+      "마": "ma",
+      "만": "man",
+      "많": "manh",
+      "말": "mal",
+      "맘": "mam",
+      "매": "mae",
+      "멈": "meom",
+      "모": "mo",
+      "미": "mi",
+      "바": "ba",
+      "반": "ban",
+      "밤": "bam",
+      "버": "beo",
+      "벽": "byeok",
+      "변": "byeon",
+      "별": "byeol",
+      "복": "bok",
+      "봐": "bwa",
+      "부": "bu",
+      "빛": "bi",
+      "사": "sa",
+      "상": "sang",
+      "생": "saeng",
+      "서": "seo",
+      "선": "seon",
+      "세": "se",
+      "속": "so",
+      "수": "su",
+      "순": "sun",
+      "숨": "sum",
+      "스": "seu",
+      "슬": "seul",
+      "시": "si",
+      "싶": "sip",
+      "아": "a",
+      "안": "an",
+      "않": "an",
+      "알": "al",
+      "앞": "ap",
+      "야": "ya",
+      "어": "eo",
+      "언": "eon",
+      "없": "eop",
+      "에": "e",
+      "오": "o",
+      "와": "wa",
+      "왔": "wat",
+      "요": "yo",
+      "우": "u",
+      "운": "un",
+      "울": "ul",
+      "움": "um",
+      "으": "eu",
+      "은": "eun",
+      "을": "eul",
+      "음": "eum",
+      "의": "ui",
+      "이": "i",
+      "임": "im",
+      "입": "i",
+      "적": "jeok",
+      "전": "jeon",
+      "제": "je",
+      "젠": "jen",
+      "져": "jyeo",
+      "주": "ju",
+      "줘": "jwo",
+      "지": "ji",
+      "직": "jik",
+      "진": "jin",
+      "쫓": "jjot",
+      "처": "cheo",
+      "춰": "chwo",
+      "치": "chi",
+      "친": "chin",
+      "켜": "kyeo",
+      "특": "teuk",
+      "포": "po",
+      "픈": "peun",
+      "픔": "peum",
+      "필": "pil",
+      "하": "ha",
+      "한": "han",
+      "할": "hal",
+      "함": "ham",
+      "해": "hae",
+      "향": "hyang",
+      "헤": "he",
+      "홀": "hol",
+      "후": "hu",
+      "흩": "heut",
+      "희": "hui"
+    };
+
+    const lyricsHangulList = Object.entries(lyricsHangulDictionary).map(([char, roman]) => ({
+      char,
+      roman
+    }));
 
     let quiz = [];
     let currentIndex = 0;
@@ -198,6 +352,14 @@
       startPracticeSet(alphabetList);
     }
 
+    function startRandomHangulLettersPractice() {
+      startPracticeSet(koreanList, 10);
+    }
+
+    function startLyricsHangulPractice() {
+      startPracticeSet(lyricsHangulList, 10);
+    }
+
     function startBasicConsonantsPractice() {
       startPracticeSet(basicConsonants);
     }
@@ -214,12 +376,12 @@
       startPracticeSet(compoundVowels);
     }
 
-    function startPracticeSet(list) {
+    function startPracticeSet(list, limit = list.length) {
       document.getElementById("hintBox").style.display = "none";
       document.getElementById("resultBox").innerHTML = "";
       document.getElementById("practiceBox").style.display = "block";
 
-      quiz = shuffleList(list);
+      quiz = shuffleList(list).slice(0, limit);
       resetQuiz();
     }
 
@@ -283,7 +445,7 @@
         score++;
       }
 
-      feedbackBox.innerText = `${isCorrect ? "Correct!" : "Not quite."} ${current.char} = ${correct}`;
+      feedbackBox.innerText = `${isCorrect ? "Correct!" : "Not quite."} ${current.char} = ${correct}${current.english ? ` (${current.english})` : ""}`;
       feedbackBox.className = isCorrect ? "correct" : "incorrect";
       answerInput.disabled = true;
       waitingForNextQuestion = true;
@@ -292,6 +454,7 @@
         char: current.char,
         yourAnswer: input,
         correctAnswer: correct,
+        english: current.english,
         correct: isCorrect
       });
 
@@ -323,6 +486,7 @@
             <strong>${item.char}</strong> —
             Your answer: ${item.yourAnswer || "(blank)"} |
             Correct: ${item.correctAnswer}
+            ${item.english ? `(${item.english})` : ""}
             ${item.correct ? "✅" : "❌"}
           </p>
         `;
