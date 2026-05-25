@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Korean Pronunciation Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #f7f7f7;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 15px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #333;
+      color: white;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    #practiceBox, #hintBox, #resultBox {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+
+    #koreanChar {
+      font-size: 80px;
+      margin: 30px;
+    }
+
+    input {
+      font-size: 24px;
+      padding: 10px;
+      width: 250px;
+      text-align: center;
+    }
+
+    #feedbackBox {
+      min-height: 36px;
+      margin-top: 18px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: #1f7a3f;
+    }
+
+    .incorrect {
+      color: #b42318;
+    }
+
+    .rule {
+      text-align: left;
+      max-width: 700px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Korean Pronunciation Practice</h1>
+
+  <button onclick="startAlphabetPractice()">Practice</button>
+  <button onclick="startBasicConsonantsPractice()">Practice Basic Consonants</button>
+  <button onclick="startDoubleConsonantsPractice()">Practice Double Consonants</button>
+  <button onclick="startSimpleVowelsPractice()">Practice Simple Vowels</button>
+  <button onclick="startCompoundVowelsPractice()">Practice Compound Vowels</button>
+  <button onclick="showHints()">Hint</button>
+
+  <div id="practiceBox" style="display:none;">
+    <div id="progress"></div>
+    <div id="koreanChar"></div>
+    <input 
+      id="answerInput" 
+      type="text" 
+      placeholder="Type romanization"
+      onkeydown="checkEnter(event)"
+    />
+    <div id="feedbackBox"></div>
+  </div>
+
+  <div id="resultBox"></div>
+
+  <div id="hintBox" style="display:none;"></div>
+
+  <script>
+    const koreanList = [
+      { char: "가", roman: "ga" },
+      { char: "나", roman: "na" },
+      { char: "다", roman: "da" },
+      { char: "라", roman: "ra" },
+      { char: "마", roman: "ma" },
+      { char: "바", roman: "ba" },
+      { char: "사", roman: "sa" },
+      { char: "아", roman: "a" },
+      { char: "자", roman: "ja" },
+      { char: "차", roman: "cha" },
+      { char: "카", roman: "ka" },
+      { char: "타", roman: "ta" },
+      { char: "파", roman: "pa" },
+      { char: "하", roman: "ha" },
+      { char: "고", roman: "go" },
+      { char: "누", roman: "nu" },
+      { char: "미", roman: "mi" },
+      { char: "소", roman: "so" },
+      { char: "주", roman: "ju" },
+      { char: "해", roman: "hae" }
+    ];
+
+    const basicConsonants = [
+      { char: "ㄱ", roman: "g/k", answers: ["g", "k"] },
+      { char: "ㄴ", roman: "n" },
+      { char: "ㄷ", roman: "d/t", answers: ["d", "t"] },
+      { char: "ㄹ", roman: "r/l", answers: ["r", "l"] },
+      { char: "ㅁ", roman: "m" },
+      { char: "ㅂ", roman: "b/p", answers: ["b", "p"] },
+      { char: "ㅅ", roman: "s" },
+      { char: "ㅇ", roman: "silent at start / ng at end", answers: ["silent", "ng", "none"] },
+      { char: "ㅈ", roman: "j" },
+      { char: "ㅊ", roman: "ch" },
+      { char: "ㅋ", roman: "k" },
+      { char: "ㅌ", roman: "t" },
+      { char: "ㅍ", roman: "p" },
+      { char: "ㅎ", roman: "h" }
+    ];
+
+    const doubleConsonants = [
+      { char: "ㄲ", roman: "kk" },
+      { char: "ㄸ", roman: "tt" },
+      { char: "ㅃ", roman: "pp" },
+      { char: "ㅆ", roman: "ss" },
+      { char: "ㅉ", roman: "jj" }
+    ];
+
+    const simpleVowels = [
+      { char: "ㅏ", roman: "a" },
+      { char: "ㅑ", roman: "ya" },
+      { char: "ㅓ", roman: "eo" },
+      { char: "ㅕ", roman: "yeo" },
+      { char: "ㅗ", roman: "o" },
+      { char: "ㅛ", roman: "yo" },
+      { char: "ㅜ", roman: "u" },
+      { char: "ㅠ", roman: "yu" },
+      { char: "ㅡ", roman: "eu" },
+      { char: "ㅣ", roman: "i" }
+    ];
+
+    const compoundVowels = [
+      { char: "ㅐ", roman: "ae" },
+      { char: "ㅔ", roman: "e" },
+      { char: "ㅒ", roman: "yae" },
+      { char: "ㅚ", roman: "oe" },
+      { char: "ㅟ", roman: "wi" },
+      { char: "ㅢ", roman: "ui" },
+      { char: "ㅘ", roman: "wa" },
+      { char: "ㅙ", roman: "wae" },
+      { char: "ㅝ", roman: "wo" },
+      { char: "ㅞ", roman: "we" },
+      { char: "ㅖ", roman: "ye" }
+    ];
+
+    const alphabetList = [
+      ...basicConsonants,
+      ...doubleConsonants,
+      ...simpleVowels,
+      ...compoundVowels
+    ];
+
+    let quiz = [];
+    let currentIndex = 0;
+    let score = 0;
+    let answers = [];
+    let waitingForNextQuestion = false;
+
+    function startPractice() {
+      document.getElementById("hintBox").style.display = "none";
+      document.getElementById("resultBox").innerHTML = "";
+      document.getElementById("practiceBox").style.display = "block";
+
+      quiz = shuffleList(koreanList).slice(0, 10);
+      resetQuiz();
+    }
+
+    function startAlphabetPractice() {
+      startPracticeSet(alphabetList);
+    }
+
+    function startBasicConsonantsPractice() {
+      startPracticeSet(basicConsonants);
+    }
+
+    function startDoubleConsonantsPractice() {
+      startPracticeSet(doubleConsonants);
+    }
+
+    function startSimpleVowelsPractice() {
+      startPracticeSet(simpleVowels);
+    }
+
+    function startCompoundVowelsPractice() {
+      startPracticeSet(compoundVowels);
+    }
+
+    function startPracticeSet(list) {
+      document.getElementById("hintBox").style.display = "none";
+      document.getElementById("resultBox").innerHTML = "";
+      document.getElementById("practiceBox").style.display = "block";
+
+      quiz = shuffleList(list);
+      resetQuiz();
+    }
+
+    function shuffleList(list) {
+      const shuffled = [...list];
+
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+
+      return shuffled;
+    }
+
+    function resetQuiz() {
+      currentIndex = 0;
+      score = 0;
+      answers = [];
+      waitingForNextQuestion = false;
+
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const item = quiz[currentIndex];
+
+      document.getElementById("progress").innerText =
+        `Question ${currentIndex + 1} of ${quiz.length}`;
+
+      document.getElementById("koreanChar").innerText = item.char;
+      document.getElementById("answerInput").value = "";
+      document.getElementById("answerInput").disabled = false;
+      document.getElementById("feedbackBox").innerText = "";
+      document.getElementById("feedbackBox").className = "";
+      waitingForNextQuestion = false;
+      document.getElementById("answerInput").focus();
+    }
+
+    function checkEnter(event) {
+      if (event.key === "Enter") {
+        checkAnswer();
+      }
+    }
+
+    function checkAnswer() {
+      if (waitingForNextQuestion) {
+        return;
+      }
+
+      const input = document.getElementById("answerInput").value.trim().toLowerCase();
+      const current = quiz[currentIndex];
+      const correct = current.roman;
+      const acceptedAnswers = current.answers || [correct];
+      const isCorrect = acceptedAnswers.includes(input);
+      const feedbackBox = document.getElementById("feedbackBox");
+      const answerInput = document.getElementById("answerInput");
+
+      speakKorean(current.char);
+
+      if (isCorrect) {
+        score++;
+      }
+
+      feedbackBox.innerText = `${isCorrect ? "Correct!" : "Not quite."} ${current.char} = ${correct}`;
+      feedbackBox.className = isCorrect ? "correct" : "incorrect";
+      answerInput.disabled = true;
+      waitingForNextQuestion = true;
+
+      answers.push({
+        char: current.char,
+        yourAnswer: input,
+        correctAnswer: correct,
+        correct: isCorrect
+      });
+
+      currentIndex++;
+
+      if (currentIndex < quiz.length) {
+        setTimeout(showQuestion, 1400);
+      } else {
+        setTimeout(showResults, 1400);
+      }
+    }
+
+    function speakKorean(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "ko-KR";
+      utterance.rate = 0.7;
+      speechSynthesis.speak(utterance);
+    }
+
+    function showResults() {
+      document.getElementById("practiceBox").style.display = "none";
+
+      let html = `<h2>Your Score: ${score} / ${quiz.length}</h2>`;
+      html += `<div class="rule">`;
+
+      answers.forEach(item => {
+        html += `
+          <p>
+            <strong>${item.char}</strong> —
+            Your answer: ${item.yourAnswer || "(blank)"} |
+            Correct: ${item.correctAnswer}
+            ${item.correct ? "✅" : "❌"}
+          </p>
+        `;
+      });
+
+      html += `</div>`;
+      document.getElementById("resultBox").innerHTML = html;
+    }
+
+    function showHints() {
+      document.getElementById("practiceBox").style.display = "none";
+      document.getElementById("resultBox").innerHTML = "";
+
+      const hints = `
+        <div class="rule">
+          <h2>Practice Answers: 40 Korean Romanizations</h2>
+
+          <h3>1. Korean syllables are built from blocks</h3>
+          <p>Each Korean character is usually made from consonants and vowels.</p>
+          <p>Example: ㄱ + ㅏ = 가, pronounced “ga”.</p>
+
+          <h3>2. Basic consonants</h3>
+          <p>
+            ㄱ = g/k<br>
+            ㄴ = n<br>
+            ㄷ = d/t<br>
+            ㄹ = r/l<br>
+            ㅁ = m<br>
+            ㅂ = b/p<br>
+            ㅅ = s<br>
+            ㅇ = silent at the start / ng at the end<br>
+            ㅈ = j<br>
+            ㅊ = ch<br>
+            ㅋ = k<br>
+            ㅌ = t<br>
+            ㅍ = p<br>
+            ㅎ = h
+          </p>
+
+          <h3>3. Double consonants</h3>
+          <p>
+            ㄲ = kk<br>
+            ㄸ = tt<br>
+            ㅃ = pp<br>
+            ㅆ = ss<br>
+            ㅉ = jj
+          </p>
+
+          <h3>4. Simple vowels</h3>
+          <p>
+            ㅏ = a<br>
+            ㅑ = ya<br>
+            ㅓ = eo<br>
+            ㅕ = yeo<br>
+            ㅗ = o<br>
+            ㅛ = yo<br>
+            ㅜ = u<br>
+            ㅠ = yu<br>
+            ㅡ = eu<br>
+            ㅣ = i
+          </p>
+
+          <h3>5. Compound vowels</h3>
+          <p>
+            ㅐ = ae<br>
+            ㅔ = e<br>
+            ㅒ = yae<br>
+            ㅚ = oe<br>
+            ㅟ = wi<br>
+            ㅢ = ui<br>
+            ㅘ = wa<br>
+            ㅙ = wae<br>
+            ㅝ = wo<br>
+            ㅞ = we<br>
+            ㅖ = ye
+          </p>
+
+          <h3>6. ㅇ is silent at the beginning</h3>
+          <p>For song romanization, 아 is pronounced “a”, not “nga”. When ㅇ is at the bottom of a syllable, it sounds like “ng”.</p>
+
+          <h3>7. Final consonants can sound different</h3>
+          <p>Some consonants change sound when they appear at the bottom of a syllable. You can learn this later after basic pronunciation.</p>
+        </div>
+      `;
+
+      document.getElementById("hintBox").innerHTML = hints;
+      document.getElementById("hintBox").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
