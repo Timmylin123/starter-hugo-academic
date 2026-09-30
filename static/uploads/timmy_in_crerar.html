@@ -234,6 +234,15 @@
     const SUPABASE_URL = "https://qxmtrhogudduxecfmqxq.supabase.co";
     const SUPABASE_ANON_KEY = "sb_publishable_7jrIXsur89G-5xriJYLu3A_pEzbPoHw";
     const DAY_BAR_MAX_SECONDS = 12 * 60 * 60;
+    const FULL_DAY_SECONDS = 24 * 60 * 60;
+    const MAX_REASONABLE_DAY_SECONDS = 16 * 60 * 60;
+
+    function sanitizeDaySeconds(totalSeconds) {
+      const seconds = Number(totalSeconds || 0);
+      if (!Number.isFinite(seconds) || seconds <= 0) return 0;
+      if (seconds >= FULL_DAY_SECONDS || seconds > MAX_REASONABLE_DAY_SECONDS) return 0;
+      return seconds;
+    }
 
     function formatHours(totalSeconds) {
       const totalMinutes = Math.floor(totalSeconds / 60);
@@ -357,7 +366,7 @@
       container.innerHTML = "";
 
       rows.forEach((row) => {
-        const value = Number(row.total_seconds || 0);
+        const value = sanitizeDaySeconds(row.total_seconds);
         const percent = value <= 0
           ? 0
           : Math.min(100, Math.round((value / DAY_BAR_MAX_SECONDS) * 100));
