@@ -12,6 +12,7 @@ design:
 
 # Add any content here - text, images, videos, galleries - and even HTML code!
 ---
+<p><b style="color:maroon;">09/18/2026</b> Submitted two first-author papers to HRI 2027! </p>
 <p><b style="color:maroon;">03/22/2026</b> Presented at HRI 2026 Pioneers in Edinburgh, Scotland! </p>
 <p><b style="color:maroon;">01/13/2026</b> First-author paper accepted to Transactions on Human-Robot Interaction!</p>
 
