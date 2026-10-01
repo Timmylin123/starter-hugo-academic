@@ -33,5 +33,5 @@ Hello! My name is **Ting-Han Lin**, and I go by **Timmy**. I am a computer scie
 
 My research focuses on designing **socially intelligent robots that build long-term relationships with people**. I develop robots that navigate group dynamics, build rapport through communication, and adapt to users’ needs over time. Through studies in real-life settings with adults and children, I investigate how these capabilities support sustained engagement and trustworthy human–robot interactions. I have published my research at leading conferences, including HRI and CHI.
 
-Research interests: Long-Term Human-Robot Interaction · Child-Robot Interaction · Social Dynamics · Human–Robot Rapport · In-Home Robot Deployment · Scale Development
+Research interests: *Long-Term Human-Robot Interaction · Human-Robot Rapport · Child-Robot Interaction · In-Home Robot Deployment · Scale Development*
 
