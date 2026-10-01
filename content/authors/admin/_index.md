@@ -22,7 +22,7 @@ organizations:
   - name: University of Chicago
     url: https://www.uchicago.edu/
   - name: Human-Robot Interaction Lab
-    url: https://hri.cs.uchicago.edu/
+    url: https://sebo-hri-lab.github.io/
   - url: https://www.axlab.cs.uchicago.edu/
     name: Actuated Experience Lab
 email: tinghan@uchicago.edu
