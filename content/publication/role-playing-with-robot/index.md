@@ -31,4 +31,6 @@ url_video: https://www.youtube.com/watch?v=LggfmUpKx20
 links:
  - name: ACM
    url: https://dl.acm.org/doi/10.1145/3610977.3634941?fbclid=IwAR3E6FHd9yz6VvnSjAX8XUdTtUynN0xr2D6zQygP1JTD-846hQc9kxQvflo
+ - name: Roblox
+   url: https://about.roblox.com/publications/role-playing-with-robot-characters
 ---
