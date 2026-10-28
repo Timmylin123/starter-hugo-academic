@@ -31,4 +31,6 @@ url_video:
 links:
  - name: 	ACM
    url: https://dl.acm.org/doi/abs/10.1145/3796533
+ - name: 	Scale & Usage
+   url: https://sebo-hri-lab.github.io/pages/resources/ccr_scale.html#reduced-length-ccr-scale
 ---

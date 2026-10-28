@@ -36,5 +36,9 @@ links:
    url: https://dl.acm.org/doi/10.5555/3721488.3721594
  - name: 	arXiv
    url: https://arxiv.org/abs/2501.11887
+ - name: 	Scale & Usage
+   url: https://sebo-hri-lab.github.io/pages/resources/ccr_scale.html#full-length-ccr-scale
+ - name: 	Scale & Usage (Japanese)
+   url: https://sebo-hri-lab.github.io/pages/resources/ccr_scale.html#japanese-ccr-scale
 
 ---
